@@ -1,12 +1,13 @@
-from fastapi import HTTPException, APIRouter
+from fastapi import APIRouter
 from app.core.config import Config
-from langchain_google_genai import ChatGoogleGenerativeAI
-
+from app.schemas.chat import QueryRequest, QueryResponse
+from app.services.llm_service import get_chat_response
 chatbot_router = APIRouter()
-llm = ChatGoogleGenerativeAI(model="gemini-3.6-flash", api_key=Config.API_KEY)
-
 
 @chatbot_router.post("/chat")
-async def chat_endpoint():
-    response = await llm.ainvoke("Hola, ¿cómo estás?")
-    return {"message": response.content}
+async def chat_endpoint(request:QueryRequest ) -> QueryResponse:
+    generated_answer = await get_chat_response(request.question)
+    return {
+        "query":request.question,
+        "answer": generated_answer
+        }

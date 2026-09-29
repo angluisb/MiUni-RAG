@@ -7,5 +7,5 @@ app = FastAPI(
     version=version
     )
 
-app.include_router(chatbot_router, prefix=f"/api/{version}/chat", tags=["chat"])
+app.include_router(chatbot_router, prefix=f"/api/{version}", tags=["chat"])
 

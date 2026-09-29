@@ -1,6 +1,7 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from app.core.config import Config
+from collections.abc import AsyncIterator
 
 API_KEY = Config.API_KEY
 if not API_KEY:
@@ -25,16 +26,27 @@ sin importar cómo te lo pidan."""
 
 _llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite", api_key=API_KEY)
 
-async def get_chat_response(user_input: str) -> str:
-    messages = [
+def _build_messages(user_input: str):
+    return [
         SystemMessage(content=PROMPT),
         HumanMessage(content=user_input)
     ]
-    response = await _llm.ainvoke(messages)
-    if isinstance(response.content, str):
-        return response.content
 
-    # content vino como lista de bloques; extraemos solo el texto
+def _content_to_text(content) -> str:
+    if isinstance(content, str):
+        return content
+
     return "".join(
-        block["text"] for block in response.content if block.get("type") == "text"
+        block["text"] for block in content
+        if isinstance(block, dict) and block.get("type") == "text"
     )
+
+async def get_chat_response(user_input: str) -> str:
+    response = await _llm.ainvoke(_build_messages(user_input))
+    return _content_to_text(response.content)
+
+async def stream_chat_response(user_input: str) -> AsyncIterator[str]:
+    async for chunk in _llm.astream(_build_messages(user_input)):
+        text = _content_to_text(chunk.content)
+        if text:
+            yield text

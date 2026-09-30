@@ -1,0 +1,1242 @@
+[
+  {
+    "url": "https://admision.unison.mx/docs/CONVENIO_DE_PAGO_PARA_INSCRIPCION_2026.pdf",
+    "filename": "CONVENIO_DE_PAGO_PARA_INSCRIPCION_2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://admision.unison.mx/convocatoria.php",
+    "depth": 1,
+    "category": "admision",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://admision.unison.mx/docs/ConvocatoriaNuevoIngresoUnison_2026.pdf",
+    "filename": "ConvocatoriaNuevoIngresoUnison_2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://admision.unison.mx/convocatoria.php",
+    "depth": 1,
+    "category": "admision",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://admision.unison.mx/docs/Mecanismos_de_Seleccion2026.pdf",
+    "filename": "Mecanismos_de_Seleccion2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://admision.unison.mx/convocatoria.php",
+    "depth": 1,
+    "category": "admision",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://admision.unison.mx/docs/Oferta_Educativa_2026.pdf",
+    "filename": "Oferta_Educativa_2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://admision.unison.mx/lugares_ofertados.php",
+    "depth": 1,
+    "category": "admision",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://contraloria.unison.mx/WP-CONTENT/UPLOADS/2026/01/MANUAL_PRESUPUESTACION2026.PDF",
+    "filename": "MANUAL_PRESUPUESTACION2026.PDF",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://contraloria.unison.mx/wp-content/uploads/2021/05/ManualFondoRevolvente2021.pdf",
+    "filename": "ManualFondoRevolvente2021.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://contraloria.unison.mx/wp-content/uploads/2023/09/SGA-288-2023-VICE-RECTORIAS-DIR-DIV-JEFES-DE-DEPTO-Disposicion-Administrativa.pdf",
+    "filename": "SGA-288-2023-VICE-RECTORIAS-DIR-DIV-JEFES-DE-DEPTO-Disposicion-Administrativa.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://contraloria.unison.mx/wp-content/uploads/2026/02/presupuesto_ingresosyegresos2026.pdf",
+    "filename": "presupuesto_ingresosyegresos2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Primera_reunion_CIM_01_Julio_2019.pdf",
+    "filename": "Primera_reunion_CIM_01_Julio_2019.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Primera_reunion_CIM_05_Septiembre_2017.pdf",
+    "filename": "Primera_reunion_CIM_05_Septiembre_2017.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Primera_reunion_CIM_21_Junio_2018.pdf",
+    "filename": "Primera_reunion_CIM_21_Junio_2018.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Primera_reunion_CIM_26_Junio_2020.pdf",
+    "filename": "Primera_reunion_CIM_26_Junio_2020.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Segunda_Reunion_Ordinaria_CIM_2020.pdf",
+    "filename": "Segunda_Reunion_Ordinaria_CIM_2020.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Segunda_reunion_CIM_04_Diciembre_2018.pdf",
+    "filename": "Segunda_reunion_CIM_04_Diciembre_2018.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Segunda_reunion_CIM_18_Septiembre_2020.pdf",
+    "filename": "Segunda_reunion_CIM_18_Septiembre_2020.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Segunda_reunion_CIM_28_Noviembre_2017.pdf",
+    "filename": "Segunda_reunion_CIM_28_Noviembre_2017.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2021/09/Segunda_reunion_CIM_28_Noviembre_2019.pdf",
+    "filename": "Segunda_reunion_CIM_28_Noviembre_2019.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2022/04/Lineamientos-para-otorgar-apoyos-de-movilidad.pdf",
+    "filename": "Lineamientos-para-otorgar-apoyos-de-movilidad.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2022/06/Gui%CC%81a-para-postular-a-los-estudiantes-1-1.pdf",
+    "filename": "Gui%CC%81a-para-postular-a-los-estudiantes-1-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/international-incoming-students/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/02/Lineamientos-Programa-Delfín-2023.pdf",
+    "filename": "Lineamientos-Programa-Delfín-2023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/03/Lineamientos-Movilidad-2023.pdf",
+    "filename": "Lineamientos-Movilidad-2023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/03/Primera-Reunión-del-CIM-2021.pdf",
+    "filename": "Primera-Reunión-del-CIM-2021.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/03/Primera-Reunión-del-CIM-2022.pdf",
+    "filename": "Primera-Reunión-del-CIM-2022.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/03/Segunda-Reunión-del-CIM-2021.pdf",
+    "filename": "Segunda-Reunión-del-CIM-2021.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/03/Segunda-Reunión-del-CIM-2022.pdf",
+    "filename": "Segunda-Reunión-del-CIM-2022.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/08/LINEAMIENTOS-2024-1.pdf",
+    "filename": "LINEAMIENTOS-2024-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2023/10/Apoyos-Lic.pdf",
+    "filename": "Apoyos-Lic.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2024/03/SGACAD3A.6-0502024.pdf",
+    "filename": "SGACAD3A.6-0502024.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2024/08/Lineamientos-apoyo-25-1.pdf",
+    "filename": "Lineamientos-apoyo-25-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2025/01/LINEAMIENTOS_APOYOS_ECONOMICOS_2025_2.pdf",
+    "filename": "LINEAMIENTOS_APOYOS_ECONOMICOS_2025_2.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2025/03/Lineamientos_Apoyo_Economico_Programa_DELFIN_2025.pdf",
+    "filename": "Lineamientos_Apoyo_Economico_Programa_DELFIN_2025.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2025/03/WNMU_2025.pdf",
+    "filename": "WNMU_2025.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2025/09/lineamientos_2026.pdf",
+    "filename": "lineamientos_2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2025/11/Durante-Movilidad-INTERNACIONAL-25-2_Saliente.pdf",
+    "filename": "Durante-Movilidad-INTERNACIONAL-25-2_Saliente.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/01/Guia_postulacion_estudiantes_entrantes.pdf",
+    "filename": "Guia_postulacion_estudiantes_entrantes.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/internacional-2/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/02/Lineamientos_2026-2.pdf",
+    "filename": "Lineamientos_2026-2.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/03/CONVOCATORIA_WNMU_2026-MDT-MSSG_FINAL.pdf",
+    "filename": "CONVOCATORIA_WNMU_2026-MDT-MSSG_FINAL.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/03/CONV_ASU_FINAL_2026-1.pdf",
+    "filename": "CONV_ASU_FINAL_2026-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/05/COMUNICADO_18_MAY2026.pdf",
+    "filename": "COMUNICADO_18_MAY2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/05/Lineamientos_Veranos_2026.pdf",
+    "filename": "Lineamientos_Veranos_2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/08/Adendum_Lineamientos_Verano_2026.pdf",
+    "filename": "Adendum_Lineamientos_Verano_2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/08/CONVOCATORIA_ESPANA_2027-1_mssg_y_mdt.pdf",
+    "filename": "CONVOCATORIA_ESPANA_2027-1_mssg_y_mdt.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/08/CONVOCATORIA_GENERAL_2027-1_MDT.pdf",
+    "filename": "CONVOCATORIA_GENERAL_2027-1_MDT.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/08/Convocatoria_KOSPIE_2027_2028_UNISON_JV_MSSGy_MDT1.pdf",
+    "filename": "Convocatoria_KOSPIE_2027_2028_UNISON_JV_MSSGy_MDT1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/08/Lineamientos_2027-1_MDT.pdf",
+    "filename": "Lineamientos_2027-1_MDT.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/09/CONVOCATORIA_CONAHEC_27-1_MSSG_Y_MDT_1.pdf",
+    "filename": "CONVOCATORIA_CONAHEC_27-1_MSSG_Y_MDT_1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/09/Flyer_Arizona.pdf",
+    "filename": "Flyer_Arizona.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://movilidad.unison.mx/wp-content/uploads/2026/09/LINEAMIENTOS_ESPANA_2027-1.pdf",
+    "filename": "LINEAMIENTOS_ESPANA_2027-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://movilidad.unison.mx/normatividad/",
+    "depth": 1,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/wp-content/uploads/2025/08/MENSAJE-DE-RECTORA-2530.pdf",
+    "filename": "MENSAJE-DE-RECTORA-2530.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 1,
+    "category": "oferta_educativa",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/docs/ProcedimientoCursodeTitulacion.pdf",
+    "filename": "ProcedimientoCursodeTitulacion.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/docs/cv/cv_yesenia_lavariega.pdf",
+    "filename": "cv_yesenia_lavariega.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://serviciosescolares.unison.mx/directorio/",
+    "depth": 1,
+    "category": "directorio",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/wp-content/uploads/2020/02/CUOTAS-INSCRIPCION-COLEGIATURA-Y-SERVICIOS-2020-UMA-86.88-vigente-a-partir-del-1-de-febrero-de-2020-2.pdf",
+    "filename": "CUOTAS-INSCRIPCION-COLEGIATURA-Y-SERVICIOS-2020-UMA-86.88-vigente-a-partir-del-1-de-febrero-de-2020-2.pdf",
+    "status": 200,
+    "content_type": "application/pdf",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "costos",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/wp-content/uploads/2022/03/Curriculum-Vitae-LGLG.pdf",
+    "filename": "Curriculum-Vitae-LGLG.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://serviciosescolares.unison.mx/directorio/",
+    "depth": 1,
+    "category": "directorio",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/wp-content/uploads/2024/04/CORREOS-DE-ATENCION-PARA-IMPRESION.pdf",
+    "filename": "CORREOS-DE-ATENCION-PARA-IMPRESION.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/wp-content/uploads/2026/09/Foliosaceptados-1.pdf",
+    "filename": "Foliosaceptados-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/directorio/docs/manualdeorganizacion_auditoria_interna.pdf",
+    "filename": "manualdeorganizacion_auditoria_interna.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/directorio/",
+    "depth": 1,
+    "category": "directorio",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/MANUAL_DE_BAJA_Y_DESTNO_FINAL_DE_BIENES_MUEBLES_DE_LA_UNIVERSIDAD_DE_SONORA.pdf",
+    "filename": "MANUAL_DE_BAJA_Y_DESTNO_FINAL_DE_BIENES_MUEBLES_DE_LA_UNIVERSIDAD_DE_SONORA.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/Plan_de_Cultura_de_Paz_de_la_Universidad_de_Sonora_2024-2023.pdf",
+    "filename": "Plan_de_Cultura_de_Paz_de_la_Universidad_de_Sonora_2024-2023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/ReglamentosyDisposicionesAdministrativas/LINEAMIENTOS_Programa_Incentivo_a_la-Jubilacion_Personal_de_Confianza_UNISON.pdf",
+    "filename": "LINEAMIENTOS_Programa_Incentivo_a_la-Jubilacion_Personal_de_Confianza_UNISON.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/ReglamentosyDisposicionesAdministrativas/LineamientosDeRadioyTV.pdf",
+    "filename": "LineamientosDeRadioyTV.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/ReglamentosyDisposicionesAdministrativas/LineamientosParaRegularComercioAmbulante.pdf",
+    "filename": "LineamientosParaRegularComercioAmbulante.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/ReglamentosyDisposicionesAdministrativas/Plan_de_Trabajo_para_la_atencion_de_la_Salud_Mental_Agosto2026.pdf",
+    "filename": "Plan_de_Trabajo_para_la_atencion_de_la_Salud_Mental_Agosto2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/ReglamentosyDisposicionesAdministrativas/Reglamento_Salud_Seguridad_y_Proteccion_al_Ambiente_Agosto2026.pdf",
+    "filename": "Reglamento_Salud_Seguridad_y_Proteccion_al_Ambiente_Agosto2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/ReglamentosyDisposicionesAdministrativas/Reglas_de_Operacion_del_Grupo_Interdisciplinario_de_Gestion_Documental_de_la_Universidad_de_Sonora.pdf",
+    "filename": "Reglas_de_Operacion_del_Grupo_Interdisciplinario_de_Gestion_Documental_de_la_Universidad_de_Sonora.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/ReglamentosyDisposicionesAdministrativas/RegresoActividadesPresenciales.pdf",
+    "filename": "RegresoActividadesPresenciales.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/convenios-staus/STAUS-Convenio-de-revision-contractual-2025.pdf",
+    "filename": "STAUS-Convenio-de-revision-contractual-2025.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/convenios-staus/STAUS-Convenio-de-revision-salarial-2026.pdf",
+    "filename": "STAUS-Convenio-de-revision-salarial-2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/convenios-steus/Convenio_de_revision_contractual_STEUS_UNISON_2024.pdf",
+    "filename": "Convenio_de_revision_contractual_STEUS_UNISON_2024.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/convenios-steus/Convenio_modificatorio_de_Clausulas_87_y_91_del_Convenio_de_Revision_Contractual_STEUS_UNISON_2022.pdf",
+    "filename": "Convenio_modificatorio_de_Clausulas_87_y_91_del_Convenio_de_Revision_Contractual_STEUS_UNISON_2022.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/convenios-steus/STEUS-Convenio-de-revision-salarial-2025.pdf",
+    "filename": "STEUS-Convenio-de-revision-salarial-2025.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/Convenio-STEUS-particular-de-choferes-2017.pdf",
+    "filename": "Convenio-STEUS-particular-de-choferes-2017.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/Convenio_ISSSTESON_17_de_abril_de_1981.pdf",
+    "filename": "Convenio_ISSSTESON_17_de_abril_de_1981.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/Convenio_ISSSTESON_1_de_noviembre_de_1977.pdf",
+    "filename": "Convenio_ISSSTESON_1_de_noviembre_de_1977.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/Convenio_ISSSTESON_21_de_marzo_de_2012.pdf",
+    "filename": "Convenio_ISSSTESON_21_de_marzo_de_2012.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/ISSSTESON-CONVENIO-MODIFICATORIO-DE-CONTRATO-DE-PRESTACIONES-DEL-31-03-1990.pdf",
+    "filename": "ISSSTESON-CONVENIO-MODIFICATORIO-DE-CONTRATO-DE-PRESTACIONES-DEL-31-03-1990.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/Minuta_de_acuerdos-Lineamientos_para_la_interpretacion_y_aplicacion_de_la_Clausula_Tercera_Transitoria-convenio_ISSSTESON-UNISON.pdf",
+    "filename": "Minuta_de_acuerdos-Lineamientos_para_la_interpretacion_y_aplicacion_de_la_Clausula_Tercera_Transitoria-convenio_ISSSTESON-UNISON.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/ReglamentoProgramaComplementarioPensionesJubilacionesSTAUS-UNISON.pdf",
+    "filename": "ReglamentoProgramaComplementarioPensionesJubilacionesSTAUS-UNISON.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/ReglamentoProgramaIncentivoJubilacionSTAUS-UNISON.pdf",
+    "filename": "ReglamentoProgramaIncentivoJubilacionSTAUS-UNISON.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/STEUS-UniSon-Fondo-Jubilacion-Convenio-Revision-Contractual-2012.pdf",
+    "filename": "STEUS-UniSon-Fondo-Jubilacion-Convenio-Revision-Contractual-2012.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/contrato_cct_staus_unison2025-2027.pdf",
+    "filename": "contrato_cct_staus_unison2025-2027.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/conveniosycontratos/contrato_colectivo_steus2022-2024.pdf",
+    "filename": "contrato_colectivo_steus2022-2024.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/jubilacion-staus/ConvocatoriaSTAUS-2017ProgramaIncentivoJubilacion.pdf",
+    "filename": "ConvocatoriaSTAUS-2017ProgramaIncentivoJubilacion.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/jubilacion-steus/ConvocatoriaSTEUS-2017ProgramaDeIncentivoJubilacion.pdf",
+    "filename": "ConvocatoriaSTEUS-2017ProgramaDeIncentivoJubilacion.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/leyesyestatutos/ConstitucionPoliticadelosEstadosUnidosMexicanos/ConstitucionPoliticadelosEstadosUnidosMexicanos.pdf",
+    "filename": "ConstitucionPoliticadelosEstadosUnidosMexicanos.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/leyesyestatutos/ConstitucionPoliticaparaelEstadoLibreySoberanodeSonora/ConstitucionPoliticaparaelEstadoLibreySoberanodeSonora.pdf",
+    "filename": "ConstitucionPoliticaparaelEstadoLibreySoberanodeSonora.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/leyesyestatutos/EPA_noviembre2020.pdf",
+    "filename": "EPA_noviembre2020.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/leyesyestatutos/Estatuto_de_la_Defensoria_de_los_Derechos_Universitarios_Octubre2021.pdf",
+    "filename": "Estatuto_de_la_Defensoria_de_los_Derechos_Universitarios_Octubre2021.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/leyesyestatutos/EstatutodelaComisiondeDerechosUniversitarios/EstatutodelaComisiondeDerechosUniversitarios.pdf",
+    "filename": "EstatutodelaComisiondeDerechosUniversitarios.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/manual_gral_de_organizacion.pdf",
+    "filename": "manual_gral_de_organizacion.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/Criterios_para_la_formulacion_y_aprobacion_de_eventos_formativos_de_actualizacion_y_capacitacion.pdf",
+    "filename": "Criterios_para_la_formulacion_y_aprobacion_de_eventos_formativos_de_actualizacion_y_capacitacion.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/Definicion_procedimiento_y_criterios_para_el_nombramiento_de_Profesor_Investigador_Honorario_Enero 2022.pdf",
+    "filename": "Definicion_procedimiento_y_criterios_para_el_nombramiento_de_Profesor_Investigador_Honorario_Enero 2022.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/Lineamientos_para_el_Componente_Curricular_Edicion_Febrero2023.pdf",
+    "filename": "Lineamientos_para_el_Componente_Curricular_Edicion_Febrero2023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/MODELO_EDUCATIVO-FEB-2023.pdf",
+    "filename": "MODELO_EDUCATIVO-FEB-2023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/MODELO_EDUCATIVO_2030.pdf",
+    "filename": "MODELO_EDUCATIVO_2030.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/Organizacion_Academica_y_Operativa_del_Area_de_Formacion_Integral_Edicion_Mayo_2021.pdf",
+    "filename": "Organizacion_Academica_y_Operativa_del_Area_de_Formacion_Integral_Edicion_Mayo_2021.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/Plan_Institucional_de_Investigacion_Interdisciplinaria_Agosto2026.pdf",
+    "filename": "Plan_Institucional_de_Investigacion_Interdisciplinaria_Agosto2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/REGLAMENTO_DE_ACADEMIAS_FEB-2023.pdf",
+    "filename": "REGLAMENTO_DE_ACADEMIAS_FEB-2023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/ReglamentoDelPEDPD/Reglamento_del_PEDPD_Dic2025.pdf",
+    "filename": "Reglamento_del_PEDPD_Dic2025.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/ReglamentoInternodelCVS.pdf",
+    "filename": "ReglamentoInternodelCVS.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/criterios_programacionacad_posgrados.pdf",
+    "filename": "criterios_programacionacad_posgrados.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/reglamentoEPA2019/reglamentoEPA2019.pdf",
+    "filename": "reglamentoEPA2019.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/reglamentoIngresoPersonalAcademico.pdf",
+    "filename": "reglamentoIngresoPersonalAcademico.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/reglamento_premios_anuales.pdf",
+    "filename": "reglamento_premios_anuales.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosacademicos/reglamentobecas/Reglamento_Becas_ABRIL_2024.pdf",
+    "filename": "Reglamento_Becas_ABRIL_2024.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosescolares/ReglamentoDeMovilidadDeAlumnos/Reglamento_de_Movilidad_de_Alumnos_edicion_Octubre_2020.pdf",
+    "filename": "Reglamento_de_Movilidad_de_Alumnos_edicion_Octubre_2020.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosescolares/Reglamento_Escolar_Mayo_2022.pdf",
+    "filename": "Reglamento_Escolar_Mayo_2022.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosescolares/Reglamento_de_Cuotas_por_Servicios_Escolares_2025.pdf",
+    "filename": "Reglamento_de_Cuotas_por_Servicios_Escolares_2025.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/marconormativo/reglamentosescolares/Reglamento_de_Estudios_de_Posgrado_Edicion_marzo_2023.pdf",
+    "filename": "Reglamento_de_Estudios_de_Posgrado_Edicion_marzo_2023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/pdi2025-2030.pdf",
+    "filename": "pdi2025-2030.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2018/08/Convenio-de-prestaciones-de-seguridad-social-ISSSTESON-UNISON-2019.pdf",
+    "filename": "Convenio-de-prestaciones-de-seguridad-social-ISSSTESON-UNISON-2019.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2018/08/Protocolo-para-la-prevención-y-atención-de-casos-de-violencia-de-género_Nov-2019.pdf",
+    "filename": "Protocolo-para-la-prevención-y-atención-de-casos-de-violencia-de-género_Nov-2019.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2020/03/Reglamento-de-Responsabilidades-Administrativas-para-impresio%CC%81n-28feb2020-1.pdf",
+    "filename": "Reglamento-de-Responsabilidades-Administrativas-para-impresio%CC%81n-28feb2020-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2020/08/Lineamientos-de-la-U-de-S-para-el-regreso-a-las-actividades-de-investiga...-1.pdf",
+    "filename": "Lineamientos-de-la-U-de-S-para-el-regreso-a-las-actividades-de-investiga...-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2020/08/Lineamientos-para-el-regreso-a-las-actividades-acad%C3%A9micas-y-administrati...-1.pdf",
+    "filename": "Lineamientos-para-el-regreso-a-las-actividades-acad%C3%A9micas-y-administrati...-1.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2023/03/EE05032023.pdf",
+    "filename": "EE05032023.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2023/03/LEY-ORGANICA-OK-UNISON-MEDIA-CARTA.pdf",
+    "filename": "LEY-ORGANICA-OK-UNISON-MEDIA-CARTA.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2023/11/Reglamento_Transitorio_Jefaturas_de_Departamento_Aprobado_Colegio_Universitario.pdf",
+    "filename": "Reglamento_Transitorio_Jefaturas_de_Departamento_Aprobado_Colegio_Universitario.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2025/02/Estatuto_General_de_la_Universidad_de_Sonora.pdf",
+    "filename": "Estatuto_General_de_la_Universidad_de_Sonora.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2025/02/Reglamento_General_de_Elecciones.pdf",
+    "filename": "Reglamento_General_de_Elecciones.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2026/02/lineamientos_para_la_exencion_de_cuotas_a_estudiantes_con_discapacidad.pdf",
+    "filename": "lineamientos_para_la_exencion_de_cuotas_a_estudiantes_con_discapacidad.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2026/02/lineamientos_para_la_exencion_de_pagos_a_estudiantes_provenientes_de_pueblos_y_comunidades_indigenas.pdf",
+    "filename": "lineamientos_para_la_exencion_de_pagos_a_estudiantes_provenientes_de_pueblos_y_comunidades_indigenas.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2026/02/lineamientos_para_la_exencion_de_pagos_de_inscripcion_y_colegiatura_en_posgrados_registrados_en_el_SNP.pdf",
+    "filename": "lineamientos_para_la_exencion_de_pagos_de_inscripcion_y_colegiatura_en_posgrados_registrados_en_el_SNP.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2026/03/PROGRAMA_AUSTERIDAD_UNISON_2026.pdf",
+    "filename": "PROGRAMA_AUSTERIDAD_UNISON_2026.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  },
+  {
+    "url": "https://www.unison.mx/wp-content/uploads/2026/07/Lineamientos_Institucionales_para_el_descuento_en_finiquitos_de_bienes_en_proceso_de_aclaracion_0001.pdf",
+    "filename": "Lineamientos_Institucionales_para_el_descuento_en_finiquitos_de_bienes_en_proceso_de_aclaracion_0001.pdf",
+    "status": null,
+    "content_type": "application/pdf",
+    "discovered_from": "https://www.unison.mx/marco-normativo/",
+    "depth": 1,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29"
+  }
+]

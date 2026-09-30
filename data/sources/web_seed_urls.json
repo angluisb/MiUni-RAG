@@ -1,0 +1,72 @@
+[
+  {
+    "url": "https://serviciosescolares.unison.mx/",
+    "category": "servicios_escolares",
+    "priority": "high"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/directorio/",
+    "category": "directorio",
+    "priority": "high"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/requisitos-de-titulacion/",
+    "category": "tramites",
+    "priority": "high"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/procedimiento-de-titulacion/",
+    "category": "tramites",
+    "priority": "high"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/tabla-de-costos/",
+    "category": "costos",
+    "priority": "high"
+  },
+  {
+    "url": "https://www.unison.mx/marco-normativo/",
+    "category": "normatividad",
+    "priority": "high"
+  },
+  {
+    "url": "https://www.unison.mx/directorio/",
+    "category": "directorio",
+    "priority": "high"
+  },
+  {
+    "url": "https://admision.unison.mx/convocatoria.php",
+    "category": "admision",
+    "priority": "high"
+  },
+  {
+    "url": "https://admision.unison.mx/lugares_ofertados.php",
+    "category": "admision",
+    "priority": "high"
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/",
+    "category": "oferta_educativa",
+    "priority": "high"
+  },
+  {
+    "url": "https://movilidad.unison.mx/",
+    "category": "movilidad",
+    "priority": "high"
+  },
+  {
+    "url": "https://movilidad.unison.mx/internacional-2/",
+    "category": "movilidad",
+    "priority": "high"
+  },
+  {
+    "url": "https://movilidad.unison.mx/international-incoming-students/",
+    "category": "movilidad",
+    "priority": "medium"
+  },
+  {
+    "url": "https://movilidad.unison.mx/normatividad/",
+    "category": "movilidad",
+    "priority": "high"
+  }
+]

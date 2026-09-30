@@ -1,0 +1,222 @@
+[
+  {
+    "url": "https://admision.unison.mx/convocatoria.php",
+    "title": "ADMISIÓN UNISON",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "admision",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/admision-unison-mx-convocatoria-php-d288ef6a10.html"
+  },
+  {
+    "url": "https://admision.unison.mx/lugares_ofertados.php",
+    "title": "ADMISIÓN UNISON",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "admision",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/admision-unison-mx-lugares-ofertados-php-0bf806d6b7.html"
+  },
+  {
+    "url": "https://movilidad.unison.mx/",
+    "title": "Subdirección de Cooperación, Movilidad e Internacionalización – Dirección de Apoyo a Estudiantes",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/movilidad-unison-mx-ca0d9d3f95.html"
+  },
+  {
+    "url": "https://movilidad.unison.mx/internacional-2/",
+    "title": "Internacional – Subdirección de Cooperación, Movilidad e Internacionalización",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/movilidad-unison-mx-internacional-2-df4b374fd5.html"
+  },
+  {
+    "url": "https://movilidad.unison.mx/international-incoming-students/",
+    "title": "International incoming students – Subdirección de Cooperación, Movilidad e Internacionalización",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/movilidad-unison-mx-international-incoming-students-88f9b22891.html"
+  },
+  {
+    "url": "https://movilidad.unison.mx/normatividad/",
+    "title": "Normatividad – Subdirección de Cooperación, Movilidad e Internacionalización",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "movilidad",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/movilidad-unison-mx-normatividad-e7f9282b4a.html"
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/",
+    "title": "Oferta Educativa – UNISON",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "oferta_educativa",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/ofertaeducativa-unison-mx-b2bfbb4d42.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/",
+    "title": "Dirección de Servicios Escolares – Secretaría General Administrativa",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-6d0457b7cb.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/contacto/",
+    "title": "Contacto – Dirección de Servicios Escolares",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-contacto-8f5d1a8b56.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/directorio/",
+    "title": "DIRECTORIO – Dirección de Servicios Escolares",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "directorio",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-directorio-45f43aa9f3.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/objetivo/",
+    "title": "OBJETIVO – Dirección de Servicios Escolares",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-objetivo-87a7bd15d0.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/politica-de-calidad/",
+    "title": "POLÍTICA DE CALIDAD – Dirección de Servicios Escolares",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-politica-de-calidad-f48a842ff0.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/procedimiento-de-titulacion/",
+    "title": "PROCEDIMIENTO DE TITULACION – Dirección de Servicios Escolares",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "tramites",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-procedimiento-de-titulacion-2af1574a65.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/quienes-somos/",
+    "title": "QUIÉNES SOMOS – Dirección de Servicios Escolares",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-quienes-somos-94d606e15f.html"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/requisitos-de-titulacion/",
+    "title": "Requisitos de Titulación – Dirección de Servicios Escolares",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "tramites",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-requisitos-de-titulacion-6fec4debf8.html"
+  },
+  {
+    "url": "https://www.unison.mx/",
+    "title": "Universidad de Sonora – El saber de mis hijos hará mi grandeza",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/www-unison-mx-6ba48249c2.html"
+  },
+  {
+    "url": "https://www.unison.mx/directorio/",
+    "title": "Directorio – Universidad de Sonora",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "directorio",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/www-unison-mx-directorio-3b3caf5464.html"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/valores/CodigoConducta/",
+    "title": "Código de Conducta",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/www-unison-mx-institucional-valores-codigoconducta-26729687db.html"
+  },
+  {
+    "url": "https://www.unison.mx/institucional/valores/CodigoEtica/",
+    "title": "Código de Etica",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": "https://serviciosescolares.unison.mx/",
+    "depth": 1,
+    "category": "servicios_escolares",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/www-unison-mx-institucional-valores-codigoetica-ebc53784e6.html"
+  },
+  {
+    "url": "https://www.unison.mx/marco-normativo/",
+    "title": "Marco Normativo – Universidad de Sonora",
+    "status": 200,
+    "content_type": "text/html",
+    "discovered_from": null,
+    "depth": 0,
+    "category": "normatividad",
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/www-unison-mx-marco-normativo-5dca6ac8c0.html"
+  }
+]

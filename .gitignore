@@ -214,5 +214,14 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# RAG generated data
+data/raw/
+data/processed/
+data/sources/discovered_pages.json
+data/sources/discovered_pdfs.json
+
+# Python caches in project scripts
+scripts/__pycache__/
+
 # Streamlit
 .streamlit/secrets.toml

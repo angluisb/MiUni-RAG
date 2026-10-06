@@ -268,10 +268,39 @@ Cada linea debe ser un JSON independiente:
     "institution": "Universidad de Sonora",
     "domain": "serviciosescolares.unison.mx",
     "section": "Servicios Escolares",
-    "last_seen_at": "2026-09-29"
+    "last_seen_at": "2026-09-29",
+    "raw_html_path": "data/raw/html/serviciosescolares-unison-mx-....html",
+    "content_word_count": 312,
+    "content_sha256": "hash-del-contenido",
+    "chunking_strategy": "paragraph_sliding_window",
+    "chunk_max_words": 512,
+    "chunk_overlap_words": 100,
+    "chunk_min_words": 175
   }
 }
 ```
+
+## Parametros de chunking HTML
+
+El chunking HTML debe usar ventana deslizante con corte por parrafos cuando sea posible:
+
+```text
+max_words = 512
+min_chunk_words = 175
+overlap_words = 100
+overlap_percent_aprox = 19.5%
+```
+
+Reglas:
+
+- `512` palabras es el maximo por chunk.
+- `175` palabras es el minimo deseado.
+- El overlap debe mantenerse entre 10% y 25%.
+- Se debe cortar por parrafos cuando sea posible.
+- Si un parrafo excede `512` palabras, se corta por palabras con sliding window.
+- El ultimo chunk puede quedar por debajo del minimo si es necesario para no perder contenido.
+- El overlap solo aplica entre chunks consecutivos de la misma fuente.
+- No se debe mezclar contenido de paginas distintas.
 
 ## Relacion esperada con `DocumentoFuente`
 
@@ -310,7 +339,8 @@ Un chunk es aceptable si:
 - No contiene footer repetido como contenido principal.
 - El texto se entiende sin abrir la pagina.
 - No mezcla contenido de paginas distintas.
-- Tiene longitud razonable para embeddings.
+- Tiene longitud razonable para embeddings: maximo `512` palabras, minimo deseado `175` palabras.
+- Conserva metadata de estrategia de chunking, conteo de palabras y hash del contenido.
 
 ## Criterios de cobertura minima
 

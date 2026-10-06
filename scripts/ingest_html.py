@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -14,9 +15,9 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW_HTML_METADATA_PATH = ROOT / "data" / "raw" / "html" / "metadata.json"
 CHUNKS_PATH = ROOT / "data" / "processed" / "chunks" / "html_chunks.jsonl"
 
-DEFAULT_MAX_WORDS = 900
-DEFAULT_OVERLAP_WORDS = 120
-MIN_CHUNK_WORDS = 40
+DEFAULT_MAX_WORDS = 512
+DEFAULT_OVERLAP_WORDS = 100
+MIN_CHUNK_WORDS = 175
 
 REMOVE_SELECTORS = [
     "script",
@@ -39,6 +40,55 @@ REMOVE_SELECTORS = [
     "#wpadminbar",
 ]
 
+MAIN_CONTAINER_SELECTORS = [
+    "main",
+    "article",
+    ".entry-content",
+    ".page-content",
+    ".content",
+    "#primary",
+    "#content",
+    ".site-content",
+    ".elementor",
+    ".wp-site-blocks",
+]
+
+OUT_OF_SCOPE_PAGE_PATTERNS = [
+    re.compile(r"adquisiciones|arrendamientos|obras", re.IGNORECASE),
+    re.compile(r"contralor[ií]a", re.IGNORECASE),
+    re.compile(r"c[oó]digo[-_/ .]?de[-_/ .]?(conducta|[eé]tica)", re.IGNORECASE),
+    re.compile(r"constituci[oó]n", re.IGNORECASE),
+    re.compile(r"convenio|contrato[-_/ .]?colectivo|isssteson|staus|steus", re.IGNORECASE),
+    re.compile(r"jubilaci[oó]n", re.IGNORECASE),
+    re.compile(r"ley[-_/ .]?org[aá]nica", re.IGNORECASE),
+    re.compile(r"manual[-_/ .]?de[-_/ .]?organizaci[oó]n", re.IGNORECASE),
+    re.compile(r"pdi|plan[-_/ .]?de[-_/ .]?desarrollo", re.IGNORECASE),
+    re.compile(r"transparencia", re.IGNORECASE),
+]
+
+STUDENT_USEFUL_PAGE_PATTERNS = [
+    re.compile(r"admisi[oó]n", re.IGNORECASE),
+    re.compile(r"beca", re.IGNORECASE),
+    re.compile(r"calendario", re.IGNORECASE),
+    re.compile(r"certificado[-_/ .]?de[-_/ .]?pasante", re.IGNORECASE),
+    re.compile(r"componente[-_/ .]?curricular", re.IGNORECASE),
+    re.compile(r"convocatoria", re.IGNORECASE),
+    re.compile(r"colegiatura|cuotas?", re.IGNORECASE),
+    re.compile(r"derechos[-_/ .]?universitarios", re.IGNORECASE),
+    re.compile(r"eje[-_/ .]?de[-_/ .]?formaci[oó]n[-_/ .]?com[uú]n", re.IGNORECASE),
+    re.compile(r"exenci[oó]n", re.IGNORECASE),
+    re.compile(r"inscripci[oó]n", re.IGNORECASE),
+    re.compile(r"mapa[-_/ .]?curricular", re.IGNORECASE),
+    re.compile(r"movilidad", re.IGNORECASE),
+    re.compile(r"oferta[-_/ .]?educativa", re.IGNORECASE),
+    re.compile(r"plan[-_/ .]?de[-_/ .]?estudios|planestudios", re.IGNORECASE),
+    re.compile(r"pr[aá]cticas?[-_/ .]?profesionales?", re.IGNORECASE),
+    re.compile(r"reglamento[-_/ .]?escolar", re.IGNORECASE),
+    re.compile(r"servicio[-_/ .]?social", re.IGNORECASE),
+    re.compile(r"titulaci[oó]n", re.IGNORECASE),
+    re.compile(r"violencia[-_/ .]?de[-_/ .]?g[eé]nero", re.IGNORECASE),
+]
+
 
 def load_metadata(path: Path) -> list[dict[str, Any]]:
     with path.open("r", encoding="utf-8") as file:
@@ -49,6 +99,7 @@ def clean_text(value: str) -> str:
     value = value.replace("\xa0", " ")
     value = re.sub(r"[ \t]+", " ", value)
     value = re.sub(r"\n{3,}", "\n\n", value)
+    value = re.sub(r"^(Skip to content|Saltar al contenido)\s+", "", value, flags=re.IGNORECASE)
     return value.strip()
 
 
@@ -81,10 +132,16 @@ def extract_title(soup: BeautifulSoup, fallback: str | None) -> str:
 
 
 def main_container(soup: BeautifulSoup):
-    for selector in ["main", "article", "#content", ".content", ".entry-content", ".site-content"]:
-        element = soup.select_one(selector)
-        if element:
-            return element
+    candidates = []
+    for selector in MAIN_CONTAINER_SELECTORS:
+        for element in soup.select(selector):
+            text = clean_text(element.get_text(" ", strip=True))
+            if text:
+                candidates.append((len(text.split()), element))
+
+    if candidates:
+        return max(candidates, key=lambda item: item[0])[1]
+
     return soup.body or soup
 
 
@@ -94,23 +151,64 @@ def extract_structured_text(html: str, fallback_title: str | None) -> tuple[str,
 
     title = extract_title(soup, fallback_title)
     container = main_container(soup)
+    container_text = clean_text(container.get_text(" ", strip=True))
 
     parts: list[str] = []
-    for element in container.find_all(["h1", "h2", "h3", "h4", "p", "li", "td", "th"], recursive=True):
+    for element in container.find_all(["h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "td", "th"], recursive=True):
         text = clean_text(element.get_text(" ", strip=True))
         if not text:
             continue
 
-        if element.name in {"h1", "h2", "h3", "h4"}:
+        if element.name in {"h1", "h2", "h3", "h4", "h5", "h6"}:
             parts.append(f"\n{text}\n")
         else:
             parts.append(text)
 
     if not parts:
-        parts = [clean_text(container.get_text(" ", strip=True))]
+        parts = [container_text]
 
     text = clean_text("\n".join(parts))
+    if len(text.split()) < MIN_CHUNK_WORDS and len(container_text.split()) > len(text.split()):
+        text = container_text
+
+    body = soup.body or soup
+    body_text = clean_text(body.get_text(" ", strip=True))
+    if len(text.split()) < MIN_CHUNK_WORDS and len(body_text.split()) > len(text.split()):
+        text = body_text
+
     return title, text
+
+
+def word_count(text: str) -> int:
+    return len(text.split())
+
+
+def trailing_words(text: str, count: int) -> str:
+    if count <= 0:
+        return ""
+
+    words = text.split()
+    return " ".join(words[-count:])
+
+
+def split_oversized_paragraph(paragraph: str, max_words: int, overlap_words: int) -> list[str]:
+    words = paragraph.split()
+    chunks: list[str] = []
+    start = 0
+    while start < len(words):
+        end = min(start + max_words, len(words))
+        chunks.append(" ".join(words[start:end]))
+        if end == len(words):
+            break
+        start = max(end - overlap_words, start + 1)
+
+    return chunks
+
+
+def split_paragraphs(text: str) -> list[str]:
+    paragraphs = [clean_text(paragraph) for paragraph in re.split(r"\n+", text)]
+    paragraphs = [paragraph for paragraph in paragraphs if paragraph]
+    return paragraphs or [clean_text(text)]
 
 
 def word_chunks(text: str, max_words: int, overlap_words: int) -> list[str]:
@@ -121,17 +219,57 @@ def word_chunks(text: str, max_words: int, overlap_words: int) -> list[str]:
     if len(words) <= max_words:
         return [" ".join(words)]
 
+    overlap_words = min(overlap_words, max_words // 4)
+    paragraphs = split_paragraphs(text)
     chunks: list[str] = []
-    start = 0
-    while start < len(words):
-        end = min(start + max_words, len(words))
-        chunk_words = words[start:end]
-        if len(chunk_words) >= MIN_CHUNK_WORDS:
-            chunks.append(" ".join(chunk_words))
 
-        if end == len(words):
-            break
-        start = max(end - overlap_words, start + 1)
+    current: list[str] = []
+
+    def flush_current() -> str:
+        chunk = clean_text("\n\n".join(current))
+        current.clear()
+        if chunk and word_count(chunk) >= MIN_CHUNK_WORDS:
+            chunks.append(chunk)
+        return chunk
+
+    for paragraph in paragraphs:
+        paragraph_words = word_count(paragraph)
+        if paragraph_words > max_words:
+            previous = flush_current()
+            prefix = trailing_words(previous, overlap_words)
+            for piece in split_oversized_paragraph(paragraph, max_words, overlap_words):
+                if prefix:
+                    candidate = clean_text(f"{prefix}\n\n{piece}")
+                    if word_count(candidate) <= max_words:
+                        piece = candidate
+                    prefix = ""
+                if word_count(piece) >= MIN_CHUNK_WORDS:
+                    chunks.append(piece)
+            continue
+
+        candidate_parts = [*current, paragraph]
+        candidate = clean_text("\n\n".join(candidate_parts))
+        if word_count(candidate) <= max_words:
+            current.append(paragraph)
+            continue
+
+        previous = flush_current()
+        prefix = trailing_words(previous, overlap_words)
+        current = [prefix, paragraph] if prefix else [paragraph]
+
+        if word_count(clean_text("\n\n".join(current))) > max_words:
+            current = [paragraph]
+
+    final_chunk = clean_text("\n\n".join(current))
+    if final_chunk:
+        if chunks and word_count(final_chunk) < MIN_CHUNK_WORDS:
+            combined = clean_text(f"{chunks[-1]}\n\n{final_chunk}")
+            if word_count(combined) <= max_words:
+                chunks[-1] = combined
+            else:
+                chunks.append(final_chunk)
+        else:
+            chunks.append(final_chunk)
 
     return chunks
 
@@ -140,6 +278,28 @@ def chunk_id(source_url: str, chunk_index: int) -> str:
     parsed = urlparse(source_url)
     base = slugify(f"{parsed.netloc}{parsed.path}")
     return f"{base}-{chunk_index:04d}"
+
+
+def content_sha256(content: str) -> str:
+    return hashlib.sha256(content.encode("utf-8")).hexdigest()
+
+
+def page_is_out_of_scope(page: dict[str, Any], title: str) -> bool:
+    haystack = " ".join(
+        str(value or "")
+        for value in [
+            page.get("url"),
+            page.get("title"),
+            page.get("category"),
+            title,
+        ]
+    )
+    category = str(page.get("category") or "").lower()
+    if category == "normatividad":
+        if not any(pattern.search(haystack) for pattern in STUDENT_USEFUL_PAGE_PATTERNS):
+            return True
+
+    return any(pattern.search(haystack) for pattern in OUT_OF_SCOPE_PAGE_PATTERNS)
 
 
 def build_chunks(
@@ -156,6 +316,9 @@ def build_chunks(
 
         html = raw_path.read_text(encoding="utf-8", errors="replace")
         title, text = extract_structured_text(html, page.get("title"))
+        if page_is_out_of_scope(page, title):
+            continue
+
         page_chunks = word_chunks(text, max_words=max_words, overlap_words=overlap_words)
 
         for index, content in enumerate(page_chunks):
@@ -174,6 +337,12 @@ def build_chunks(
                         "section": page.get("category"),
                         "last_seen_at": page.get("last_seen_at"),
                         "raw_html_path": page.get("raw_html_path"),
+                        "content_word_count": word_count(content),
+                        "content_sha256": content_sha256(content),
+                        "chunking_strategy": "paragraph_sliding_window",
+                        "chunk_max_words": max_words,
+                        "chunk_overlap_words": min(overlap_words, max_words // 4),
+                        "chunk_min_words": MIN_CHUNK_WORDS,
                     },
                 }
             )

@@ -35,6 +35,294 @@
     "priority": "high"
   },
   {
+    "url": "https://dae.unison.mx/",
+    "category": "apoyo_estudiantes",
+    "priority": "high"
+  },
+  {
+    "url": "https://dae.unison.mx/serviciosocial.html",
+    "category": "servicio_social",
+    "priority": "high"
+  },
+  {
+    "url": "https://dae.unison.mx/practicasprofesionales.html",
+    "category": "practicas_profesionales",
+    "priority": "high"
+  },
+  {
+    "url": "https://dae.unison.mx/becas.html",
+    "category": "becas",
+    "priority": "high"
+  },
+  {
+    "url": "https://dae.unison.mx/practicasprofesionales-directorio.html",
+    "category": "practicas_profesionales",
+    "priority": "high"
+  },
+  {
+    "url": "https://dae.unison.mx/becas-directorio.html",
+    "category": "becas",
+    "priority": "high"
+  },
+  {
+    "url": "https://dise.unison.mx/serviciosocial-directorio.html",
+    "category": "servicio_social",
+    "priority": "high",
+    "discovered_from": "https://dae.unison.mx/serviciosocial.html",
+    "depth": 1
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/certificado-de-pasante/",
+    "category": "tramites",
+    "priority": "high"
+  },
+  {
+    "url": "https://serviciosescolares.unison.mx/titulacion/",
+    "category": "tramites",
+    "priority": "high"
+  },
+  {
+    "url": "https://campushermosillo.unison.mx/",
+    "category": "campus_hermosillo",
+    "priority": "high"
+  },
+  {
+    "url": "https://campushermosillo.unison.mx/directorio/",
+    "category": "directorio",
+    "priority": "high"
+  },
+  {
+    "url": "https://fi-cen.unison.mx/",
+    "category": "facultades_interdisciplinarias",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://fisica.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://geologia.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://difus.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://www.mat.uson.mx/web/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://fi-cbs.unison.mx/",
+    "category": "facultades_interdisciplinarias",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://dagus.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://deportes.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://qb.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://enfermeria.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "http://www.dictus.uson.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://dipa.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://medicina.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://fi-ing.unison.mx/",
+    "category": "facultades_interdisciplinarias",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://dicym.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://www.industrial.uson.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://iq.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://polimeros.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://fi-cea.unison.mx/",
+    "category": "facultades_interdisciplinarias",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://administracion.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://contabilidad.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://economia.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://fi-csoc.unison.mx/",
+    "category": "facultades_interdisciplinarias",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://dsap.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://derecho.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://historia.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://psicom.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://trabajosocial.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://fi-ha.unison.mx/",
+    "category": "facultades_interdisciplinarias",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://dad.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://bellasartes.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://lenguasextranjeras.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
+    "url": "https://letrasylinguistica.unison.mx/",
+    "category": "departamentos_hermosillo",
+    "priority": "medium",
+    "discovered_from": "https://campushermosillo.unison.mx/",
+    "depth": 1
+  },
+  {
     "url": "https://admision.unison.mx/convocatoria.php",
     "category": "admision",
     "priority": "high"
@@ -48,6 +336,440 @@
     "url": "https://ofertaeducativa.unison.mx/",
     "category": "oferta_educativa",
     "priority": "high"
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-sustentabilidad/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-humanidades-y-bellas-artes/arquitectura/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/ingeniero-agronomo/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/ingenieria-biomedica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/ingenieria-civil/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/ingenieria-en-ciencias-ambientales/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/ingenieria-en-energias-renovables/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/ingenieria-en-materiales/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/ingenieria-en-semiconductores/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/ingenieria-en-sistemas-de-informacion/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/ingenieria-en-tecnologia-electronica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/ingenieria-industrial-y-de-sistemas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/licenciatura-en-ingenieria-en-mecatronica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/licenciatura-en-ingenieria-metalurgica-2/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/ingenieria-minero/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/licenciatura-en-ingenieria-quimica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/quimico-en-alimentos/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-economicas-administrativas/licenciatura-en-administracion/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-administracion-publica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-antropologia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-humanidades-y-bellas-artes/licenciatura-en-artes-escenicas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-humanidades-y-bellas-artes/licenciatura-en-artes-plasticas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciatura-en-biologia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/licenciatura-en-ciencias-de-la-computacion/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-ciencias-de-la-comunicacion/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciatura-en-ciencias-genomicas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciado-de-ciencias-nutricionales/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-economicas-administrativas/licenciatura-en-contaduria-publica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciado-en-cultura-fisica-y-deporte/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-derecho/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-humanidades-y-bellas-artes/licenciatura-en-diseno-grafico/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-economicas-administrativas/licenciatura-en-economia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-educacion/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciado-en-enfermeria/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-ensenanza-del-ingles-2/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-economicas-administrativas/licenciatura-en-finanzas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/licenciatura-en-fisica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/licenciatura-en-fisica-medica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciatura-en-fisioterapia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/licenciatura-en-geologia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-historia-2/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-humanidades-y-bellas-artes/licenciatura-en-linguistica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-humanidades-y-bellas-artes/licenciatura-en-literaturas-hispanicas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-logistica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-exactas-y-naturales/licenciatura-en-matematicas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-economicas-administrativas/licenciado-en-mercadotecnia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-humanidades-y-bellas-artes/licenciatura-en-musica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-negocios-y-comercio-internacionales/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciatura-en-odontologia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-psicologia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciatura-en-quimica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-seguridad-publica/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-sociologia/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ingenieria/licenciatura-en-sustentabilidad/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-trabajo-social/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciado-en-turismo/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-medicina/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/quimico-biologo-clinico/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-biologicas-y-de-la-salud/licenciado-de-ciencias-nutricionales/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/division-de-ciencias-sociales/licenciatura-en-psicologia-de-la-salud-3/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/licenciatura-en-finanzas/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
+  },
+  {
+    "url": "https://ofertaeducativa.unison.mx/ingenieria-en-semiconductores/",
+    "category": "planes_estudio",
+    "priority": "high",
+    "discovered_from": "https://ofertaeducativa.unison.mx/",
+    "depth": 0
   },
   {
     "url": "https://movilidad.unison.mx/",

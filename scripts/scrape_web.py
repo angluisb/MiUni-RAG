@@ -32,6 +32,9 @@ HIGH_PRIORITY_DOMAINS = {
     "serviciosescolares.unison.mx",
     "www.unison.mx",
     "unison.mx",
+    "campushermosillo.unison.mx",
+    "dae.unison.mx",
+    "dise.unison.mx",
     "admision.unison.mx",
     "movilidad.unison.mx",
     "ofertaeducativa.unison.mx",
@@ -56,6 +59,17 @@ EXCLUDED_HOST_PARTS = {
 
 USER_AGENT = "MiUniRagScraper/0.1 (educational project)"
 
+PRIORITY_ORDER = {
+    "high": 0,
+    "medium": 1,
+    "low": 2,
+}
+
+OFFICIAL_DOMAIN_ROOTS = {
+    "unison.mx",
+    "uson.mx",
+}
+
 
 @dataclass(frozen=True)
 class QueueItem:
@@ -67,7 +81,12 @@ class QueueItem:
 
 def load_seeds(path: Path) -> list[dict[str, Any]]:
     with path.open("r", encoding="utf-8") as file:
-        return json.load(file)
+        seeds = json.load(file)
+
+    return sorted(
+        seeds,
+        key=lambda seed: PRIORITY_ORDER.get(str(seed.get("priority", "medium")).lower(), 1),
+    )
 
 
 def normalize_url(url: str, base_url: str | None = None) -> str | None:
@@ -88,6 +107,10 @@ def normalize_url(url: str, base_url: str | None = None) -> str | None:
     return urlunparse(normalized)
 
 
+def is_official_unison_host(host: str) -> bool:
+    return any(host == domain or host.endswith(f".{domain}") for domain in OFFICIAL_DOMAIN_ROOTS)
+
+
 def host_is_allowed(url: str, discovered_from: str | None = None) -> bool:
     host = urlparse(url).netloc.lower()
     if any(part in host for part in EXCLUDED_HOST_PARTS):
@@ -96,12 +119,12 @@ def host_is_allowed(url: str, discovered_from: str | None = None) -> bool:
     if host in HIGH_PRIORITY_DOMAINS or host in MEDIUM_PRIORITY_DOMAINS:
         return True
 
-    if not host.endswith(".unison.mx"):
+    if not is_official_unison_host(host):
         return False
 
     if discovered_from:
         source_host = urlparse(discovered_from).netloc.lower()
-        return source_host.endswith("unison.mx")
+        return is_official_unison_host(source_host)
 
     return False
 
@@ -188,7 +211,14 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
         if not normalized:
             continue
 
-        queue.append(QueueItem(normalized, None, 0, seed.get("category")))
+        queue.append(
+            QueueItem(
+                normalized,
+                seed.get("discovered_from"),
+                int(seed.get("depth", 0)),
+                seed.get("category"),
+            )
+        )
 
     visited: set[str] = set()
     queued: set[str] = {item.url for item in queue}
@@ -242,6 +272,9 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
 
         final_url = normalize_url(response.url) or item.url
         content_type = response.headers.get("content-type", "").split(";")[0].lower()
+        if not host_is_allowed(final_url, item.discovered_from or item.url):
+            time.sleep(delay_seconds)
+            continue
 
         if "application/pdf" in content_type or is_pdf_url(final_url):
             discovered_pdfs.setdefault(

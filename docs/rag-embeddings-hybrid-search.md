@@ -4,8 +4,6 @@
 
 Este documento define el plan inicial para indexar chunks HTML/PDF y recuperar contexto para el chatbot de MiUni.
 
-La prioridad inmediata sigue siendo la ingesta de datos y PDFs. Este documento sirve para que las decisiones de chunking, metadata e indexado queden alineadas desde ahora.
-
 ## Modelo de embeddings
 
 Modelo propuesto:

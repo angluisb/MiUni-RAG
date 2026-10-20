@@ -1,5 +1,21 @@
 # Plan de Embeddings y Busqueda Hibrida para RAG
 
+## Implementacion
+
+El pipeline esta implementado en `app/rag/`, `scripts/index_embeddings.py` y
+`scripts/search_rag.py`. La configuracion y los comandos estan en `README.md`.
+El esquema real se reutiliza de la migracion `AddRagChunksPgvector` de MiUni.Api:
+la tabla se llama **rag_chunk** y tiene FK a **documentofuente**. Los IDs SQL son
+UUID; los IDs legibles del JSONL quedan en `metadata.chunk_id`.
+El esquema conceptual de abajo es una referencia del plan, no una segunda tabla.
+`RAG_ENABLED` permite activar el contexto en ambos endpoints despues de indexar.
+
+Referencias de implementacion:
+- [BGE-M3](https://huggingface.co/BAAI/bge-m3)
+- [pgvector: coseno, HNSW y filtros](https://github.com/pgvector/pgvector)
+- [SentenceTransformer.encode](https://www.sbert.net/docs/package_reference/sentence_transformer/model.html)
+- [Psycopg: conexiones y transacciones](https://www.psycopg.org/psycopg3/docs/basic/usage.html)
+
 ## Proposito
 
 Este documento define el plan inicial para indexar chunks HTML/PDF y recuperar contexto para el chatbot de MiUni.

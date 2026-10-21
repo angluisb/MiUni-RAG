@@ -21,6 +21,19 @@ class RagRepository:
             options=f"-c statement_timeout={self.settings.RAG_DB_STATEMENT_TIMEOUT_MS}",
         )
 
+    def list_campus_places(self) -> list[dict]:
+        """Use the same active, geolocated places that the map can display."""
+        with self.connect() as conn:
+            rows = conn.execute(
+                "SELECT l.id::text AS id, l.nombre, c.nombre AS categoria "
+                "FROM lugar l JOIN categoria c ON c.id = l.categoria_id "
+                "WHERE l.activo AND l.ubicacion IS NOT NULL "
+                "AND ST_Y(l.ubicacion::geometry) BETWEEN -90 AND 90 "
+                "AND ST_X(l.ubicacion::geometry) BETWEEN -180 AND 180 "
+                "ORDER BY l.nombre, l.id"
+            ).fetchall()
+        return [{**row, "map_url": f"/mapa?lugar={row['id']}"} for row in rows]
+
     def check(self) -> dict:
         with self.connect() as conn:
             version = conn.execute(

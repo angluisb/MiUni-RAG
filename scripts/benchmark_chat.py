@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import os
+from math import ceil
 from datetime import datetime, timezone
 from pathlib import Path
 from time import perf_counter
@@ -12,6 +13,18 @@ from time import perf_counter
 import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def summarize(runs):
+    successful = [run for run in runs if run["ok"]]
+    summary = {"successful_runs": len(successful), "failed_runs": len(runs) - len(successful)}
+    for key in ("headers_ms", "first_text_ms", "total_ms", "generation_after_first_text_ms"):
+        values = sorted(run[key] for run in successful if key in run)
+        summary[key] = {"samples": len(values), **{
+            f"p{p}": values[ceil(len(values) * p / 100) - 1] if values else None
+            for p in (50, 95, 99)
+        }}
+    return summary
 
 
 def measure(client, url, question, protocol):
@@ -103,6 +116,7 @@ def main():
                 if isinstance(exc, httpx.HTTPStatusError):
                     result["status"] = exc.response.status_code
             report["runs"].append(result)
+            report["summary"] = summarize(report["runs"])
             args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             print(json.dumps(result, ensure_ascii=False), flush=True)
     return 0 if all(run["ok"] for run in report["runs"]) else 1

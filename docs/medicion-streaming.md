@@ -128,3 +128,35 @@ La consola del navegador, en desarrollo, registra `miuni_chat_stream` con
 `firstTextMs`, `totalMs`, `textChunks` y `characters` después de cada respuesta.
 La pestaña Network debe mostrar **POST `/api/Chat/stream`**. Las consultas GET de
 sesiones que aparecen después actualizan el historial.
+
+## Métricas por etapa y percentiles
+
+El log estructurado `chat_request` mide el ciclo HTTP completo, incluido el cierre
+del streaming. No registra preguntas, respuestas, credenciales ni URLs de fuentes.
+Cada solicitud tiene un `request_id` y separa `catalog_ms`, `prompt_build_ms`,
+`total_retrieval_ms`, las etapas internas de retrieval y la generación.
+`prompt_build_ms` excluye la espera del catálogo y retrieval.
+`generation_first_token_ms` mide desde el inicio de generación hasta el primer
+fragmento textual del proveedor; no equivale a un token individual ni incluye retrieval.
+`generation_complete_ms` incluye el consumo del stream, incluida la espera del cliente.
+Para respuestas JSON no se inventa un tiempo de primer token.
+
+Los percentiles p50/p95/p99 usan nearest rank sobre una ventana móvil de hasta 1024
+muestras por etapa, estado del modelo, caché y resultado. Las ventanas son locales
+al proceso y se reinician con él; no son métricas agregadas entre workers.
+`model_state` indica `cold` o `warm` según los pesos observados al entrar a retrieval;
+`not_used` corresponde a rutas sin retrieval. No equivale al primer request del proceso.
+Actualmente `cache=disabled`: no se afirma que haya caché de preguntas.
+Los errores y streams interrumpidos no se mezclan con respuestas satisfactorias.
+Etapas desactivadas pueden tener duración cero en las métricas de retrieval.
+
+El informe de `scripts/benchmark_chat.py` añade `summary` con número de éxitos,
+fallos, muestras y p50/p95/p99 para headers, primer texto, total y tiempo posterior
+al primer texto. Los fallos conservan su registro pero no entran en los percentiles
+exitosos. Una serie vacía tiene percentiles `null`; pocas muestras no prueban SLOs.
+El script no infiere cold/warm por el ordinal de la petición: esa evidencia está
+en los logs del servidor. Se mantienen las opciones y límites de la tabla anterior.
+
+Las pruebas con dobles verifican contratos y cálculo, no la latencia de Gemini ni
+la persistencia integrada de MiUni. Aún se necesita una línea base real separada
+por consultas de mapa, simples y complejas antes de aceptar objetivos de latencia.

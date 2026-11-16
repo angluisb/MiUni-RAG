@@ -7,6 +7,8 @@ from app.rag.retrieval import RetrievalService, format_context
 from app.services.campus_service import location_target, location_answer
 import asyncio
 import json
+from time import perf_counter
+from app.services.chat_metrics import record_stage, record_retrieval
 
 
 PROMPT = """Eres el asistente virtual de MiUni, una app para estudiantes universitarios de la Universidad de Sonora.
@@ -52,10 +54,16 @@ async def generate_hyde(user_input: str) -> str:
     return _content_to_text(response.content)
 
 async def _build_messages(user_input: str):
+    started = perf_counter()
+    waiting_ms = 0.0
     messages = [SystemMessage(content=PROMPT)]
     if Config.RAG_ENABLED:
         retriever = _get_retriever()
+        stage = perf_counter()
         places = await asyncio.to_thread(retriever.repository.list_campus_places)
+        catalog_ms = (perf_counter() - stage) * 1000
+        record_stage("catalog_ms", catalog_ms)
+        waiting_ms += catalog_ms
         messages.append(SystemMessage(content=(
             "El catálogo de lugares de MiUni es la fuente para saber qué lugares existen "
             "en el mapa del campus. Para preguntas sobre un lugar presente en el catálogo, "
@@ -79,7 +87,12 @@ async def _build_messages(user_input: str):
             content="Lugares activos en el mapa de MiUni (JSON):\n"
             + json.dumps(places, ensure_ascii=False)
         ))
+        model_state = "cold" if getattr(retriever.embedder, "_model", None) is None else "warm"
+        record_retrieval({}, model_state)
+        stage = perf_counter()
         result = await retriever.retrieve(user_input, generate_hyde)
+        waiting_ms += (perf_counter() - stage) * 1000
+        record_retrieval(result.metrics, model_state)
         messages.append(SystemMessage(content=(
             "Para afirmaciones institucionales usa exclusivamente las fuentes recuperadas "
             "y, para la identidad de los lugares disponibles en el mapa, el catálogo de MiUni. "
@@ -93,6 +106,7 @@ async def _build_messages(user_input: str):
         )))
         messages.append(HumanMessage(content="Fuentes recuperadas (JSON):\n" + format_context(result.chunks)))
     messages.append(HumanMessage(content=user_input))
+    record_stage("prompt_build_ms", max(0, (perf_counter() - started) * 1000 - waiting_ms))
     return messages
 
 def _content_to_text(content) -> str:
@@ -110,7 +124,9 @@ async def _get_location_answer(user_input: str) -> str | None:
     target = location_target(user_input)
     if target is None:
         return None
+    stage = perf_counter()
     places = await asyncio.to_thread(_get_retriever().repository.list_campus_places)
+    record_stage("catalog_ms", (perf_counter() - stage) * 1000)
     return location_answer(target, places)
 
 
@@ -118,15 +134,31 @@ async def get_chat_response(user_input: str) -> str:
     answer = await _get_location_answer(user_input)
     if answer:
         return answer
-    response = await _get_llm().ainvoke(await _build_messages(user_input))
-    return _content_to_text(response.content)
+    model = _get_llm()
+    messages = await _build_messages(user_input)
+    started = perf_counter()
+    try:
+        response = await model.ainvoke(messages)
+        return _content_to_text(response.content)
+    finally:
+        record_stage("generation_complete_ms", (perf_counter() - started) * 1000)
 
 async def stream_chat_response(user_input: str) -> AsyncIterator[str]:
     answer = await _get_location_answer(user_input)
     if answer:
         yield answer
         return
-    async for chunk in _get_llm().astream(await _build_messages(user_input)):
-        text = _content_to_text(chunk.content)
-        if text:
-            yield text
+    model = _get_llm()
+    messages = await _build_messages(user_input)
+    started = perf_counter()
+    first = True
+    try:
+        async for chunk in model.astream(messages):
+            text = _content_to_text(chunk.content)
+            if text:
+                if first:
+                    record_stage("generation_first_token_ms", (perf_counter() - started) * 1000)
+                    first = False
+                yield text
+    finally:
+        record_stage("generation_complete_ms", (perf_counter() - started) * 1000)

@@ -58,13 +58,13 @@ Acceptance criteria:
 
 ## Tasks
 
-- T1 — S1 — inline — reconcile existing integration baseline and startup prerequisites — in progress — prior proof recorded in chatbot optimization; current coverage will be checked again.
-- T2 — S2 — delegated — robots policy, redirect admission, delay and reports — in progress — writer trigger: independent multi-file network behavior launched in parallel with T3; exact surfaces disjoint. Risk: item2 (network guards).
-- T3 — S3/S6 — delegated — typed source manifest, canonical persistence and metadata-only dry-run/apply — in progress — writer trigger: independent multi-file persistence behavior launched with T2. Schema already owned/applied by MiUni; no new migration. Risk: items1/3/4 (stored metadata/shared indexing/source lock).
-- T4 — S4/S5 — inline — reconcile prior temporal implementation and rerun current/history/period cases — pending — existing Python98e1e91 and MiUnifaaeba9; not reimplemented.
-- T5 — S1/S6 — inline plus independent verifier — seam checks, public CLI/HTTP regressions and docs — pending — known item2/1/3/4 risks require one scoped independent feature verifier.
+- T1 — S1 — inline — complete — fresh RAG/API HTTP200 and API51places; exact dev.ps1 startup observed; evidence in docs/ingestion-v2-verification.md.
+- T2 — S2 — delegated parallel independent writer — complete — commit9f8f3cf; focused13+7, parentseam110/110, independentnetwork/reportprobes passed. Risk:item2.
+- T3 — S3/S6 — delegated parallel independent writer — complete — commitffca012; focused7+9 andexistingPG6+2; canonical persistence/backfill validated independently. Risk:items1/3/4.
+- T4 — S4/S5 — inline reconciliation — complete — prior98e1e91/MiUnifaaeba9 reused; independentSQL/structuredintent and livecurrent/history/periodcoverage verified; no reimplementation.
+- T5 — S1/S6 — inline plus independent verifier — complete —110tests/77independentassertions/twoHTTPbaselinechecks/twoactualanswers; no blocker. Final verification record accompanies closure commit.
 
-- T6 — S3/S4/S6 — inline — bounded evidence-based existing-source backfill with backup and retrieval checks — pending — no blanket status inference, no chunk rewrite/reembedding/deletion; preserve unknown when proof unavailable. Risk: item1 (existing stored metadata).
+- T6 — S3/S4/S6 — inline — complete first reviewed batch — six-row canonical update fromffca012 manifest, full+before-values backups, independent live recheck; current14chunks, unchanged488docs/1379chunks;482sourcesremainunknown. Risk:item1.
 
 ## Log
 
@@ -84,3 +84,9 @@ Acceptance criteria:
 - L11 - T1fresh baseline: RAGhealth/ready200(modelready/PostgreSQLready) and MiUni API/api/Lugar200/51places; APIstartedthrough exactscripts/dev.ps1 -Action api withenvironment5433 and no seeds/migrations. WriterT2focused13+7pass; T3focused7+9andexistingPG6+2pass. Parentseam110/110pass(noDBskips), pipcheckpass. Sixcuratedmanifestrecords validate and publicbackfilldryrun matched6/affected6/noDML.
 - L12 - Independentfeatureverification77assertions+twoHTTPchecks passed perS1-S6; no blocker. Testscoverednetworkguards/URLnormalization/redirects/reports/TTL/delay, sourceprovenance/omissions/nulls/identities, atomicrollback/backup/unchangedchunkshashes, canonicaltemporalbranches andbaselineCLIparity. Existingwriterregressions alreadyrepresentcriticalindependentprobes; no duplicate testsadded. Nativegentlereview remainsdisabled; no fabricatedreviewapproval.
 - L13 - Localworkunits naturally exceed400advisorylines because sharedguard+bothconsumers and typedmetadata+atomicbackfill each needtheirtests/docs together; do notminifyoromitverification. Preservebestcohesiveunits; recommend PRsizeexceptionoronehonestfuturePRslicingpass ifpublishing. Previouslyselectedfeature-branch-chain retained; no push/PRauthorized.
+
+- L14 - Applied reviewed6canonicalmetadata rows only after fullbackup/dryrun/independent77checks. OutsideGitbefore-valuesbackup under localprofileMiUni/backups created andfsynced first. Independentlyrechecked final2vigente/3historico/1reemplazado/482desconocido and6manifestidentities; canonicalcoveragecurrent14chunks2docs,historical27chunks6docs,2027-1period9chunks2docs. Non-temporaldocandfullchunkhashes match prestate exactly; count488/1379 unchanged.
+- L15 - Two native-consented real Gemini streaming smokes returned200 and8retrievedchunkseach: practices firsttext5.161s/complete6.306s;Buddy5.567s/6.325s. Medical-service certificate and activity-report facts were confirmed in exactselectedpracticechunks; officialregulation/program links supplied. This proves restored source access, not universal latency/accuracy or open exchange availability. No more modelrequests, no storedchats or sourcecontent/vectorchanges.
+- L16 - Recovery/closure: docs/ingestion-v2-verification.md captures proof, limits andremaining482unknownsources. Removed13ownedoutside-worktreescratchdirectories; durablebackups/privateartifacts retained. Existinguncommittedpromptfix/priorplanningdocs preserved outsideingestioncommits; MiUnisourceunchanged; nativeRDDstilldisabled; no push/PR/mainmutation. Engrammirrorremainsunavailable due missingregisteredhostidentity; actualtaskfile is recovery source.
+
+- L17 - Final idempotencecheck publicCLI dry-run: matched6, affected0, no writes. Allsix tasklines readback withproof; documentation correctedhistorical initialemptycoverage versuscurrent14eligiblechunks. No extra regressiontestneededbecause allcriticalindependentprobes already represented. Fullcorpusclassification andbulknetworkcrawl not claimed; remaining482unknownsources remainexplicitfollow-up.

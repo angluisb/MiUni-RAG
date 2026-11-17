@@ -51,11 +51,11 @@ migrations were already applied. Document and chunk content fingerprints were
 unchanged (488 documents, 1379 chunks). Do not use the unrelated port 5432 database.
 
 The local `.env` now sets `RAG_TEMPORAL_FILTER_ENABLED=true`; the committed default
-remains false for deployments without the migration. All 488 documents initially
-have `desconocido`, with no verified temporal metadata. Consequently, strict
-retrieval currently finds **no eligible institutional documents**. This is a safe
-rollout restriction, not evidence that documents were lost. Catalog/map routing
-is independent. Classify sources only from verified status, dates and periods;
+remains false for deployments without the migration. The initial rollout left all 488 documents `desconocido`, with no verified temporal
+metadata. That initially excluded every institutional document without deleting
+anything. The subsequent ingestion-v2 reviewed batch classifies six sources and
+restores 14 current chunks; 482 sources remain unknown. See
+[the rollout verification](ingestion-v2-verification.md). Catalog/map routing is independent. Classify sources only from verified status, dates and periods;
 do not bulk mark them current to make a demonstration answer work.
 
 Use current, historical and explicit-period questions to check that unsupported
@@ -166,3 +166,10 @@ plan. A single explicit transaction covers all updates; SQL/FK/check failure
 rolls everything back. Reapplying identical values reports zero affected rows.
 No chunk, embedding, content, document ID or source URL is rewritten or deleted.
 The dry-run reports intended changes, not a durable approval or mutation receipt.
+
+## Verified initial backfill
+
+The 2026-11-17 six-source rollout is recorded in
+[ingestion-v2 verification](ingestion-v2-verification.md). A repeated dry-run is
+expected to report zero affected rows. Remaining unknown sources need separate
+authoritative review; this manifest is not a whole-corpus validity declaration.

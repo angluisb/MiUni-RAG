@@ -21,6 +21,15 @@ class InputChunk(BaseModel):
     content: str = Field(min_length=1)
     metadata: dict[str, Any] = Field(default_factory=dict)
 
+    @field_validator("metadata")
+    @classmethod
+    def document_metadata(cls, value):
+        from app.rag.document_metadata import DocumentMetadata
+
+        if "document_metadata" in value:
+            DocumentMetadata.model_validate(value["document_metadata"])
+        return value
+
     @field_validator("content", "source_url", "document_title", "id")
     @classmethod
     def not_blank(cls, value: str) -> str:

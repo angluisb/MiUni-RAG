@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -13,6 +14,8 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from app.rag.document_metadata import attach_manifest, load_manifest
 PDF_METADATA_PATH = ROOT / "data" / "raw" / "pdfs" / "metadata.json"
 PDF_CHUNKS_PATH = ROOT / "data" / "processed" / "chunks" / "pdf_chunks.jsonl"
 
@@ -230,7 +233,9 @@ def build_chunks(
     metadata: list[dict[str, Any]],
     max_words: int,
     overlap_words: int,
+    temporal_manifest: Path | None = None,
 ) -> list[dict[str, Any]]:
+    manifest = load_manifest(temporal_manifest) if temporal_manifest is not None else {}
     rows: list[dict[str, Any]] = []
 
     for record in metadata:
@@ -282,7 +287,7 @@ def build_chunks(
                 }
             )
 
-    return rows
+    return attach_manifest(rows, manifest)
 
 
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -299,13 +304,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", type=Path, default=PDF_CHUNKS_PATH)
     parser.add_argument("--max-words", type=int, default=DEFAULT_MAX_WORDS)
     parser.add_argument("--overlap-words", type=int, default=DEFAULT_OVERLAP_WORDS)
+    parser.add_argument("--temporal-manifest", type=Path, help="Reviewed source temporal metadata JSON")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
     metadata = load_metadata(args.metadata)
-    chunks = build_chunks(metadata, max_words=args.max_words, overlap_words=args.overlap_words)
+    chunks = build_chunks(metadata, max_words=args.max_words, overlap_words=args.overlap_words,
+                          temporal_manifest=args.temporal_manifest)
     write_jsonl(args.output, chunks)
 
     print(f"PDF records read: {len(metadata)}")

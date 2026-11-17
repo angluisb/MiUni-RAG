@@ -62,3 +62,107 @@ Use current, historical and explicit-period questions to check that unsupported
 claims are not invented. Meaningful answer-quality comparisons require verified
 source classifications first. The prior four Gemini measurements predate this
 strict rollout and must not be described as its quality benchmark.
+
+## Reviewed source manifest
+
+Canonical temporal values now flow from a reviewed, exact-URL-keyed manifest
+into `documentofuente`. The checked-in
+`data/sources/document_temporal_metadata.json` contains six reviewed source records;
+an empty manifest remains a supported no-op and does not reset classifications.
+No status or year is automatically inferred from a URL,
+filename, title, crawl time or model output.
+
+```json
+{
+  "version": 1,
+  "sources": [{
+    "source_url": "https://example.edu/official-document.pdf",
+    "source_id": "11111111-1111-4111-8111-111111111111",
+    "temporal_status": "vigente",
+    "document_year": 2026,
+    "academic_period": "2026-2",
+    "effective_from": "2026-08-01T00:00:00-07:00",
+    "last_verified_at": "2026-11-17T12:00:00-07:00",
+    "evidence": {
+      "reviewed_by": "operator-or-truthful-assisted-review-identity",
+      "rationale": "Official publication explicitly establishes applicability.",
+      "verification_urls": ["https://example.edu/official-document.pdf"],
+      "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "quote": "Exact supporting passage, when available."
+    }
+  }]
+}
+```
+
+This is a **format example, not verified institutional evidence**. Replace its
+values with reviewed source evidence before use. `source_id` is optional; when
+present it must match the row selected by the exact `source_url`. Review identity,
+rationale and verification URLs plus timezone-aware `last_verified_at` are
+required when explicitly setting `vigente`, `historico` or `reemplazado`.
+An old publication year does not prove that a regulation has expired.
+
+Supported temporal fields are `temporal_status`, `document_year` (1000–9999),
+`academic_period` (`YYYY-1` or `YYYY-2`), `effective_from`, `effective_to`,
+`last_verified_at`, and `superseded_by` (an existing document UUID). Timestamps
+must include a timezone; an effective end cannot precede its start. A replacement
+cannot reference itself and is only valid for `reemplazado` status. Evidence
+may additionally contain a 64-hex `source_sha256` and a bounded `quote`.
+
+**Omitted fields preserve existing canonical values.** Explicit null clears an
+optional value such as `document_year`; explicit `desconocido` changes status
+intentionally. Null status is rejected. Changing a replaced source back to current
+also requires explicitly clearing an existing `superseded_by`. Missing metadata
+on a later reimport never overwrites a verified canonical status with unknown.
+New rows retain the database's backward-compatible `desconocido` default.
+
+### New ingestion and indexing
+
+All three entry points accept `--temporal-manifest`:
+
+```powershell
+venv/Scripts/python.exe scripts/ingest_html.py --temporal-manifest data/sources/document_temporal_metadata.json
+venv/Scripts/python.exe scripts/ingest_pdf.py --temporal-manifest data/sources/document_temporal_metadata.json
+venv/Scripts/python.exe scripts/index_embeddings.py --dry-run --temporal-manifest data/sources/document_temporal_metadata.json
+```
+
+The first two commands regenerate their normal chunk outputs; use them only when
+new ingestion is intended. Matching source declarations are attached as
+`metadata.document_metadata`, without losing page spans, categories or other
+legacy metadata. The indexer validates consistent declarations across all chunks
+of a source, and persists supplied canonical fields in its existing transaction.
+Manifest/chunk contradictions are rejected rather than silently overwritten.
+`--check-db`, `--dry-run`, and complete-document limits retain their previous
+meaning. Indexing can prune stale chunks: **never use it just to backfill status**.
+
+### Existing indexed documents: inspect, dry-run, apply
+
+```powershell
+# Validates everything and reports database identity and intended changed fields.
+venv/Scripts/python.exe scripts/backfill_document_metadata.py --manifest data/sources/document_temporal_metadata.json
+
+# Only after reviewing the plan, database identity and source IDs:
+venv/Scripts/python.exe scripts/backfill_document_metadata.py --manifest data/sources/document_temporal_metadata.json --expected-database approved_database --apply --backup C:/Backups/miuni-temporal-before.json
+```
+
+Use the database name printed by the reviewed dry-run in place of
+`approved_database`. Read `DATABASE_URL` from the approved environment; do not put
+credentials in command arguments, manifests or reports. Reports and backups
+include only database name/server address/port, never connection credentials.
+
+The default is dry-run. `--apply` requires the expected database name and a new
+backup filename **outside every Git workspace**. The before-values JSON contains
+only selected source IDs, URLs, old temporal values and the reviewed manifest;
+it does not contain chunk text, embeddings, unrelated user data or credentials.
+Exclusive creation prevents overwriting an older backup. The file is flushed
+and fsynced before any update or transaction commit; backup failure aborts apply.
+Retain this audit/rollback copy securely. It is not a full database backup or an
+automatic restore command.
+
+The updater locks exact source URLs in sorted order using the same
+`pg_advisory_xact_lock(hashtextextended(source_url, 0))` identity as the indexer,
+then locks and revalidates canonical rows. Unknown or duplicate source URLs,
+identity/replacement mismatches and invalid merged date ranges abort the whole
+plan. A single explicit transaction covers all updates; SQL/FK/check failure
+rolls everything back. Reapplying identical values reports zero affected rows.
+No chunk, embedding, content, document ID or source URL is rewritten or deleted.
+The dry-run reports intended changes, not a durable approval or mutation receipt.

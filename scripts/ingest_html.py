@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -12,6 +13,8 @@ from bs4 import BeautifulSoup
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from app.rag.document_metadata import attach_manifest, load_manifest
 RAW_HTML_METADATA_PATH = ROOT / "data" / "raw" / "html" / "metadata.json"
 CHUNKS_PATH = ROOT / "data" / "processed" / "chunks" / "html_chunks.jsonl"
 
@@ -306,7 +309,9 @@ def build_chunks(
     metadata: list[dict[str, Any]],
     max_words: int,
     overlap_words: int,
+    temporal_manifest: Path | None = None,
 ) -> list[dict[str, Any]]:
+    manifest = load_manifest(temporal_manifest) if temporal_manifest is not None else {}
     chunks: list[dict[str, Any]] = []
 
     for page in metadata:
@@ -347,7 +352,7 @@ def build_chunks(
                 }
             )
 
-    return chunks
+    return attach_manifest(chunks, manifest)
 
 
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -362,6 +367,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Clean raw MiUni HTML and generate JSONL chunks.")
     parser.add_argument("--max-words", type=int, default=DEFAULT_MAX_WORDS)
     parser.add_argument("--overlap-words", type=int, default=DEFAULT_OVERLAP_WORDS)
+    parser.add_argument("--temporal-manifest", type=Path, help="Reviewed source temporal metadata JSON")
     return parser.parse_args()
 
 
@@ -372,6 +378,7 @@ def main() -> None:
         metadata,
         max_words=args.max_words,
         overlap_words=args.overlap_words,
+        temporal_manifest=args.temporal_manifest,
     )
     write_jsonl(CHUNKS_PATH, chunks)
 

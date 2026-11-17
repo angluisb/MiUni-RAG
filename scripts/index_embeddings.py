@@ -22,6 +22,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="Validar JSONL sin base ni descargar el modelo")
     parser.add_argument("--check-db", action="store_true", help="Comprobar extension, esquema, indices y conteos")
     parser.add_argument("--limit-documents", type=int, help="Limitar por documentos completos para una prueba")
+    parser.add_argument("--temporal-manifest", type=Path, help="Reviewed source temporal metadata JSON")
     args = parser.parse_args()
     if args.limit_documents is not None and args.limit_documents < 1:
         parser.error("--limit-documents debe ser positivo")
@@ -34,7 +35,7 @@ def main() -> int:
                           ROOT / "data/processed/chunks/pdf_chunks.jsonl") if path.exists()]
     if not paths:
         parser.error("No hay JSONL. Ejecuta ingest_html.py / ingest_pdf.py primero")
-    documents = load_documents(paths)
+    documents = load_documents(paths, temporal_manifest=args.temporal_manifest)
     if not documents:
         parser.error("Los JSONL no contienen chunks")
     selected = list(documents.values())[:args.limit_documents]

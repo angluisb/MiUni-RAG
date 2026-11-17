@@ -6,10 +6,14 @@ from pathlib import Path
 from uuid import NAMESPACE_URL, uuid5
 
 from app.core.config import Settings
+from app.rag.document_metadata import (TEMPORAL_COLUMNS, attach_manifest, load_manifest,
+                                       lock_source, metadata_for_chunks, prepare_update,
+                                       update_canonical)
 from app.rag.models import InputChunk, text_hash
 
 
-def load_documents(paths: list[Path]) -> dict[str, list[InputChunk]]:
+def load_documents(paths: list[Path], temporal_manifest: Path | None = None) -> dict[str, list[InputChunk]]:
+    manifest = load_manifest(temporal_manifest) if temporal_manifest is not None else {}
     documents = defaultdict(list)
     keys = {}
     for path in paths:
@@ -19,9 +23,12 @@ def load_documents(paths: list[Path]) -> dict[str, list[InputChunk]]:
                     continue
                 try:
                     chunk = InputChunk.model_validate_json(line)
+                    if manifest:
+                        chunk = InputChunk.model_validate(attach_manifest([chunk.model_dump()], manifest)[0])
                     key = (chunk.source_url, chunk.chunk_index)
                     if key in keys:
                         existing = keys[key]
+                        metadata_for_chunks([existing, chunk])
                         if existing.content != chunk.content or existing.source_type != chunk.source_type:
                             raise ValueError(f"Contenido contradictorio para {chunk.id}")
                         categories = existing.metadata.setdefault(
@@ -39,6 +46,7 @@ def load_documents(paths: list[Path]) -> dict[str, list[InputChunk]]:
             raise ValueError(f"Indices incompletos para {url}; proporciona el documento completo")
         if len({chunk.source_type for chunk in chunks}) != 1:
             raise ValueError(f"Tipos de fuente inconsistentes para {url}")
+        metadata_for_chunks(chunks)
     return dict(documents)
 
 
@@ -58,11 +66,12 @@ class ChunkIndexer:
             raise ValueError("No se pueden mezclar documentos")
         if sorted(c.chunk_index for c in chunks) != list(range(len(chunks))):
             raise ValueError("Se necesita el documento completo con indices consecutivos")
+        declaration = metadata_for_chunks(chunks)
         texts = {text_hash(chunk.content): chunk.content for chunk in chunks}
         settings = self.settings
         with self.repository.connect() as conn:
             # Serialize reimports of the same source, including creation of its parent row.
-            conn.execute("SELECT pg_advisory_xact_lock(hashtextextended(%s, 0))", (source.source_url,))
+            lock_source(conn, source.source_url)
             cached = conn.execute(
                 """SELECT content_sha256, embedding::text AS embedding, embedded_at
                    FROM rag_chunk WHERE content_sha256 = ANY(%s)
@@ -84,10 +93,13 @@ class ChunkIndexer:
                 now = datetime.now(timezone.utc)
                 cache.update({digest: (vector, now) for digest, vector in zip(batch, vectors)})
 
-            document = conn.execute(
-                "SELECT id FROM documentofuente WHERE referencia = %s ORDER BY id LIMIT 1",
+            documents = conn.execute(
+                "SELECT id FROM documentofuente WHERE referencia = %s ORDER BY id",
                 (source.source_url,),
-            ).fetchone()
+            ).fetchall()
+            if len(documents) > 1 and declaration.model_fields_set:
+                raise ValueError("Temporal metadata requires exactly one canonical source URL")
+            document = documents[0] if documents else None
             document_id = document["id"] if document else uuid5(NAMESPACE_URL, source.source_url)
             conn.execute(
                 """INSERT INTO documentofuente (id, titulo, tipo_origen, referencia, ultima_actualizacion)
@@ -96,6 +108,11 @@ class ChunkIndexer:
                        ultima_actualizacion = now()""",
                 (document_id, source.document_title, source.source_type, source.source_url),
             )
+            if declaration.model_fields_set:
+                row = conn.execute(
+                    "SELECT id, " + ", ".join(TEMPORAL_COLUMNS) +
+                    " FROM documentofuente WHERE id = %s FOR UPDATE", (document_id,)).fetchone()
+                update_canonical(conn, document_id, prepare_update(conn, row, declaration))
             for chunk in chunks:
                 digest = text_hash(chunk.content)
                 embedding, embedded_at = cache[digest]

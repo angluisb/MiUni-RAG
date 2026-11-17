@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "source_url": "https://www.unison.mx/institucional/marconormativo/reglamentosescolares/ReglamentoPracticasProfesionales/Reglamento_General_de_Practicas_Profesionales_Abril_2020.pdf",
+      "source_id": "5e3640d9-625a-555a-8174-a949a29705e0",
+      "temporal_status": "vigente",
+      "last_verified_at": "2026-11-17T19:24:55Z",
+      "evidence": {
+        "reviewed_by": "codex-assisted-source-review",
+        "rationale": "Current DAE practices portal links this exact regulation. Live PDF bytes, stored raw PDF and download metadata have the same SHA256. Page24 explicitly abrogates the2017regulation; publication date is not established, so effective dates remain unknown. Previous-enrolment transitional exceptions remain part of the source.",
+        "verification_urls": [
+          "https://dae.unison.mx/practicasprofesionales.html",
+          "https://www.unison.mx/institucional/marconormativo/reglamentosescolares/ReglamentoPracticasProfesionales/Reglamento_General_de_Practicas_Profesionales_Abril_2020.pdf"
+        ],
+        "source_sha256": "89e06b8d4d382142e9b1fcb687bda03b880802c38bf59791b41a167d515f3317"
+      },
+      "document_year": 2020
+    },
+    {
+      "source_url": "https://movilidad.unison.mx/buddy-program/",
+      "source_id": "f42697c6-26ea-58d1-9d3d-baa95cb42dba",
+      "temporal_status": "vigente",
+      "last_verified_at": "2026-11-17T19:24:55Z",
+      "evidence": {
+        "reviewed_by": "codex-assisted-source-review",
+        "rationale": "Current official SCMI navigation links this exact ongoing program information page. All1105 normalized substantive characters match indexed text, stored raw HTML and live HTML (SHA256 of matched substantive text5e3a22ed255477e31d409755132a11d2275826414517cf331a23c4f2d3b0431b). Full HTML bytes differ; one duplicated contact suffix in indexed text was excluded from that substantive comparison. This is current program guidance, not proof of an open exchange application window or a historical video period.",
+        "verification_urls": [
+          "https://movilidad.unison.mx/",
+          "https://movilidad.unison.mx/buddy-program/"
+        ]
+      }
+    },
+    {
+      "source_url": "https://www.unison.mx/reglamento-general-de-practicas-profesionales/",
+      "source_id": "3c83d54e-de86-531e-ac8a-9c5a8b415aec",
+      "temporal_status": "reemplazado",
+      "last_verified_at": "2026-11-17T19:24:55Z",
+      "evidence": {
+        "reviewed_by": "codex-assisted-source-review",
+        "rationale": "The live and indexed link page explicitly identifies the June2017edition. Page24 of the exact-byte-matched2020regulation abrogates that earlier regulation. Do not treat a still reachable legacy link page as current. No link-page-to-PDF replacement UUID is inferred.",
+        "verification_urls": [
+          "https://www.unison.mx/institucional/marconormativo/reglamentosescolares/ReglamentoPracticasProfesionales/Reglamento_General_de_Practicas_Profesionales_Abril_2020.pdf",
+          "https://www.unison.mx/reglamento-general-de-practicas-profesionales/"
+        ]
+      },
+      "document_year": 2017
+    },
+    {
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2026/03/CONV_ASU_FINAL_2026-1.pdf",
+      "source_id": "4a0746c3-71bf-51ff-95fe-4fb0672596cf",
+      "temporal_status": "historico",
+      "last_verified_at": "2026-11-17T19:24:55Z",
+      "evidence": {
+        "reviewed_by": "codex-assisted-source-review",
+        "rationale": "Official PDF identifies2026-1 on page1 and issuance March13,2026 on page5. Page4 application deadline June12,2026 and page3 reporting deadline August17,2026 have passed as of verification. Live PDF SHA256 matches stored download metadata. No formal successor or whole-document effective interval is inferred.",
+        "verification_urls": [
+          "https://movilidad.unison.mx/",
+          "https://movilidad.unison.mx/wp-content/uploads/2026/03/CONV_ASU_FINAL_2026-1.pdf"
+        ],
+        "source_sha256": "1f7637837f8b438618668cb6cf3ad6afcae3bbfb6aab74291462cb26340f87ae"
+      },
+      "document_year": 2026,
+      "academic_period": "2026-1"
+    },
+    {
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2026/09/CONVOCATORIA_CONAHEC_27-1_MSSG_Y_MDT_1.pdf",
+      "source_id": "dc4d1afa-b870-5246-8915-d54bd00dc85f",
+      "temporal_status": "historico",
+      "last_verified_at": "2026-11-17T19:24:55Z",
+      "evidence": {
+        "reviewed_by": "codex-assisted-source-review",
+        "rationale": "Official homepage explicitly labels this linked call closed. PDF page1 identifies mobility period2027-1; page4 application deadline September13,2026 has passed. Live PDF SHA256 matches stored download metadata. Historical describes the closed application announcement, not expiry of accepted students obligations. No issuance year or whole-document effective dates inferred.",
+        "verification_urls": [
+          "https://movilidad.unison.mx/",
+          "https://movilidad.unison.mx/wp-content/uploads/2026/09/CONVOCATORIA_CONAHEC_27-1_MSSG_Y_MDT_1.pdf"
+        ],
+        "source_sha256": "ce006e116845b76963fc4d31c4b2f83555f237a6af1d347398692ebc0d432c61"
+      },
+      "academic_period": "2027-1"
+    },
+    {
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2026/08/CONVOCATORIA_ESPANA_2027-1_mssg_y_mdt.pdf",
+      "source_id": "46b483cc-0fc9-5ec0-a92b-9ae12724413e",
+      "temporal_status": "historico",
+      "last_verified_at": "2026-11-17T19:24:55Z",
+      "evidence": {
+        "reviewed_by": "codex-assisted-source-review",
+        "rationale": "Official homepage explicitly labels this linked call closed. PDF page1 identifies mobility period2027-1; page3 application deadline September20,2026 has passed. Live PDF SHA256 matches stored download metadata. Historical describes the closed application announcement; accepted-student obligations are not thereby deemed expired. No issuance year/effective dates inferred.",
+        "verification_urls": [
+          "https://movilidad.unison.mx/",
+          "https://movilidad.unison.mx/wp-content/uploads/2026/08/CONVOCATORIA_ESPANA_2027-1_mssg_y_mdt.pdf"
+        ],
+        "source_sha256": "3240a73032ab72ee3283e956d802e1f688bfbb56708f8523a11fcf34eef6c754"
+      },
+      "academic_period": "2027-1"
+    }
+  ]
+}

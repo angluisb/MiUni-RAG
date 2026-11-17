@@ -37,3 +37,28 @@ siblings; already-running SQL threads remain bounded by statement timeout/pool.
 The disabled flag preserves legacy SQL and text-only HyDE until the approved
 rollout. Therefore prepared code and unit tests alone do **not** prove that live
 temporal filtering or the latency/quality targets have been achieved.
+
+## Local integration verified on 2026-11-16
+
+Both original checkouts use `feat/chatbot-optimization`; their `main` branches
+were not changed. MiUni local edits were preserved on
+`backup/chatbot-pre-integration-20261116` before integration.
+
+Migration `20261116120000_DocumentTemporalMetadata` was explicitly authorized and
+applied to the existing local PostgreSQL RAG database on port **5433**, after a
+custom-format backup under ignored `.cache/backups/`. All 17 predecessor
+migrations were already applied. Document and chunk content fingerprints were
+unchanged (488 documents, 1379 chunks). Do not use the unrelated port 5432 database.
+
+The local `.env` now sets `RAG_TEMPORAL_FILTER_ENABLED=true`; the committed default
+remains false for deployments without the migration. All 488 documents initially
+have `desconocido`, with no verified temporal metadata. Consequently, strict
+retrieval currently finds **no eligible institutional documents**. This is a safe
+rollout restriction, not evidence that documents were lost. Catalog/map routing
+is independent. Classify sources only from verified status, dates and periods;
+do not bulk mark them current to make a demonstration answer work.
+
+Use current, historical and explicit-period questions to check that unsupported
+claims are not invented. Meaningful answer-quality comparisons require verified
+source classifications first. The prior four Gemini measurements predate this
+strict rollout and must not be described as its quality benchmark.

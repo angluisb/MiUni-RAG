@@ -24,7 +24,7 @@ class FakeEmbedder:
 @unittest.skipUnless(os.getenv("RUN_RAG_DB_TESTS") == "1", "Set RUN_RAG_DB_TESTS=1 for PostgreSQL tests")
 class PostgresTests(unittest.TestCase):
     def setUp(self):
-        self.settings = Settings()
+        self.settings = Settings(RAG_TEMPORAL_FILTER_ENABLED=False)
         self.connection = RagRepository(self.settings).connect()
         self.connection.autocommit = True
         self.addCleanup(self.connection.close)

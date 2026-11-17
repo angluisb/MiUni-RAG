@@ -1,5 +1,37 @@
 # Contrato de Descarga de PDFs para RAG
 
+## Admisión de red y compatibilidad
+
+Antes de cada descarga nueva se aplica el mismo helper de robots que usa el
+scraper HTML. Cada salto HTTP se valida antes de solicitar el destino; las
+redirecciones automáticas están desactivadas y el límite es de cinco saltos.
+La lista de dominios oficiales del descargador no se amplía.
+
+Solo un HTTP **404 o 410** de `robots.txt` permite continuar por ausencia de
+política (`allowed_absent`). HTTP 401/403 rechaza; HTTP 429/5xx, otros estados,
+errores de red y políticas HTML o inválidas impiden descargar hasta disponer de
+una política válida. No se interpreta un servidor inaccesible como permiso.
+
+El cache es por esquema, host y puerto: una hora y hasta 128 orígenes por
+ejecución; el TTL configurable del helper no supera 24 horas. Se soportan grupos
+`User-agent`, `Allow`/`Disallow`, comodines `*`, ancla `$` y `Crawl-delay` finito
+no negativo. Gana la regla más larga, con preferencia por `Allow` en empates.
+No se afirma soporte completo de RFC 9309 ni de directivas como `Request-rate`.
+`--delay` es el intervalo mínimo por origen; un `Crawl-delay` mayor lo aumenta.
+
+Los registros mantienen todos sus campos y añaden `policy_outcomes`, una lista
+de `{url, outcome, reason}` con `allowed`, `rejected` o `unavailable` por URL
+intentada. Los estados nuevos son `skipped_policy` para rechazo y `failed_policy`
+para política no disponible; un dominio de redirección rechazado conserva
+`skipped_external_redirect`. `skip_reason` especifica el motivo. Un fallo HTTP
+del PDF sigue siendo `failed_http`, no un fallo de robots.
+
+Los PDFs ya descargados siguen devolviendo `already_downloaded` sin tráfico de
+red; los filtros de revisión, alcance y dominio también se ejecutan antes de
+robots. Estos casos registran `outcome=not_requested` y el estado original como
+motivo: no afirman una autorización de robots que no se comprobó. Se conservan
+los flags y los controles existentes de timeout, MIME y tamaño.
+
 ## Proposito
 
 Este documento define el contrato inicial para descargar PDFs oficiales descubiertos por el scraper web de MiUni.
@@ -100,9 +132,9 @@ Formato sugerido de metadata:
 
 - Descargar solo URLs oficiales de la Universidad de Sonora.
 - Permitir dominios `*.unison.mx` y `*.uson.mx` cuando fueron descubiertos desde una fuente oficial.
-- Rechazar redirecciones finales a dominios externos.
+- Rechazar cada destino de redirección externo antes de solicitarlo.
 - Usar `GET` con timeout definido.
-- Respetar un delay entre descargas.
+- Respetar un intervalo mínimo por origen antes de cada solicitud.
 - Validar que el `content-type` final sea PDF o que el contenido inicie con firma `%PDF`.
 - Guardar el PDF con nombre seguro y estable.
 - Incluir un hash corto o completo para evitar colisiones de nombres.
@@ -185,7 +217,7 @@ Estados sugeridos:
 - `already_downloaded`: URL o hash ya existe.
 - `skipped_review_required`: documento requiere revision humana.
 - `skipped_out_of_scope`: documento oficial pero fuera del foco RAG inicial.
-- `skipped_external_redirect`: redireccion final fuera de dominios oficiales.
+- `skipped_external_redirect`: dominio inicial o destino de redirección no permitido, sin solicitarlo.
 - `skipped_not_pdf`: respuesta no parece PDF.
 - `failed_http`: respuesta HTTP no exitosa.
 - `failed_timeout`: timeout.

@@ -1,5 +1,44 @@
 # Contrato de Scraping Web e Ingest HTML para RAG
 
+## Admisión de red y robots.txt
+
+El scraper valida el dominio y la política de `robots.txt` **antes** de descargar
+cada recurso y cada destino de redirección. Las redirecciones HTTP automáticas
+están desactivadas; se permiten hasta cinco saltos. La propia descarga de
+`robots.txt` también valida cada destino contra la lista de dominios permitidos.
+No se accede a destinos externos para comprobar después si estaban permitidos.
+
+| Respuesta de robots.txt | Resultado |
+| --- | --- |
+| 200 con política de texto válida | Aplicar las reglas del agente |
+| 404 o 410 | `allowed_absent`: ausencia explícita, descarga permitida |
+| 401 o 403 | `rejected`: descarga rechazada |
+| 429, 5xx, otros estados, error de red, HTML o política inválida | `unavailable`: no descargar |
+
+Las políticas se cachean por origen (esquema, host y puerto) durante una hora,
+con un máximo de 128 orígenes por ejecución. El helper permite configurar un TTL
+de hasta 24 horas. Un fallo de política no equivale a su ausencia.
+
+Se soportan grupos `User-agent`, `Allow`, `Disallow`, comodines `*`, ancla final
+`$` y `Crawl-delay` numérico finito no negativo. Gana el grupo específico del
+agente; para rutas gana la coincidencia más larga y `Allow` resuelve los empates.
+El agente sigue siendo `MiUniRagScraper/0.1 (educational project)`. Esto es un
+subconjunto explícito del protocolo, no una declaración de conformidad RFC
+completa: directivas de extensión como `Request-rate` no se implementan.
+
+`--delay` conserva su nombre, pero ahora representa el intervalo mínimo entre
+solicitudes al mismo origen, incluidas las comprobaciones de robots. Una política
+con `Crawl-delay` mayor aumenta el intervalo antes de descargar recursos. Los
+intervalos se aplican antes de solicitar, no solo después de descargar.
+
+Cada registro solicitado conserva sus campos existentes y añade
+`policy_outcomes`, una lista de `{url, outcome, reason}`. `outcome` distingue
+`allowed`, `rejected` y `unavailable`, incluidos los saltos de redirección. Un
+rechazo produce `error=policy_rejected`; una política inaccesible produce
+`error=policy_unavailable`. Los errores HTTP del recurso conservan su estado HTTP
+y no se confunden con fallos de política. Los PDFs solo descubiertos no se
+descargan en esta fase; su admisión se comprueba en el descargador.
+
 ## Proposito
 
 Este documento define el contrato tecnico para descubrir, descargar, limpiar y trocear contenido publico oficial de la Universidad de Sonora que sera usado por el RAG de MiUni.

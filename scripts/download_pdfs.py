@@ -4,7 +4,7 @@ import argparse
 import hashlib
 import json
 import re
-import time
+import sys
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -14,6 +14,11 @@ import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if __package__ in (None, ""):
+    sys.path.insert(0, str(ROOT))
+
+from app.rag.crawl_policy import CrawlPolicy, CrawlPolicyError
+
 DISCOVERED_PDFS_PATH = ROOT / "data" / "sources" / "discovered_pdfs.json"
 RAW_PDF_DIR = ROOT / "data" / "raw" / "pdfs"
 PDF_METADATA_PATH = RAW_PDF_DIR / "metadata.json"
@@ -213,13 +218,14 @@ def make_record(
     return record
 
 
-def download_pdf(
+def _download_pdf(
     session: requests.Session,
     source: dict[str, Any],
     timeout_seconds: int,
     max_file_mb: int,
     include_review_required: bool,
     today: str,
+    policy: CrawlPolicy,
 ) -> dict[str, Any]:
     normalized = normalize_url(source["url"])
     if not normalized:
@@ -283,7 +289,15 @@ def download_pdf(
         )
 
     try:
-        response = session.get(normalized, timeout=timeout_seconds, allow_redirects=True)
+        response = policy.get(normalized, source.get("discovered_from"), timeout=timeout_seconds)
+    except CrawlPolicyError as exc:
+        return make_record(
+            source, url=normalized, status=None, content_type=None,
+            download_status=("skipped_external_redirect" if exc.reason == "host_not_allowed" else
+                             "skipped_policy" if exc.outcome == "rejected" else "failed_policy"),
+            last_downloaded_at=today,
+            skip_reason="final_host_not_allowed" if exc.reason == "host_not_allowed" else exc.reason,
+        )
     except requests.Timeout as exc:
         return make_record(
             source,
@@ -368,6 +382,20 @@ def download_pdf(
     )
 
 
+def download_pdf(session, source, timeout_seconds, max_file_mb, include_review_required,
+                 today, policy=None):
+    policy = policy or CrawlPolicy(session, USER_AGENT, host_is_allowed, timeout=timeout_seconds)
+    start = len(policy.events)
+    record = _download_pdf(session, source, timeout_seconds, max_file_mb,
+                           include_review_required, today, policy)
+    record["policy_outcomes"] = policy.events[start:]
+    if not record["policy_outcomes"]:
+        record["policy_outcomes"] = [{
+            "url": record["url"], "outcome": "not_requested", "reason": record["download_status"],
+        }]
+    return record
+
+
 def download_pdfs(
     input_path: Path,
     metadata_path: Path,
@@ -384,6 +412,8 @@ def download_pdfs(
     session = requests.Session()
     session.trust_env = False
     session.headers.update({"User-Agent": USER_AGENT})
+    policy = CrawlPolicy(session, USER_AGENT, host_is_allowed, min_delay=delay_seconds,
+                         timeout=timeout_seconds)
 
     records: list[dict[str, Any]] = []
     seen_urls: set[str] = set()
@@ -405,9 +435,9 @@ def download_pdfs(
                 max_file_mb=max_file_mb,
                 include_review_required=include_review_required,
                 today=today,
+                policy=policy,
             )
         )
-        time.sleep(delay_seconds)
 
     write_json(metadata_path, records)
 
@@ -427,7 +457,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input", type=Path, default=DISCOVERED_PDFS_PATH)
     parser.add_argument("--metadata", type=Path, default=PDF_METADATA_PATH)
     parser.add_argument("--max-pdfs", type=int, default=DEFAULT_MAX_PDFS)
-    parser.add_argument("--delay", type=float, default=DEFAULT_DELAY_SECONDS)
+    parser.add_argument("--delay", type=float, default=DEFAULT_DELAY_SECONDS,
+                        help="Minimum per-origin request interval; robots Crawl-delay may increase it.")
     parser.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT_SECONDS)
     parser.add_argument("--max-file-mb", type=int, default=DEFAULT_MAX_FILE_MB)
     parser.add_argument("--include-review-required", action="store_true")

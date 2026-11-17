@@ -4,7 +4,7 @@ import argparse
 import hashlib
 import json
 import re
-import time
+import sys
 from collections import deque
 from dataclasses import dataclass
 from datetime import date
@@ -17,6 +17,11 @@ from bs4 import BeautifulSoup
 
 
 ROOT = Path(__file__).resolve().parents[1]
+if __package__ in (None, ""):
+    sys.path.insert(0, str(ROOT))
+
+from app.rag.crawl_policy import CrawlPolicy, CrawlPolicyError
+
 SEEDS_PATH = ROOT / "data" / "sources" / "web_seed_urls.json"
 DISCOVERED_PAGES_PATH = ROOT / "data" / "sources" / "discovered_pages.json"
 DISCOVERED_PDFS_PATH = ROOT / "data" / "sources" / "discovered_pdfs.json"
@@ -231,6 +236,8 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
     session = requests.Session()
     session.trust_env = False
     session.headers.update({"User-Agent": USER_AGENT})
+    policy = CrawlPolicy(session, USER_AGENT, host_is_allowed, min_delay=delay_seconds,
+                         timeout=REQUEST_TIMEOUT_SECONDS)
 
     while queue and len(discovered_pages) < max_pages:
         item = queue.popleft()
@@ -250,12 +257,22 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
         if not is_html_like_url(item.url):
             continue
 
+        policy_start = len(policy.events)
         try:
-            response = session.get(
+            response = policy.get(
                 item.url,
+                item.discovered_from,
                 timeout=REQUEST_TIMEOUT_SECONDS,
-                allow_redirects=True,
             )
+        except CrawlPolicyError as exc:
+            discovered_pages[item.url] = {
+                "url": item.url, "title": None, "status": None, "content_type": None,
+                "discovered_from": item.discovered_from, "depth": item.depth,
+                "category": item.category, "last_seen_at": today,
+                "error": "policy_rejected" if exc.outcome == "rejected" else "policy_unavailable",
+                "policy_outcomes": policy.events[policy_start:],
+            }
+            continue
         except requests.RequestException as exc:
             discovered_pages[item.url] = {
                 "url": item.url,
@@ -267,13 +284,14 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
                 "category": item.category,
                 "last_seen_at": today,
                 "error": str(exc),
+                "policy_outcomes": policy.events[policy_start:],
             }
             continue
 
         final_url = normalize_url(response.url) or item.url
         content_type = response.headers.get("content-type", "").split(";")[0].lower()
+        policy_outcomes = policy.events[policy_start:]
         if not host_is_allowed(final_url, item.discovered_from or item.url):
-            time.sleep(delay_seconds)
             continue
 
         if "application/pdf" in content_type or is_pdf_url(final_url):
@@ -281,7 +299,7 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
                 final_url,
                 make_pdf_record(item, final_url, response.status_code, today, content_type),
             )
-            time.sleep(delay_seconds)
+            discovered_pdfs[final_url]["policy_outcomes"] = policy_outcomes
             continue
 
         if response.status_code >= 400 or "html" not in content_type:
@@ -294,8 +312,8 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
                 "depth": item.depth,
                 "category": item.category,
                 "last_seen_at": today,
+                "policy_outcomes": policy_outcomes,
             }
-            time.sleep(delay_seconds)
             continue
 
         html = response_html(response)
@@ -313,6 +331,7 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
             "category": item.category,
             "last_seen_at": today,
             "raw_html_path": str(raw_path.relative_to(ROOT)).replace("\\", "/"),
+            "policy_outcomes": policy_outcomes,
         }
         discovered_pages[final_url] = page_record
         html_metadata.append(page_record)
@@ -341,7 +360,6 @@ def scrape(max_depth: int, max_pages: int, delay_seconds: float) -> None:
                     queue.append(QueueItem(link, final_url, item.depth + 1, item.category))
                     queued.add(link)
 
-        time.sleep(delay_seconds)
 
     write_json(DISCOVERED_PAGES_PATH, sorted(discovered_pages.values(), key=lambda row: row["url"]))
     write_json(DISCOVERED_PDFS_PATH, sorted(discovered_pdfs.values(), key=lambda row: row["url"]))
@@ -379,7 +397,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Discover official MiUni RAG web sources.")
     parser.add_argument("--max-depth", type=int, default=DEFAULT_MAX_DEPTH)
     parser.add_argument("--max-pages", type=int, default=DEFAULT_MAX_PAGES)
-    parser.add_argument("--delay", type=float, default=DEFAULT_DELAY_SECONDS)
+    parser.add_argument("--delay", type=float, default=DEFAULT_DELAY_SECONDS,
+                        help="Minimum per-origin request interval; robots Crawl-delay may increase it.")
     return parser.parse_args()
 
 

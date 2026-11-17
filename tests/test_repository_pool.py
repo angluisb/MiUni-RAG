@@ -1,6 +1,7 @@
 from contextlib import contextmanager
 from unittest.mock import Mock, patch
 import unittest
+import os
 
 from app.core.config import Settings
 from app.rag.repository import RagRepository
@@ -37,6 +38,24 @@ class PoolTests(unittest.TestCase):
         repo = TemporaryRepository(Settings(_env_file=None))
         with repo.connection() as connection:
             self.assertIs(connection, expected)
+
+
+@unittest.skipUnless(os.getenv("RUN_RAG_DB_TESTS") == "1", "Set RUN_RAG_DB_TESTS=1 for PostgreSQL tests")
+class LivePoolTests(unittest.TestCase):
+    def test_same_connection_is_reused_and_failed_transaction_is_rolled_back(self):
+        repository = RagRepository(Settings(RAG_DB_POOL_MAX_SIZE=1, RAG_DB_POOL_ENABLED=True))
+        self.addCleanup(repository.close)
+        with repository.connection() as connection:
+            connection.execute("CREATE TEMP TABLE pool_probe (value integer) ON COMMIT PRESERVE ROWS")
+            connection.execute("INSERT INTO pg_temp.pool_probe VALUES (1)")
+            backend = connection.execute("SELECT pg_backend_pid() AS pid").fetchone()["pid"]
+        with self.assertRaisesRegex(RuntimeError, "rollback probe"):
+            with repository.connection() as connection:
+                connection.execute("INSERT INTO pg_temp.pool_probe VALUES (2)")
+                raise RuntimeError("rollback probe")
+        with repository.connection() as connection:
+            self.assertEqual(connection.execute("SELECT count(*) AS n FROM pg_temp.pool_probe").fetchone()["n"], 1)
+            self.assertEqual(connection.execute("SELECT pg_backend_pid() AS pid").fetchone()["pid"], backend)
 
 
 if __name__ == "__main__":

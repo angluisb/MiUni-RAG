@@ -1,106 +1,106 @@
-ï»¿# OptimizaciÃ³n del chatbot MiUni RAG
+﻿# Optimización del chatbot MiUni RAG
 
-Objetivo: reducir la latencia percibida del chatbot sin sacrificar calidad de recuperaciÃ³n, grounding ni el filtro temporal de la ingesta v2.
-RelaciÃ³n: spec separado de `odd/tasks/ingesta-v2-miuni-rag.md`; se integrarÃ¡ mediante contratos de retrieval y metadata temporal.
-Estado: implementaciÃ³n autorizada; preparar migraciones sin aplicarlas a la base de datos.
+Objetivo: reducir la latencia percibida del chatbot sin sacrificar calidad de recuperación, grounding ni el filtro temporal de la ingesta v2.
+Relación: spec separado de `odd/tasks/ingesta-v2-miuni-rag.md`; se integrará mediante contratos de retrieval y metadata temporal.
+Estado: integración local y migración temporal autorizadas; clasificación documental pendiente.
 Branch: `feat/chatbot-optimization` (integrated in both repositories). Delivery: `ask-on-risk`; chain: `feature-branch-chain` (user selected); RDD: globally disabled by explicit request.
-Forecast: 1200â€“1800 authored lines across pending units. Recovery mirror: pending (Engram session binding unavailable).
+Forecast: 1200–1800 authored lines across pending units. Recovery mirror: pending (Engram session binding unavailable).
 Runner: `venv\Scripts\python.exe`, `dotnet test`, `npm run build` cuando aplique.
 
-## DecisiÃ³n
+## Decisión
 
-La optimizaciÃ³n queda separada de la ingesta porque tiene otro ciclo de mediciÃ³n y otro criterio de Ã©xito. Ingesta v2 cambia la calidad y el alcance de los documentos; esta spec cambia latencia y capacidad de respuesta. Se coordinan mediante el filtro temporal y una versiÃ³n explÃ­cita del pipeline.
+La optimización queda separada de la ingesta porque tiene otro ciclo de medición y otro criterio de éxito. Ingesta v2 cambia la calidad y el alcance de los documentos; esta spec cambia latencia y capacidad de respuesta. Se coordinan mediante el filtro temporal y una versión explícita del pipeline.
 
-## Ruta rÃ¡pida de implementaciÃ³n
+## Ruta rápida de implementación
 
-1. Instrumentar el flujo completo y separar retrieval de generaciÃ³n.
-2. Enrutar preguntas de ubicaciÃ³n al catÃ¡logo/API, sin HyDE ni generaciÃ³n completa.
-3. Aplicar lÃ­mites de generaciÃ³n y streaming para reducir tiempo real y latencia percibida.
+1. Instrumentar el flujo completo y separar retrieval de generación.
+2. Enrutar preguntas de ubicación al catálogo/API, sin HyDE ni generación completa.
+3. Aplicar límites de generación y streaming para reducir tiempo real y latencia percibida.
 4. Medir nuevamente p50/p95 con consultas de mapa, simples y complejas antes de aceptar el resultado.
 
 ## Baseline observado
 
-- Primera recuperaciÃ³n real: aproximadamente `127.7 s`.
+- Primera recuperación real: aproximadamente `127.7 s`.
 - Carga inicial del embedding BGE-M3: aproximadamente `116 s`.
-- RecuperaciÃ³n posterior: aproximadamente `17.0 s`.
+- Recuperación posterior: aproximadamente `17.0 s`.
 - HyDE: hasta `15 s` por timeout/fallback.
 - Embedding caliente: aproximadamente `1.8 s`.
-- BÃºsqueda vectorial: aproximadamente `0.47 s`.
-- BÃºsqueda lÃ©xica: aproximadamente `0.13 s`.
-- El RAG usa CPU, BGE-M3, `vector_top_n=30`, `lexical_top_n=30`, `context_top_k=8` y conexiones PostgreSQL por operaciÃ³n.
+- Búsqueda vectorial: aproximadamente `0.47 s`.
+- Búsqueda léxica: aproximadamente `0.13 s`.
+- El RAG usa CPU, BGE-M3, `vector_top_n=30`, `lexical_top_n=30`, `context_top_k=8` y conexiones PostgreSQL por operación.
 
-La lÃ­nea base mide principalmente retrieval; todavÃ­a debe medirse por separado el tiempo total de generaciÃ³n de Gemini.
+La línea base mide principalmente retrieval; todavía debe medirse por separado el tiempo total de generación de Gemini.
 
 ### Baseline del sistema integrado
 
-- Frontend: aproximadamente `15 ms` para entregar la aplicaciÃ³n.
+- Frontend: aproximadamente `15 ms` para entregar la aplicación.
 - `GET /api/Lugar`: aproximadamente `12 ms`.
 - Login: aproximadamente `472 ms`.
-- Chat integrado para una consulta de ubicaciÃ³n: aproximadamente `52.6 s`.
-- El enlace de mapa no era el cuello de botella; la consulta fallaba cuando el catÃ¡logo devolvÃ­a HTTP 500 por una migraciÃ³n pendiente.
+- Chat integrado para una consulta de ubicación: aproximadamente `52.6 s`.
+- El enlace de mapa no era el cuello de botella; la consulta fallaba cuando el catálogo devolvía HTTP 500 por una migración pendiente.
 
 ## Especificaciones
 
-### S1 â€” Medir el tiempo total y por etapa
+### S1 — Medir el tiempo total y por etapa
 
 El sistema debe registrar p50, p95 y p99 para:
 
 - solicitud HTTP;
-- catÃ¡logo de lugares;
+- catálogo de lugares;
 - HyDE;
 - embedding;
-- bÃºsqueda vectorial;
-- bÃºsqueda lÃ©xica;
+- búsqueda vectorial;
+- búsqueda léxica;
 - RRF;
 - reranking;
-- construcciÃ³n del prompt;
+- construcción del prompt;
 - primer token;
 - respuesta completa.
 
-Cada mediciÃ³n debe indicar si fue cold start, warm start, cache hit o cache miss.
+Cada medición debe indicar si fue cold start, warm start, cache hit o cache miss.
 
-### S2 â€” Eliminar el cold start del primer usuario
+### S2 — Eliminar el cold start del primer usuario
 
-El modelo de embeddings debe cargarse y calentarse al iniciar el servicio, antes de aceptar trÃ¡fico normal.
+El modelo de embeddings debe cargarse y calentarse al iniciar el servicio, antes de aceptar tráfico normal.
 
 Criterios:
 
 - El primer embedding real no debe cargar pesos del modelo.
-- La readiness del servicio debe indicar si el modelo y PostgreSQL estÃ¡n listos.
-- Un fallo de warmup debe producir un estado explÃ­cito, no una primera peticiÃ³n bloqueada durante minutos.
+- La readiness del servicio debe indicar si el modelo y PostgreSQL están listos.
+- Un fallo de warmup debe producir un estado explícito, no una primera petición bloqueada durante minutos.
 
-### S3 â€” Hacer HyDE opcional y acotado
+### S3 — Hacer HyDE opcional y acotado
 
-HyDE no debe bloquear la recuperaciÃ³n durante 15 segundos.
+HyDE no debe bloquear la recuperación durante 15 segundos.
 
 Criterios:
 
-- Timeout objetivo inicial: `2â€“3 s`.
-- La bÃºsqueda lÃ©xica debe iniciar con la pregunta original sin esperar HyDE.
+- Timeout objetivo inicial: `2–3 s`.
+- La búsqueda léxica debe iniciar con la pregunta original sin esperar HyDE.
 - El embedding generado por HyDE puede mejorar la rama densa si llega dentro del presupuesto.
-- Ante timeout, error o JSON invÃ¡lido, se continÃºa con la pregunta original.
+- Ante timeout, error o JSON inválido, se continúa con la pregunta original.
 - El fallback conserva el filtro temporal seguro: documentos vigentes por defecto.
 
-### S4 â€” Cachear resultados de alto costo
+### S4 — Cachear resultados de alto costo
 
-Debe existir cache con invalidaciÃ³n versionada para:
+Debe existir cache con invalidación versionada para:
 
-- HyDE por pregunta normalizada, modelo y versiÃ³n del prompt;
-- catÃ¡logo de lugares con TTL corto;
+- HyDE por pregunta normalizada, modelo y versión del prompt;
+- catálogo de lugares con TTL corto;
 - embeddings de preguntas repetidas, si la memoria disponible lo permite.
 
-No se deben cachear respuestas institucionales sin incluir la versiÃ³n de documentos/pipeline en la clave.
+No se deben cachear respuestas institucionales sin incluir la versión de documentos/pipeline en la clave.
 
-### S5 â€” Reutilizar conexiones y paralelizar trabajo independiente
+### S5 — Reutilizar conexiones y paralelizar trabajo independiente
 
 Criterios:
 
 - PostgreSQL usa un pool de conexiones.
-- El catÃ¡logo de lugares y retrieval se ejecutan en paralelo.
-- La bÃºsqueda vectorial y lÃ©xica siguen ejecutÃ¡ndose en paralelo.
-- Los lÃ­mites de concurrencia se configuran explÃ­citamente para no saturar CPU, memoria ni PostgreSQL.
+- El catálogo de lugares y retrieval se ejecutan en paralelo.
+- La búsqueda vectorial y léxica siguen ejecutándose en paralelo.
+- Los límites de concurrencia se configuran explícitamente para no saturar CPU, memoria ni PostgreSQL.
 
-### S6 â€” Reducir trabajo de ranking sin perder calidad
+### S6 — Reducir trabajo de ranking sin perder calidad
 
 Evaluar experimentalmente:
 
@@ -109,91 +109,93 @@ Evaluar experimentalmente:
 - `context_top_k`: `8 -> 5`;
 - reranking local solo cuando el benchmark demuestre una mejora de calidad suficiente.
 
-No se acepta una reducciÃ³n de latencia que aumente respuestas sin respaldo o rompa preguntas histÃ³ricas/por periodo.
+No se acepta una reducción de latencia que aumente respuestas sin respaldo o rompa preguntas históricas/por periodo.
 
-### S7 â€” Integrar filtros temporales de ingesta v2
+### S7 — Integrar filtros temporales de ingesta v2
+
+Current authorization (verbatim): "integra las ramas para que yo pruebe, y dame preguntas y aplica las migraciones y los filtros temporalees(para que)". Local integration/application supersedes preparation-only restrictions; no remote publication or invented source classification is authorized.
 
 El filtro temporal debe aplicarse antes de ranking y reranking.
 
 Criterios:
 
 - Preguntas vigentes consultan solo documentos vigentes.
-- Preguntas histÃ³ricas pueden consultar documentos reemplazados/histÃ³ricos.
+- Preguntas históricas pueden consultar documentos reemplazados/históricos.
 - Preguntas por periodo filtran por `academic_period`.
-- Los Ã­ndices de estado y periodo deben permitir que el filtro no dependa de recorrer todo JSONB.
+- Los índices de estado y periodo deben permitir que el filtro no dependa de recorrer todo JSONB.
 
-### S8 â€” Streaming y experiencia percibida
-
-Criterios:
-
-- El endpoint streaming debe entregar el primer token tan pronto como exista contexto vÃ¡lido.
-- El tiempo de retrieval y el tiempo de generaciÃ³n deben aparecer separados en mÃ©tricas.
-- Un usuario no debe interpretar una espera de modelo como un servidor caÃ­do.
-
-### S9 â€” Enrutamiento rÃ¡pido para consultas de lugares
-
-Las preguntas de ubicaciÃ³n, bÃºsqueda de lugares y navegaciÃ³n deben resolverse por una ruta rÃ¡pida antes de invocar HyDE o la generaciÃ³n completa de Gemini.
+### S8 — Streaming y experiencia percibida
 
 Criterios:
 
-- Detectar intenciones como "dÃ³nde estÃ¡", "ubicaciÃ³n", "cÃ³mo llego", "quÃ© lugares hay" y equivalentes normalizados.
-- Consultar el catÃ¡logo activo mediante `/api/Lugar` o una funciÃ³n de dominio equivalente.
-- Resolver cada lugar a su identificador canÃ³nico y construir el enlace `/mapa?lugar={id}`.
+- El endpoint streaming debe entregar el primer token tan pronto como exista contexto válido.
+- El tiempo de retrieval y el tiempo de generación deben aparecer separados en métricas.
+- Un usuario no debe interpretar una espera de modelo como un servidor caído.
+
+### S9 — Enrutamiento rápido para consultas de lugares
+
+Las preguntas de ubicación, búsqueda de lugares y navegación deben resolverse por una ruta rápida antes de invocar HyDE o la generación completa de Gemini.
+
+Criterios:
+
+- Detectar intenciones como "dónde está", "ubicación", "cómo llego", "qué lugares hay" y equivalentes normalizados.
+- Consultar el catálogo activo mediante `/api/Lugar` o una función de dominio equivalente.
+- Resolver cada lugar a su identificador canónico y construir el enlace `/mapa?lugar={id}`.
 - No generar un enlace a partir del nombre escrito por el modelo ni inventar identificadores.
-- Si no hay coincidencia, regresar al flujo RAG normal o mostrar una bÃºsqueda sin resultado; no producir un enlace invÃ¡lido.
-- Mantener el comportamiento de categorÃ­as, coordenadas invÃ¡lidas y lugares inactivos.
+- Si no hay coincidencia, regresar al flujo RAG normal o mostrar una búsqueda sin resultado; no producir un enlace inválido.
+- Mantener el comportamiento de categorías, coordenadas inválidas y lugares inactivos.
 
-Objetivo inicial: consultas de mapa en `1â€“3 s` de extremo a extremo en warm start.
+Objetivo inicial: consultas de mapa en `1–3 s` de extremo a extremo en warm start.
 
-### S10 â€” Presupuesto de generaciÃ³n y respuesta progresiva
+### S10 — Presupuesto de generación y respuesta progresiva
 
-El flujo de generaciÃ³n debe tener un presupuesto explÃ­cito y entregar contenido progresivamente.
+El flujo de generación debe tener un presupuesto explícito y entregar contenido progresivamente.
 
 Criterios:
 
-- Configurar un lÃ­mite de tokens acorde con el tipo de pregunta; las respuestas de ubicaciÃ³n deben ser breves.
-- Desactivar pensamiento extendido cuando no aporte valor a la intenciÃ³n detectada.
+- Configurar un límite de tokens acorde con el tipo de pregunta; las respuestas de ubicación deben ser breves.
+- Desactivar pensamiento extendido cuando no aporte valor a la intención detectada.
 - Registrar `time_to_first_token` y `time_to_complete` por separado.
-- El streaming debe conservar persistencia, cancelaciÃ³n y validaciÃ³n de la respuesta final.
-- Un timeout debe devolver un error accionable y no dejar tareas asÃ­ncronas pendientes.
+- El streaming debe conservar persistencia, cancelación y validación de la respuesta final.
+- Un timeout debe devolver un error accionable y no dejar tareas asíncronas pendientes.
 
-Objetivos iniciales: preguntas simples en `8â€“20 s`; preguntas complejas con RAG en `15â€“30 s`. Son objetivos de mediciÃ³n, no garantÃ­as de Gemini.
+Objetivos iniciales: preguntas simples en `8–20 s`; preguntas complejas con RAG en `15–30 s`. Son objetivos de medición, no garantías de Gemini.
 
-## PronÃ³stico de mejora
+## Pronóstico de mejora
 
-Son estimaciones para retrieval y deben validarse con benchmark; no son garantÃ­as del tiempo total de Gemini.
+Son estimaciones para retrieval y deben validarse con benchmark; no son garantías del tiempo total de Gemini.
 
 | Mejora | Resultado esperado |
 |---|---:|
-| Warmup BGE-M3 | Elimina aproximadamente 100â€“120 s del primer usuario |
-| HyDE limitado a 2â€“3 s y fallback paralelo | Ahorro aproximado de 10â€“13 s en consultas con timeout |
-| Pool PostgreSQL | Ahorro probable de 0.1â€“0.5 s por consulta |
-| Cache de catÃ¡logo/HyDE | Ahorro de 0.1â€“15 s segÃºn el tipo de cache hit |
-| Menos candidatos/contexto | Ahorro probable de 10â€“30% en ranking/prompt |
-| Resultado combinado esperado | Retrieval caliente de aproximadamente 17 s a un rango objetivo de 3â€“8 s |
-| Router de lugares | Consultas de mapa de aproximadamente 52.6 s a un objetivo de 1â€“3 s, evitando Gemini |
-| LÃ­mite de tokens + streaming | Menor tiempo de generaciÃ³n y primer contenido visible en pocos segundos |
+| Warmup BGE-M3 | Elimina aproximadamente 100–120 s del primer usuario |
+| HyDE limitado a 2–3 s y fallback paralelo | Ahorro aproximado de 10–13 s en consultas con timeout |
+| Pool PostgreSQL | Ahorro probable de 0.1–0.5 s por consulta |
+| Cache de catálogo/HyDE | Ahorro de 0.1–15 s según el tipo de cache hit |
+| Menos candidatos/contexto | Ahorro probable de 10–30% en ranking/prompt |
+| Resultado combinado esperado | Retrieval caliente de aproximadamente 17 s a un rango objetivo de 3–8 s |
+| Router de lugares | Consultas de mapa de aproximadamente 52.6 s a un objetivo de 1–3 s, evitando Gemini |
+| Límite de tokens + streaming | Menor tiempo de generación y primer contenido visible en pocos segundos |
 
-Para el primer usuario, el objetivo razonable es pasar de aproximadamente 128 s a menos de 10 s de retrieval. El tiempo total de respuesta seguirÃ¡ dependiendo de Gemini, por lo que no se debe prometer un tiempo final hasta medir generaciÃ³n.
+Para el primer usuario, el objetivo razonable es pasar de aproximadamente 128 s a menos de 10 s de retrieval. El tiempo total de respuesta seguirá dependiendo de Gemini, por lo que no se debe prometer un tiempo final hasta medir generación.
 
-## Orden de implementaciÃ³n
+## Orden de implementación
 
-- T1 â€” S1 â€” inline â€” mÃ©tricas y benchmark reproducible â€” parcial: instrumentaciÃ³n verificada; baseline real pendiente; commit: `1d0f3bd` (305 authored changed lines).
-- T2 â€” S2 â€” delegated (parallel independent unit) â€” warmup/readiness de embeddings â€” implemented in `d09983a`, independent verification pending â€” RED/GREEN: 5 readiness tests; isolated candidate suite passed; startup default warmup enabled; health reports model/database separately.
-- T3 â€” S3 â€” HyDE con timeout y ejecuciÃ³n no bloqueante â€” complete â€” RED: `tests.test_rag.RetrievalTests.test_lexical_search_starts_while_hyde_is_pending` failed before implementation; GREEN: focused test and full suite pass.
-- T4 â€” S4/S5 â€” delegated retrieval cache + inline catalog/pool seam â€” implemented in `e55c3a8`, `52e71c2`, `a1a8f0f`; independent/live DB verification pending â€” 12 retrieval-cache tests, catalog/pool tests; pool 4 connections/16 queued, chat capacity 4; no final-answer caching.
-- T5 â€” S6 â€” tuning de candidatos y reranking â€” pendiente.
-- T6 ? S7 ? inline Python + delegated isolated MiUni schema ? migration applied on local5433 with backup; strict temporal filtering enabled and independently verified; all488 documents remain unclassified, so answer-quality rollout remains pending.
-- T7 â€” S8 â€” inline â€” streaming y mediciÃ³n de primer token â€” Python instrumentation implemented; integrated MiUni persistence/cancellation and real latency pending.
-- T8 â€” S9 â€” router rÃ¡pido de lugares y enlaces canÃ³nicos â€” complete â€” RED: `ChatPlaceRouterTests` failed before implementation; GREEN: 5 focused tests and full MiUni suite pass. The backend fast path only answers when the question contains an exact active catalog name and a location intent; otherwise it preserves RAG.
-- T9 â€” S10 â€” inline â€” presupuesto de generaciÃ³n, streaming y timeout observable â€” implemented in `a1a8f0f`, independent verification pending â€” output cap 1024, generation deadline 30s, 504 before headers, provider close on interruption; 5 focused tests passed.
+- T1 — S1 — inline — métricas y benchmark reproducible — parcial: instrumentación verificada; baseline real pendiente; commit: `1d0f3bd` (305 authored changed lines).
+- T2 — S2 — delegated (parallel independent unit) — warmup/readiness de embeddings — implemented in `d09983a`, independent verification pending — RED/GREEN: 5 readiness tests; isolated candidate suite passed; startup default warmup enabled; health reports model/database separately.
+- T3 — S3 — HyDE con timeout y ejecución no bloqueante — complete — RED: `tests.test_rag.RetrievalTests.test_lexical_search_starts_while_hyde_is_pending` failed before implementation; GREEN: focused test and full suite pass.
+- T4 — S4/S5 — delegated retrieval cache + inline catalog/pool seam — implemented in `e55c3a8`, `52e71c2`, `a1a8f0f`; independent/live DB verification pending — 12 retrieval-cache tests, catalog/pool tests; pool 4 connections/16 queued, chat capacity 4; no final-answer caching.
+- T5 — S6 — tuning de candidatos y reranking — pendiente.
+- T6 — S7 — inline Python + delegated isolated MiUni schema — migration applied on local5433 with backup; strict temporal filtering enabled and independently verified; all488 documents remain unclassified, so answer-quality rollout remains pending.
+- T7 — S8 — inline — streaming y medición de primer token — Python instrumentation implemented; integrated MiUni persistence/cancellation and real latency pending.
+- T8 — S9 — router rápido de lugares y enlaces canónicos — complete — RED: `ChatPlaceRouterTests` failed before implementation; GREEN: 5 focused tests and full MiUni suite pass. The backend fast path only answers when the question contains an exact active catalog name and a location intent; otherwise it preserves RAG.
+- T9 — S10 — inline — presupuesto de generación, streaming y timeout observable — implemented in `a1a8f0f`, independent verification pending — output cap 1024, generation deadline 30s, 504 before headers, provider close on interruption; 5 focused tests passed.
 
 ## Fuera de alcance inicial
 
 - Cambiar BGE-M3 por otro modelo antes de medir las optimizaciones de bajo riesgo.
 - Reescribir PostgreSQL o reemplazar pgvector.
-- Eliminar documentos histÃ³ricos.
-- Optimizar la interfaz visual antes de medir retrieval y generaciÃ³n por separado.
+- Eliminar documentos históricos.
+- Optimizar la interfaz visual antes de medir retrieval y generación por separado.
 
 ## Local delivery slices
 
@@ -224,17 +226,17 @@ temporal SQL must remain disabled until the external schema/classification rollo
 
 ## Log
 
-- L1 â€” User request (verbatim): "Haz un spec sobre la optimizacion del chatbot o combinalo con la ingesta como lo veas mejor, yo lo veo mejor separado y dime cuanta mejora puedo esperar"
-- L2 â€” Decision: keep chatbot optimization as a separate spec because it has an independent latency benchmark and deployment cadence, while sharing temporal-filter contracts with ingestion v2.
-- L3 â€” Evidence: live retrieval metrics showed cold embedding load near 116 seconds, HyDE near 15 seconds, and database retrieval below 0.5 seconds per branch.
-- L4 â€” T2 implementation: added opt-in `RAG_WARMUP_ON_STARTUP`, a `DenseEmbedder.warmup()` method, and FastAPI lifespan warmup; local `.env` enables the warmup for development. Tests keep startup warmup disabled while exercising endpoint behavior.
-- L5 â€” T3 implementation: lexical retrieval now starts while HyDE is pending, and the default HyDE timeout is reduced from 15 seconds to 3 seconds; fallback behavior remains the original question.
-- L6 â€” Independent verification: `compileall` passed; `unittest discover` passed with 30 tests and 6 skips; `git diff --check` passed; a timeout probe found no pending asyncio tasks. Advisory: task cleanup is runtime-probed but not yet pinned by a dedicated regression test.
-- L7 â€” Integrated smoke verification: RAG, MiUni API, and frontend are running; login returned HTTP 200, the first cold chat exceeded the API client timeout during model startup, and a warm retry returned HTTP 200 in approximately 15.5 seconds with a generated answer. The startup warmup must complete before testing chat requests.
-- L8 â€” Map-link incident: `/api/Lugar` returned HTTP 500 because the development database had not applied migrations `20261103160000_NegociosAmbulantes` and `20261103180000_VerificarCuentasExistentes`; the API model queried missing column `lugar.es_ambulante`. Applied both migrations, then verified `/api/Lugar` through API and Vite proxy returned HTTP 200 and `/mapa?lugar={id}` returned HTTP 200.
-- L9 â€” User request (verbatim): "como podemos bajarlo?" followed by "haz un spec de eso". Accepted direction: prioritize a fast intent router for location questions, then generation budgets and streaming; retain full RAG for documentary and complex questions.
-- L10 â€” T8 implementation: added `ChatPlaceRouter` and integrated it into synchronous and streaming chat. Exact active place questions now bypass RAG and return the canonical catalog name for the existing frontend map-link resolver. Full MiUni tests passed: 68 passed, 8 skipped; frontend build passed.
-- L11 â€” Runtime verification: the failed manual test was caused by starting the API with `appsettings.Development` on port 5432, while the intended development database is on port 5433 and lacked the pulled migrations. Restarted with `ConnectionStrings__MiUniDb`, applied the three post-pull migrations, and verified synchronous and streaming location chat return HTTP 200 in under 0.1 s.
+- L1 — User request (verbatim): "Haz un spec sobre la optimizacion del chatbot o combinalo con la ingesta como lo veas mejor, yo lo veo mejor separado y dime cuanta mejora puedo esperar"
+- L2 — Decision: keep chatbot optimization as a separate spec because it has an independent latency benchmark and deployment cadence, while sharing temporal-filter contracts with ingestion v2.
+- L3 — Evidence: live retrieval metrics showed cold embedding load near 116 seconds, HyDE near 15 seconds, and database retrieval below 0.5 seconds per branch.
+- L4 — T2 implementation: added opt-in `RAG_WARMUP_ON_STARTUP`, a `DenseEmbedder.warmup()` method, and FastAPI lifespan warmup; local `.env` enables the warmup for development. Tests keep startup warmup disabled while exercising endpoint behavior.
+- L5 — T3 implementation: lexical retrieval now starts while HyDE is pending, and the default HyDE timeout is reduced from 15 seconds to 3 seconds; fallback behavior remains the original question.
+- L6 — Independent verification: `compileall` passed; `unittest discover` passed with 30 tests and 6 skips; `git diff --check` passed; a timeout probe found no pending asyncio tasks. Advisory: task cleanup is runtime-probed but not yet pinned by a dedicated regression test.
+- L7 — Integrated smoke verification: RAG, MiUni API, and frontend are running; login returned HTTP 200, the first cold chat exceeded the API client timeout during model startup, and a warm retry returned HTTP 200 in approximately 15.5 seconds with a generated answer. The startup warmup must complete before testing chat requests.
+- L8 — Map-link incident: `/api/Lugar` returned HTTP 500 because the development database had not applied migrations `20261103160000_NegociosAmbulantes` and `20261103180000_VerificarCuentasExistentes`; the API model queried missing column `lugar.es_ambulante`. Applied both migrations, then verified `/api/Lugar` through API and Vite proxy returned HTTP 200 and `/mapa?lugar={id}` returned HTTP 200.
+- L9 — User request (verbatim): "como podemos bajarlo?" followed by "haz un spec de eso". Accepted direction: prioritize a fast intent router for location questions, then generation budgets and streaming; retain full RAG for documentary and complex questions.
+- L10 — T8 implementation: added `ChatPlaceRouter` and integrated it into synchronous and streaming chat. Exact active place questions now bypass RAG and return the canonical catalog name for the existing frontend map-link resolver. Full MiUni tests passed: 68 passed, 8 skipped; frontend build passed.
+- L11 — Runtime verification: the failed manual test was caused by starting the API with `appsettings.Development` on port 5432, while the intended development database is on port 5433 and lacked the pulled migrations. Restarted with `ConnectionStrings__MiUniDb`, applied the three post-pull migrations, and verified synchronous and streaming location chat return HTTP 200 in under 0.1 s.
 
 - L12 - User request (verbatim): "Hola ejecuta el spec de optimizacion del chatbot". User approved including MiUni.Api changes and preparing migrations without applying them: "si".
 - L13 - Execution plan: preserve existing dirty warmup/HyDE edits; instrument and test observability first, then readiness, caches/pool and generation budgets. Temporal migration work is preparation-only. Existing T2 completion is provisional because readiness is absent. T5 defaults remain unchanged until measured quality evidence exists. Independent verification is required for shared helpers/concurrency. No project skill registry was found.
@@ -262,7 +264,7 @@ temporal SQL must remain disabled until the external schema/classification rollo
 - L30 - Subsequent independent Python verification passed: ten baseline/current HTTP outcomes identical, nineteen runtime probes and two durable tests passed; prompt qualifiers preserved. Added the durable probes and made TEMP column setup compatible with either pre/post-migration copies. Full Python suite71/71 passed with real PostgreSQL and no skips.
 - L31 - Actual map benchmark9/9 HTTP200, canonical links valid, one catalog miss/eight hits: complete4.83-73.29ms, median6.94ms (direct Python, not integrated UI). Offline startup/readiness151.878s measured separately. Public document/chunk fingerprints unchanged. Existing benchmark children terminated.
 - L32 - MiUni source seam: profile augmentation prevented a raw listing from reaching the Python fast router. In the isolated worktree, adopted the existing router/controller/test changes without editing the original checkout; observed RED3 listing/mixed-question cases and RED2 coordinate cases, then fixed raw listing, documentary fallback and map eligibility. Full isolated suite97pass/8skip; independent offline routing probes passed. Stream interruption tests assert partial delivered text but no persisted assistant. Local commits:41ba9ca (stream regression tests),a3f2407 (router fix), following prepared schemafaaeba9. No migration applied.
-- L33 - User authorization (verbatim): "si", accepting "4 consultas de prueba â€”simples y complejas, hasta 8 llamadas contando HyDEâ€”" with the configured `.env` API_KEY to Google Gemini. Exactly4 chats completed HTTP200 with7 guarded transport attempts (3HyDE,4generation); all generationSTOP. First-text/complete seconds: simple16.056/16.463, repeated3.407/3.622, complex4.302/6.985, repeated1.019/2.611. The last retrieval was0.183s with all input caches hit. Startup48.966s separate. Benchmark-only forced HTTPX to count the SDK's retry attempts; production unchanged. No extra model calls, migrations or stored-data changes. One additional citation domain was verified inside the exact retrieved chunks; semantic accuracy remains unevaluated. See docs/chat-optimization-validation.md and ignored .cache artifacts; do not claim population percentiles or controlled baseline improvement.
+- L33 - User authorization (verbatim): "si", accepting "4 consultas de prueba —simples y complejas, hasta 8 llamadas contando HyDE—" with the configured `.env` API_KEY to Google Gemini. Exactly4 chats completed HTTP200 with7 guarded transport attempts (3HyDE,4generation); all generationSTOP. First-text/complete seconds: simple16.056/16.463, repeated3.407/3.622, complex4.302/6.985, repeated1.019/2.611. The last retrieval was0.183s with all input caches hit. Startup48.966s separate. Benchmark-only forced HTTPX to count the SDK's retry attempts; production unchanged. No extra model calls, migrations or stored-data changes. One additional citation domain was verified inside the exact retrieved chunks; semantic accuracy remains unevaluated. See docs/chat-optimization-validation.md and ignored .cache artifacts; do not claim population percentiles or controlled baseline improvement.
 
 - L34 - User authorization (verbatim): "integra las ramas para que yo pruebe, y dame preguntas y aplica las migraciones y los filtros temporalees(para que)". Supersedes prior preparation-only restriction. Local integration uses feat/chatbot-optimization in both original repositories; main unchanged. MiUni original four dirty router files preserved in checkpoint3f16ec4 on backup/chatbot-pre-integration-20261116; run logs preserved. RAG fast-forwardedf0cc2f3, MiUni integrateda3f2407. No remote operation.
 - L35 - All17 predecessors already applied on intended local5433; offline SQL reviewed and EF model drift check passed. Full pg_dump backup .cache/backups/pre-temporal-20261116-221320.dump (8343622bytes) preceded EF application of only20261116120000_DocumentTemporalMetadata. Pre/post488documents and1379chunks counts and content fingerprints identical (ignored proof JSON alongside backup). Local .env enables RAG_TEMPORAL_FILTER_ENABLED=true. All488documents remain desconocido; no validity/period is fabricated. Strict retrieval therefore has zero eligible institutional documents until evidence-based classification, while catalog routing remains available. Risk: item1 (stored schema), item5 (local runtime configuration). Independent verification pending. Engram mirror blocked by missing authoritative runtime identity; do not attempt writes.

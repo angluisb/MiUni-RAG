@@ -18,6 +18,9 @@ async def chat_endpoint(request: QueryRequest) -> QueryResponse:
     question = _normalize_question(request.question)
     try:
         generated_answer = await get_chat_response(question)
+    except TimeoutError as exc:
+        raise HTTPException(status_code=504,
+                            detail="La respuesta excedio el tiempo limite; intenta una pregunta mas breve.") from exc
     except Exception as exc:
         logger.error("Chat fallo (%s)", type(exc).__name__)
         raise HTTPException(
@@ -43,6 +46,10 @@ async def chat_stream_endpoint(request: QueryRequest) -> StreamingResponse:
         first = await anext(stream)
     except StopAsyncIteration as exc:
         raise HTTPException(status_code=502, detail="El modelo devolvio una respuesta vacia.") from exc
+    except TimeoutError as exc:
+        await stream.aclose()
+        raise HTTPException(status_code=504,
+                            detail="La respuesta excedio el tiempo limite; intenta una pregunta mas breve.") from exc
     except Exception as exc:
         logger.error("Chat stream fallo (%s)", type(exc).__name__)
         raise HTTPException(status_code=502, detail="No se pudo obtener respuesta del modelo.") from exc

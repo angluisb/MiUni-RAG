@@ -29,9 +29,9 @@ class CampusTests(unittest.TestCase):
         duplicate = {**PLACES[0], "id": "otra-central"}
         self.assertIsNone(location_answer("biblioteca central", PLACES + [duplicate]))
 
-    def test_document_and_route_questions_still_need_the_existing_pipeline(self):
+    def test_document_and_mixed_questions_still_need_the_existing_pipeline(self):
         for question in (
-            "Qué becas puedo pedir?", "Cómo llegar a Biblioteca Central?",
+            "Qué becas puedo pedir?",
             "Dónde está la Biblioteca Central y a qué hora abre?",
             "Cuál es el horario de la Biblioteca Central?",
         ):
@@ -39,6 +39,22 @@ class CampusTests(unittest.TestCase):
 
 
 class CampusChatTests(unittest.IsolatedAsyncioTestCase):
+    async def test_navigation_and_catalog_listing_bypass_model_with_canonical_links(self):
+        retriever = Mock()
+        retriever.repository.list_campus_places.return_value = PLACES
+        with patch.object(llm_service.Config, "RAG_ENABLED", True), \
+             patch.object(llm_service, "_get_retriever", return_value=retriever), \
+             patch.object(llm_service, "_get_llm") as llm:
+            for question in ("¿Cómo llego a Biblioteca Central?", "Cómo llegar a Biblioteca Central?"):
+                answer = await llm_service.get_chat_response(question)
+                self.assertIn("/mapa?lugar=central", answer)
+            answer = await llm_service.get_chat_response("¿Qué lugares hay en el campus?")
+            self.assertIn("/mapa?lugar=central", answer)
+            self.assertIn("/mapa?lugar=medicina", answer)
+            self.assertNotIn("/mapa?lugar=Biblioteca", answer)
+        llm.assert_not_called()
+        retriever.retrieve.assert_not_called()
+
     async def test_json_and_stream_use_real_catalog_without_calling_model_or_embeddings(self):
         retriever = Mock()
         retriever.repository.list_campus_places.return_value = PLACES

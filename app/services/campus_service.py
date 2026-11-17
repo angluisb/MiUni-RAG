@@ -15,7 +15,7 @@ def location_target(question: str) -> str | None:
     question = normalize(question)
     match = re.fullmatch(
         r"(?:donde (?:esta|queda|se ubica|se encuentra)|ubicacion de|"
-        r"muestrame en el mapa|ubica en el mapa) "
+        r"muestrame en el mapa|ubica en el mapa|como (?:llego|llegar) a) "
         r"(?:(?:el|la) )?(.+?)(?: por favor)?",
         question,
     )
@@ -26,6 +26,23 @@ def location_target(question: str) -> str | None:
     if re.search(r"\b(y|horario|horarios|requisitos|tramite|tramites|abre|cierra)\b", target):
         return None
     return target
+
+
+def is_place_listing(question: str) -> bool:
+    return bool(re.fullmatch(
+        r"(?:(?:que|cuales) lugares (?:hay|estan disponibles)(?: en (?:el )?campus)?|"
+        r"(?:lista|muestra|muestrame)(?: los)? lugares(?: del campus)?)",
+        normalize(question)))
+
+
+def place_listing_answer(places: list[dict], limit: int = 10) -> str:
+    if not places:
+        return "No hay lugares activos disponibles en el mapa del campus."
+    lines = [f"Lugares disponibles en el mapa (mostrando {min(limit, len(places))} de {len(places)}):"]
+    for place in places[:limit]:
+        label = re.sub(r"([\\`*_{}\[\]()<>!#])", r"\\\1", place["nombre"])
+        lines.append(f"- [{label}]({place['map_url']})")
+    return "\n".join(lines)
 
 
 def location_answer(target: str, places: list[dict]) -> str | None:

@@ -46,6 +46,13 @@ class Settings(BaseSettings):
     RAG_EMBEDDING_CACHE_TTL_SECONDS: float = Field(default=600, ge=0)
     RAG_HYDE_PROMPT_VERSION: str = "hyde-v1"
 
+    LLM_MAX_OUTPUT_TOKENS: int = Field(default=1024, ge=128, le=8192)
+    LLM_GENERATION_TIMEOUT_SECONDS: float = Field(default=30, gt=0, le=180)
+    LLM_THINKING_LEVEL: Literal["minimal", "low", "medium", "high"] = "minimal"
+    CHAT_MAX_CONCURRENT_REQUESTS: int = Field(default=4, ge=1, le=32)
+    CHAT_QUEUE_TIMEOUT_SECONDS: float = Field(default=2, gt=0, le=30)
+    RAG_CATALOG_CACHE_TTL_SECONDS: float = Field(default=15, ge=0)
+
     model_config = SettingsConfigDict(
         env_file=ROOT / ".env",
         env_file_encoding="utf-8",

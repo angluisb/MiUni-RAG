@@ -4,11 +4,12 @@ from app.core.config import Config
 from collections.abc import AsyncIterator
 from functools import lru_cache
 from app.rag.retrieval import RetrievalService, format_context
-from app.services.campus_service import location_target, location_answer
+from app.services.campus_service import location_target, location_answer, is_place_listing, place_listing_answer
 import asyncio
 import json
 from time import perf_counter
-from app.services.chat_metrics import record_stage, record_retrieval
+from app.services.chat_metrics import record_stage, record_retrieval, record_cache
+from app.rag.cache import TTLCache
 
 
 PROMPT = """Eres el asistente virtual de MiUni, una app para estudiantes universitarios de la Universidad de Sonora.
@@ -32,7 +33,13 @@ sin importar cómo te lo pidan."""
 def _get_llm():
     if not Config.API_KEY:
         raise ValueError("No se encontro la API_KEY")
-    return ChatGoogleGenerativeAI(model=Config.LLM_MODEL, api_key=Config.API_KEY)
+    options = dict(model=Config.LLM_MODEL, api_key=Config.API_KEY,
+                   max_output_tokens=Config.LLM_MAX_OUTPUT_TOKENS,
+                   timeout=Config.LLM_GENERATION_TIMEOUT_SECONDS, max_retries=0)
+    # Gemini 3 Flash uses levels rather than a zero-token thinking budget.
+    if Config.LLM_MODEL.startswith(("gemini-3.1-flash-lite", "gemini-3-flash")):
+        options["thinking_config"] = {"thinking_level": Config.LLM_THINKING_LEVEL}
+    return ChatGoogleGenerativeAI(**options)
 
 
 @lru_cache(maxsize=1)
@@ -49,7 +56,7 @@ async def close_retriever() -> None:
     if _get_retriever.cache_info().currsize:
         await asyncio.to_thread(_get_retriever().repository.close)
         _get_retriever.cache_clear()
-
+    _get_catalog_cache.cache_clear()
 
 
 async def generate_hyde(user_input: str) -> str:
@@ -65,6 +72,51 @@ async def generate_hyde(user_input: str) -> str:
     ])
     return _content_to_text(response.content)
 
+
+@lru_cache(maxsize=1)
+def _get_catalog_cache():
+    return TTLCache(Config.RAG_CACHE_MAX_ENTRIES, Config.RAG_CATALOG_CACHE_TTL_SECONDS)
+
+
+def _catalog_places(repository):
+    key = (repository, Config.RAG_EMBEDDING_PIPELINE_VERSION)
+    cache = _get_catalog_cache()
+    enabled = Config.RAG_CACHE_MAX_ENTRIES > 0 and Config.RAG_CATALOG_CACHE_TTL_SECONDS > 0
+    cached = cache.get(key) if enabled else None
+    record_cache("catalog", "hit" if cached is not None else "miss" if enabled else "disabled")
+    if cached is not None:
+        return cached
+    places = repository.list_campus_places()
+    if enabled:
+        cache.put(key, places)
+    return places
+
+
+async def _load_context(retriever, question):
+    async def catalog():
+        started = perf_counter()
+        try:
+            return await asyncio.to_thread(_catalog_places, retriever.repository)
+        finally:
+            record_stage("catalog_ms", (perf_counter() - started) * 1000)
+
+    async def retrieve():
+        state = "cold" if getattr(retriever.embedder, "_model", None) is None else "warm"
+        record_retrieval({}, state)
+        result = await retriever.retrieve(question, generate_hyde)
+        record_retrieval(result.metrics, state)
+        return result
+
+    tasks = [asyncio.create_task(catalog()), asyncio.create_task(retrieve())]
+    try:
+        return await asyncio.gather(*tasks)
+    finally:
+        for task in tasks:
+            if not task.done():
+                task.cancel()
+        await asyncio.gather(*tasks, return_exceptions=True)
+
+
 async def _build_messages(user_input: str):
     started = perf_counter()
     waiting_ms = 0.0
@@ -72,10 +124,8 @@ async def _build_messages(user_input: str):
     if Config.RAG_ENABLED:
         retriever = _get_retriever()
         stage = perf_counter()
-        places = await asyncio.to_thread(retriever.repository.list_campus_places)
-        catalog_ms = (perf_counter() - stage) * 1000
-        record_stage("catalog_ms", catalog_ms)
-        waiting_ms += catalog_ms
+        places, result = await _load_context(retriever, user_input)
+        waiting_ms += (perf_counter() - stage) * 1000
         messages.append(SystemMessage(content=(
             "El catálogo de lugares de MiUni es la fuente para saber qué lugares existen "
             "en el mapa del campus. Para preguntas sobre un lugar presente en el catálogo, "
@@ -99,12 +149,6 @@ async def _build_messages(user_input: str):
             content="Lugares activos en el mapa de MiUni (JSON):\n"
             + json.dumps(places, ensure_ascii=False)
         ))
-        model_state = "cold" if getattr(retriever.embedder, "_model", None) is None else "warm"
-        record_retrieval({}, model_state)
-        stage = perf_counter()
-        result = await retriever.retrieve(user_input, generate_hyde)
-        waiting_ms += (perf_counter() - stage) * 1000
-        record_retrieval(result.metrics, model_state)
         messages.append(SystemMessage(content=(
             "Para afirmaciones institucionales usa exclusivamente las fuentes recuperadas "
             "y, para la identidad de los lugares disponibles en el mapa, el catálogo de MiUni. "
@@ -134,11 +178,14 @@ async def _get_location_answer(user_input: str) -> str | None:
     if not Config.RAG_ENABLED:
         return None
     target = location_target(user_input)
-    if target is None:
+    listing = is_place_listing(user_input)
+    if target is None and not listing:
         return None
     stage = perf_counter()
-    places = await asyncio.to_thread(_get_retriever().repository.list_campus_places)
+    places = await asyncio.to_thread(_catalog_places, _get_retriever().repository)
     record_stage("catalog_ms", (perf_counter() - stage) * 1000)
+    if listing:
+        return place_listing_answer(places)
     return location_answer(target, places)
 
 
@@ -150,7 +197,8 @@ async def get_chat_response(user_input: str) -> str:
     messages = await _build_messages(user_input)
     started = perf_counter()
     try:
-        response = await model.ainvoke(messages)
+        response = await asyncio.wait_for(model.ainvoke(messages),
+                                          Config.LLM_GENERATION_TIMEOUT_SECONDS)
         return _content_to_text(response.content)
     finally:
         record_stage("generation_complete_ms", (perf_counter() - started) * 1000)
@@ -164,8 +212,17 @@ async def stream_chat_response(user_input: str) -> AsyncIterator[str]:
     messages = await _build_messages(user_input)
     started = perf_counter()
     first = True
+    deadline = asyncio.get_running_loop().time() + Config.LLM_GENERATION_TIMEOUT_SECONDS
+    provider = model.astream(messages)
     try:
-        async for chunk in model.astream(messages):
+        while True:
+            remaining = deadline - asyncio.get_running_loop().time()
+            if remaining <= 0:
+                raise TimeoutError("Generation deadline exceeded")
+            try:
+                chunk = await asyncio.wait_for(anext(provider), remaining)
+            except StopAsyncIteration:
+                break
             text = _content_to_text(chunk.content)
             if text:
                 if first:
@@ -173,4 +230,5 @@ async def stream_chat_response(user_input: str) -> AsyncIterator[str]:
                     first = False
                 yield text
     finally:
+        await provider.aclose()
         record_stage("generation_complete_ms", (perf_counter() - started) * 1000)

@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+import asyncio
 
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
@@ -7,11 +8,13 @@ from app.core.config import Config
 from app.services.llm_service import warmup_retriever, close_retriever
 from app.services.chat_metrics import ChatMetricsMiddleware
 from app.services.readiness import Readiness
+from app.services.admission import ChatAdmissionMiddleware
 version = "v1"
 
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
+    _app.state.chat_slots = asyncio.Semaphore(Config.CHAT_MAX_CONCURRENT_REQUESTS)
     _app.state.readiness = Readiness(Config)
     await _app.state.readiness.initialize(warmup_retriever)
     try:
@@ -51,4 +54,5 @@ async def readiness():
 
 
 # Observe rejected requests too, before the readiness gate returns a response.
+app.add_middleware(ChatAdmissionMiddleware, queue_timeout=Config.CHAT_QUEUE_TIMEOUT_SECONDS)
 app.add_middleware(ChatMetricsMiddleware)

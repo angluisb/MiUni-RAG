@@ -12,7 +12,7 @@ Configuración local comprobada el 19 de octubre de 2026:
 | Recuperación léxica | PostgreSQL full-text en español, `websearch_to_tsquery` y `ts_rank_cd`, índice GIN; no es BM25 |
 | Búsqueda híbrida | Hasta 30 candidatos vectoriales y 30 léxicos |
 | Fusión | Reciprocal Rank Fusion, constante `k=60` |
-| HyDE | Activo: pasaje hipotético de 3 oraciones para buscar vectores; timeout de 15 s y fallback a la pregunta original |
+| HyDE | Activo: pasaje hipotético de 3 oraciones para buscar vectores; timeout predeterminado de 3 s y fallback a la pregunta original |
 | Contexto final | Hasta 8 fragmentos; la rama léxica siempre usa la pregunta original |
 | Generación | Gemini `gemini-3.1-flash-lite`, con contexto documental e instrucciones de citar fuentes |
 | Reranking | Implementado, desactivado |
@@ -146,7 +146,9 @@ muestras por etapa, estado del modelo, caché y resultado. Las ventanas son loca
 al proceso y se reinician con él; no son métricas agregadas entre workers.
 `model_state` indica `cold` o `warm` según los pesos observados al entrar a retrieval;
 `not_used` corresponde a rutas sin retrieval. No equivale al primer request del proceso.
-Actualmente `cache=disabled`: no se afirma que haya caché de preguntas.
+`cache_stages` distingue hit/miss/disabled por catálogo, HyDE y embedding;
+`cache` resume miss si alguna etapa falla la caché, hit si hay aciertos sin fallos,
+y disabled si ninguna etapa usó caché. No se cachean respuestas completas.
 Los errores y streams interrumpidos no se mezclan con respuestas satisfactorias.
 Etapas desactivadas pueden tener duración cero en las métricas de retrieval.
 

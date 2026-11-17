@@ -3,16 +3,23 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import unicodedata
 from dataclasses import replace
 from time import perf_counter
 from uuid import uuid4
 
 from app.core.config import Settings
+from app.rag.cache import TTLCache
 from app.rag.embeddings import DenseEmbedder, LocalReranker
 from app.rag.models import RetrievalResult, SearchHit
 from app.rag.repository import RagRepository
 
 logger = logging.getLogger("uvicorn.error.rag")
+
+
+def _normalized_cache_input(text: str) -> str:
+    # Preserve accents, punctuation, digits and word boundaries.
+    return " ".join(unicodedata.normalize("NFC", text).casefold().split())
 
 
 def reciprocal_rank_fusion(rankings: list[list[SearchHit]], k: int = 60) -> list[SearchHit]:
@@ -38,6 +45,11 @@ class RetrievalService:
         self.repository = repository or RagRepository(settings)
         self.embedder = embedder or DenseEmbedder(settings)
         self.reranker = reranker or LocalReranker(settings)
+        capacity = getattr(settings, "RAG_CACHE_MAX_ENTRIES", 128)
+        self._hyde_cache = TTLCache(
+            capacity, getattr(settings, "RAG_HYDE_CACHE_TTL_SECONDS", 120))
+        self._embedding_cache = TTLCache(
+            capacity, getattr(settings, "RAG_EMBEDDING_CACHE_TTL_SECONDS", 600))
 
     async def retrieve(self, question: str, hyde_generator=None) -> RetrievalResult:
         settings = self.settings
@@ -51,20 +63,12 @@ class RetrievalService:
                    "vector_top_n": settings.RAG_VECTOR_TOP_N,
                    "lexical_top_n": settings.RAG_LEXICAL_TOP_N,
                    "context_top_k": settings.RAG_CONTEXT_TOP_K}
-        query_text = question
-        if settings.RAG_HYDE_ENABLED and hyde_generator:
-            stage = perf_counter()
-            try:
-                hypothetical = await asyncio.wait_for(
-                    hyde_generator(question), timeout=settings.RAG_HYDE_TIMEOUT_SECONDS)
-                if hypothetical.strip():
-                    query_text = hypothetical.strip()
-                    metrics["hyde_used"] = True
-            except Exception:
-                # HyDE is an enhancement; an unavailable LLM must not prevent retrieval.
-                metrics["hyde_failed"] = True
-                logger.warning("HyDE fallo; se recuperara usando la pregunta original")
-            metrics["hyde_ms"] = (perf_counter() - stage) * 1000
+        hyde_cache_enabled = (getattr(settings, "RAG_CACHE_MAX_ENTRIES", 128) > 0
+                              and self._hyde_cache.ttl_seconds > 0)
+        embedding_cache_enabled = (getattr(settings, "RAG_CACHE_MAX_ENTRIES", 128) > 0
+                                   and self._embedding_cache.ttl_seconds > 0)
+        metrics["hyde_cache"] = "disabled"
+        metrics["embedding_cache"] = "miss" if embedding_cache_enabled else "disabled"
 
         async def timed_call(key, fn, *args):
             stage = perf_counter()
@@ -72,22 +76,72 @@ class RetrievalService:
             metrics[key] = (perf_counter() - stage) * 1000
             return result
 
+        query_text = question
         async def vector_branch():
-            embeddings = await timed_call("embedding_ms", self.embedder.encode, [query_text])
+            embedding_key = (_normalized_cache_input(query_text), settings.RAG_EMBEDDING_MODEL,
+                             settings.RAG_EMBEDDING_PIPELINE_VERSION)
+            embedding = self._embedding_cache.get(embedding_key) if embedding_cache_enabled else None
+            if embedding is not None:
+                metrics["embedding_cache"] = "hit"
+            else:
+                embeddings = await timed_call("embedding_ms", self.embedder.encode, [query_text])
+                embedding = embeddings[0]
+                if embedding_cache_enabled and embedding is not None and len(embedding):
+                    self._embedding_cache.put(embedding_key, embedding)
             return await timed_call("vector_search_ms", self.repository.vector_search,
-                                    embeddings[0], settings.RAG_VECTOR_TOP_N)
+                                    embedding, settings.RAG_VECTOR_TOP_N)
 
-        if settings.RAG_HYBRID_SEARCH_ENABLED:
-            vector, lexical = await asyncio.gather(
-                vector_branch(),
-                timed_call("lexical_search_ms", self.repository.lexical_search,
-                           question, settings.RAG_LEXICAL_TOP_N),
-            )
-            stage = perf_counter()
-            hits = reciprocal_rank_fusion([vector, lexical], settings.RAG_RRF_K)
-            metrics["rrf_ms"] = (perf_counter() - stage) * 1000
-        else:
-            hits = await vector_branch()
+        tasks = []
+        try:
+            lexical_task = None
+            if settings.RAG_HYBRID_SEARCH_ENABLED:
+                lexical_task = asyncio.create_task(
+                    timed_call("lexical_search_ms", self.repository.lexical_search,
+                               question, settings.RAG_LEXICAL_TOP_N))
+                tasks.append(lexical_task)
+            if settings.RAG_HYDE_ENABLED and hyde_generator:
+                stage = perf_counter()
+                hyde_key = (_normalized_cache_input(question), settings.LLM_MODEL,
+                            settings.RAG_EMBEDDING_PIPELINE_VERSION,
+                            getattr(settings, "RAG_HYDE_PROMPT_VERSION", "hyde-v1"),
+                            settings.RAG_HYDE_SENTENCES)
+                hypothetical = self._hyde_cache.get(hyde_key) if hyde_cache_enabled else None
+                if hyde_cache_enabled:
+                    metrics["hyde_cache"] = "hit" if hypothetical is not None else "miss"
+                try:
+                    if hypothetical is None:
+                        hypothetical = await asyncio.wait_for(
+                            hyde_generator(question), timeout=settings.RAG_HYDE_TIMEOUT_SECONDS)
+                    if not isinstance(hypothetical, str):
+                        raise ValueError("HyDE returned non-text content")
+                    if hypothetical.strip():
+                        query_text = hypothetical.strip()
+                        metrics["hyde_used"] = True
+                        if hyde_cache_enabled:
+                            self._hyde_cache.put(hyde_key, hypothetical.strip())
+                except Exception:
+                    # HyDE is optional; provider failure preserves the original query.
+                    metrics["hyde_failed"] = True
+                    logger.warning("HyDE fallo; se recuperara usando la pregunta original")
+                metrics["hyde_ms"] = (perf_counter() - stage) * 1000
+
+            vector_task = asyncio.create_task(vector_branch())
+            tasks.append(vector_task)
+            if lexical_task is not None:
+                vector, lexical = await asyncio.gather(vector_task, lexical_task)
+                stage = perf_counter()
+                hits = reciprocal_rank_fusion([vector, lexical], settings.RAG_RRF_K)
+                metrics["rrf_ms"] = (perf_counter() - stage) * 1000
+            else:
+                hits = await vector_task
+        finally:
+            # Cancelling to_thread's awaiter cannot stop the underlying SQL/model
+            # thread. Database statement timeouts still bound outstanding SQL.
+            for task in tasks:
+                if not task.done():
+                    task.cancel()
+            if tasks:
+                await asyncio.gather(*tasks, return_exceptions=True)
         if settings.RAG_RERANK_ENABLED:
             hits = await timed_call("rerank_ms", self.reranker.rerank, question, hits)
         hits = hits[:settings.RAG_CONTEXT_TOP_K]

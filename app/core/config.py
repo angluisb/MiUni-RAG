@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     RAG_HYBRID_SEARCH_ENABLED: bool = True
     RAG_HYDE_ENABLED: bool = True
     RAG_HYDE_SENTENCES: int = Field(default=3, ge=2, le=4)
-    RAG_HYDE_TIMEOUT_SECONDS: float = Field(default=15, gt=0)
+    RAG_HYDE_TIMEOUT_SECONDS: float = Field(default=3, gt=0)
     RAG_VECTOR_TOP_N: int = Field(default=30, ge=1, le=500)
     RAG_LEXICAL_TOP_N: int = Field(default=30, ge=1, le=500)
     RAG_RRF_K: int = Field(default=60, ge=1)
@@ -40,6 +40,11 @@ class Settings(BaseSettings):
     RAG_DB_POOL_MAX_SIZE: int = Field(default=4, ge=1, le=32)
     RAG_DB_POOL_MAX_WAITING: int = Field(default=16, ge=1, le=256)
     RAG_DB_POOL_TIMEOUT_SECONDS: float = Field(default=5, gt=0)
+
+    RAG_CACHE_MAX_ENTRIES: int = Field(default=128, ge=0, le=4096)
+    RAG_HYDE_CACHE_TTL_SECONDS: float = Field(default=120, ge=0)
+    RAG_EMBEDDING_CACHE_TTL_SECONDS: float = Field(default=600, ge=0)
+    RAG_HYDE_PROMPT_VERSION: str = "hyde-v1"
 
     model_config = SettingsConfigDict(
         env_file=ROOT / ".env",

@@ -1,6 +1,7 @@
 import asyncio
 import json
 import tempfile
+import threading
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -10,7 +11,7 @@ from fastapi.testclient import TestClient
 
 from app import app
 from app.core.config import Settings
-from app.rag.embeddings import vector_literal
+from app.rag.embeddings import DenseEmbedder, vector_literal
 from app.rag.indexing import load_documents
 from app.rag.models import RetrievalResult, SearchHit
 from app.rag.retrieval import RetrievalService, format_context, reciprocal_rank_fusion
@@ -61,6 +62,14 @@ class InputTests(unittest.TestCase):
                 vector_literal(vector)
         self.assertEqual(len(json.loads(vector_literal([1.0] * 1024))), 1024)
 
+    def test_embedder_warmup_runs_a_small_embedding(self):
+        embedder = DenseEmbedder(settings())
+        embedder.encode = Mock(return_value=["vector"])
+
+        embedder.warmup()
+
+        embedder.encode.assert_called_once_with(["MiUni RAG warmup"])
+
     def test_rrf_rewards_agreement_without_mutating_scores(self):
         a, b, c = hit("a"), hit("b"), hit("c")
         fused = reciprocal_rank_fusion([[a, b], [c, b]])
@@ -109,6 +118,28 @@ class RetrievalTests(unittest.IsolatedAsyncioTestCase):
             service.embedder.encode.assert_called_once_with(["pregunta"])
             self.assertFalse(result.metrics["hyde_used"])
 
+    async def test_lexical_search_starts_while_hyde_is_pending(self):
+        hyde_started = asyncio.Event()
+        release_hyde = asyncio.Event()
+        lexical_started = threading.Event()
+
+        async def slow_hyde(question):
+            hyde_started.set()
+            await release_hyde.wait()
+            return "hipotesis"
+
+        def lexical_search(question, top_n):
+            lexical_started.set()
+            return [hit("b")]
+
+        service = self.service()
+        service.repository.lexical_search.side_effect = lexical_search
+        task = asyncio.create_task(service.retrieve("pregunta", slow_hyde))
+        await asyncio.wait_for(hyde_started.wait(), timeout=1)
+        self.assertTrue(await asyncio.to_thread(lexical_started.wait, 1))
+        release_hyde.set()
+        await task
+
     async def test_vector_only_and_disabled_hyde_do_not_call_other_branches(self):
         service = self.service(RAG_HYBRID_SEARCH_ENABLED=False, RAG_HYDE_ENABLED=False)
         generator = AsyncMock()
@@ -132,6 +163,21 @@ class RetrievalTests(unittest.IsolatedAsyncioTestCase):
 
 
 class ChatTests(unittest.IsolatedAsyncioTestCase):
+    def setUp(self):
+        # Pin the legacy uncached path; enabled-cache behavior has dedicated tests.
+        no_cache = patch.object(llm_service.Config, "RAG_CACHE_MAX_ENTRIES", 0)
+        no_cache.start()
+        self.addCleanup(no_cache.stop)
+
+    async def test_warmup_retriever_preloads_embeddings_when_enabled(self):
+        retriever = Mock()
+        with patch.object(llm_service.Config, "RAG_ENABLED", True), \
+             patch.object(llm_service.Config, "RAG_WARMUP_ON_STARTUP", True), \
+             patch.object(llm_service, "_get_retriever", return_value=retriever):
+            await llm_service.warmup_retriever()
+
+        retriever.embedder.warmup.assert_called_once_with()
+
     async def test_both_modes_use_retrieved_sources_and_preserve_question(self):
         retriever = Mock()
         retriever.retrieve = AsyncMock(return_value=RetrievalResult([hit("a")], {}))
@@ -178,6 +224,7 @@ class ChatTests(unittest.IsolatedAsyncioTestCase):
 
     async def test_catalog_failure_does_not_silently_invent_map_data(self):
         retriever = Mock()
+        retriever.retrieve = AsyncMock(return_value=RetrievalResult([], {}))
         retriever.repository.list_campus_places.side_effect = RuntimeError("catalog unavailable")
         with patch.object(llm_service.Config, "RAG_ENABLED", True), \
              patch.object(llm_service, "_get_retriever", return_value=retriever):
@@ -198,7 +245,8 @@ class EndpointTests(unittest.TestCase):
             raise RuntimeError("unavailable")
             yield "unreachable"
 
-        with patch("app.api.v1.endpoints.chat.stream_chat_response", fail):
+        with patch("app.api.v1.endpoints.chat.stream_chat_response", fail), \
+             patch.object(llm_service.Config, "RAG_WARMUP_ON_STARTUP", False):
             with TestClient(app) as client:
                 response = client.post("/api/v1/chat/stream", json={"question": "Becas"})
         self.assertEqual(response.status_code, 502)
@@ -208,7 +256,8 @@ class EndpointTests(unittest.TestCase):
             yield "Hola "
             yield "MiUni"
 
-        with patch("app.api.v1.endpoints.chat.stream_chat_response", stream):
+        with patch("app.api.v1.endpoints.chat.stream_chat_response", stream), \
+             patch.object(llm_service.Config, "RAG_WARMUP_ON_STARTUP", False):
             with TestClient(app) as client:
                 response = client.post("/api/v1/chat/stream", json={"question": "Becas"})
                 self.assertEqual(response.text, "Hola MiUni")

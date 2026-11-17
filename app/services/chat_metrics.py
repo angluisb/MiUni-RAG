@@ -35,6 +35,7 @@ class RequestTrace:
     model_state: str = "not_used"
     cache: str = "disabled"
     stages: dict = field(default_factory=dict)
+    caches: dict = field(default_factory=dict)
 
 
 current_trace = ContextVar("chat_trace", default=None)
@@ -48,10 +49,19 @@ def record_stage(name, milliseconds):
         trace.stages[name] = trace.stages.get(name, 0) + milliseconds
 
 
+def record_cache(name, status):
+    trace = current_trace.get()
+    if trace is not None:
+        trace.caches[name] = status
+
+
 def record_retrieval(metrics, model_state):
     trace = current_trace.get()
     if trace is not None:
         trace.model_state = model_state
+        for name in ("hyde", "embedding"):
+            if f"{name}_cache" in metrics:
+                record_cache(name, metrics[f"{name}_cache"])
         for key in ("hyde_ms", "embedding_ms", "vector_search_ms", "lexical_search_ms",
                     "rrf_ms", "rerank_ms", "total_retrieval_ms"):
             if key in metrics:
@@ -84,6 +94,8 @@ class ChatMetricsMiddleware:
             await self.app(scope, receive, measured_send)
         finally:
             record_stage("http_ms", (perf_counter() - started) * 1000)
+            trace.cache = ("miss" if "miss" in trace.caches.values() else
+                           "hit" if "hit" in trace.caches.values() else "disabled")
             outcome = "ok" if completed and status < 400 else "error" if completed else "interrupted"
             aggregates = {name: windows.observe(name, trace.model_state, trace.cache, outcome, duration)
                           for name, duration in trace.stages.items()}
@@ -91,5 +103,6 @@ class ChatMetricsMiddleware:
             logger.info("chat_request %s", json.dumps({
                 "request_id": str(uuid4()), "path": scope["path"], "status": status,
                 "outcome": outcome, "model_state": trace.model_state, "cache": trace.cache,
+                "cache_stages": trace.caches,
                 "stages_ms": trace.stages, "window": aggregates,
             }))

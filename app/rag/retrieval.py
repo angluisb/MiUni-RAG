@@ -13,6 +13,7 @@ from app.rag.cache import TTLCache
 from app.rag.embeddings import DenseEmbedder, LocalReranker
 from app.rag.models import RetrievalResult, SearchHit
 from app.rag.repository import RagRepository
+from app.rag.temporal import TemporalIntent, parse_temporal_hyde
 
 logger = logging.getLogger("uvicorn.error.rag")
 
@@ -77,6 +78,12 @@ class RetrievalService:
             return result
 
         query_text = question
+        temporal_enabled = settings.RAG_TEMPORAL_FILTER_ENABLED
+        intent = TemporalIntent()
+
+        def temporal_args():
+            return (intent,) if temporal_enabled else ()
+
         async def vector_branch():
             embedding_key = (_normalized_cache_input(query_text), settings.RAG_EMBEDDING_MODEL,
                              settings.RAG_EMBEDDING_PIPELINE_VERSION)
@@ -89,7 +96,7 @@ class RetrievalService:
                 if embedding_cache_enabled and embedding is not None and len(embedding):
                     self._embedding_cache.put(embedding_key, embedding)
             return await timed_call("vector_search_ms", self.repository.vector_search,
-                                    embedding, settings.RAG_VECTOR_TOP_N)
+                                    embedding, settings.RAG_VECTOR_TOP_N, *temporal_args())
 
         tasks = []
         try:
@@ -97,14 +104,14 @@ class RetrievalService:
             if settings.RAG_HYBRID_SEARCH_ENABLED:
                 lexical_task = asyncio.create_task(
                     timed_call("lexical_search_ms", self.repository.lexical_search,
-                               question, settings.RAG_LEXICAL_TOP_N))
+                               question, settings.RAG_LEXICAL_TOP_N, *temporal_args()))
                 tasks.append(lexical_task)
             if settings.RAG_HYDE_ENABLED and hyde_generator:
                 stage = perf_counter()
                 hyde_key = (_normalized_cache_input(question), settings.LLM_MODEL,
                             settings.RAG_EMBEDDING_PIPELINE_VERSION,
                             getattr(settings, "RAG_HYDE_PROMPT_VERSION", "hyde-v1"),
-                            settings.RAG_HYDE_SENTENCES)
+                            settings.RAG_HYDE_SENTENCES, temporal_enabled)
                 hypothetical = self._hyde_cache.get(hyde_key) if hyde_cache_enabled else None
                 if hyde_cache_enabled:
                     metrics["hyde_cache"] = "hit" if hypothetical is not None else "miss"
@@ -115,7 +122,10 @@ class RetrievalService:
                     if not isinstance(hypothetical, str):
                         raise ValueError("HyDE returned non-text content")
                     if hypothetical.strip():
-                        query_text = hypothetical.strip()
+                        if temporal_enabled:
+                            intent, query_text = parse_temporal_hyde(hypothetical)
+                        else:
+                            query_text = hypothetical.strip()
                         metrics["hyde_used"] = True
                         if hyde_cache_enabled:
                             self._hyde_cache.put(hyde_key, hypothetical.strip())
@@ -124,6 +134,19 @@ class RetrievalService:
                     metrics["hyde_failed"] = True
                     logger.warning("HyDE fallo; se recuperara usando la pregunta original")
                 metrics["hyde_ms"] = (perf_counter() - stage) * 1000
+
+            if temporal_enabled:
+                metrics["temporal_scope"] = intent.scope
+                metrics["academic_period"] = intent.period
+                if lexical_task is not None and intent != TemporalIntent():
+                    # Discard the speculative current-only result, never mix scopes.
+                    if not lexical_task.done():
+                        lexical_task.cancel()
+                    await asyncio.gather(lexical_task, return_exceptions=True)
+                    lexical_task = asyncio.create_task(timed_call(
+                        "lexical_search_ms", self.repository.lexical_search,
+                        question, settings.RAG_LEXICAL_TOP_N, intent))
+                    tasks.append(lexical_task)
 
             vector_task = asyncio.create_task(vector_branch())
             tasks.append(vector_task)

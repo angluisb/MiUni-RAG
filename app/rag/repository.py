@@ -4,6 +4,7 @@ from threading import Lock
 
 from app.core.config import Settings
 from app.rag.models import SearchHit
+from app.rag.temporal import TemporalIntent
 
 
 class RagRepository:
@@ -95,6 +96,9 @@ class RagRepository:
                          "embedding_model, embedding_dimension, embedded_at, search_tsv "
                          "FROM rag_chunk LIMIT 0")
             conn.execute("SELECT id, titulo, tipo_origen, referencia FROM documentofuente LIMIT 0")
+            if self.settings.RAG_TEMPORAL_FILTER_ENABLED:
+                conn.execute("SELECT temporal_status, document_year, academic_period, effective_from, "
+                             "effective_to, last_verified_at, superseded_by FROM documentofuente LIMIT 0")
             counts = conn.execute(
                 "SELECT count(*) AS chunks, count(embedding) AS embedded_chunks FROM rag_chunk"
             ).fetchone()
@@ -113,7 +117,13 @@ class RagRepository:
             metadata=row["metadata"], score=float(row["score"]),
         ) for row in rows]
 
-    def vector_search(self, embedding: str, top_n: int) -> list[SearchHit]:
+    def _temporal_predicate(self, intent):
+        if intent is not None or self.settings.RAG_TEMPORAL_FILTER_ENABLED:
+            return (intent or TemporalIntent()).predicate()
+        return "", []
+
+    def vector_search(self, embedding: str, top_n: int, temporal=None) -> list[SearchHit]:
+        temporal_sql, temporal_parameters = self._temporal_predicate(temporal)
         with self.connection() as conn:
             # An ANN index must scan at least as many candidates as requested.
             conn.execute("SELECT set_config('hnsw.ef_search', %s, true)", (str(max(40, top_n)),))
@@ -125,21 +135,22 @@ class RagRepository:
                    WHERE embedding IS NOT NULL AND embedding_model = %s
                      AND embedding_dimension = %s
                      AND metadata->>'embedding_pipeline_version' = %s
-                   ORDER BY embedding <=> %s::vector LIMIT %s""",
+                   """ + temporal_sql + " ORDER BY embedding <=> %s::vector LIMIT %s",
                 (embedding, self.settings.RAG_EMBEDDING_MODEL,
                  self.settings.RAG_EMBEDDING_DIMENSION,
-                 self.settings.RAG_EMBEDDING_PIPELINE_VERSION, embedding, top_n),
+                 self.settings.RAG_EMBEDDING_PIPELINE_VERSION, *temporal_parameters, embedding, top_n),
             ).fetchall()
         return self._hits(rows)
 
-    def lexical_search(self, question: str, top_n: int) -> list[SearchHit]:
+    def lexical_search(self, question: str, top_n: int, temporal=None) -> list[SearchHit]:
+        temporal_sql, temporal_parameters = self._temporal_predicate(temporal)
         with self.connection() as conn:
             rows = conn.execute(
                 """SELECT id, source_url, document_title, content, metadata,
                           ts_rank_cd(search_tsv, query) AS score
                    FROM rag_chunk, websearch_to_tsquery('spanish', %s) query
                    WHERE search_tsv @@ query
-                   ORDER BY score DESC, id LIMIT %s""",
-                (question, top_n),
+                   """ + temporal_sql + " ORDER BY score DESC, id LIMIT %s",
+                (question, *temporal_parameters, top_n),
             ).fetchall()
         return self._hits(rows)

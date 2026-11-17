@@ -45,6 +45,13 @@ async def warmup_retriever() -> None:
         await asyncio.to_thread(_get_retriever().embedder.warmup)
 
 
+async def close_retriever() -> None:
+    if _get_retriever.cache_info().currsize:
+        await asyncio.to_thread(_get_retriever().repository.close)
+        _get_retriever.cache_clear()
+
+
+
 async def generate_hyde(user_input: str) -> str:
     response = await _get_llm().ainvoke([
         SystemMessage(content=(

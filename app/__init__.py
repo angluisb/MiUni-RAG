@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from app.api.v1.endpoints.chat import chatbot_router
 from app.core.config import Config
-from app.services.llm_service import warmup_retriever
+from app.services.llm_service import warmup_retriever, close_retriever
 from app.services.chat_metrics import ChatMetricsMiddleware
 from app.services.readiness import Readiness
 version = "v1"
@@ -14,7 +14,10 @@ version = "v1"
 async def lifespan(_app: FastAPI):
     _app.state.readiness = Readiness(Config)
     await _app.state.readiness.initialize(warmup_retriever)
-    yield
+    try:
+        yield
+    finally:
+        await close_retriever()
 
 
 app = FastAPI(

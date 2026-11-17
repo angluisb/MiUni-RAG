@@ -36,6 +36,11 @@ class Settings(BaseSettings):
     RAG_DB_CONNECT_TIMEOUT_SECONDS: int = Field(default=5, ge=1)
     RAG_DB_STATEMENT_TIMEOUT_MS: int = Field(default=30000, ge=1)
 
+    RAG_DB_POOL_ENABLED: bool = True
+    RAG_DB_POOL_MAX_SIZE: int = Field(default=4, ge=1, le=32)
+    RAG_DB_POOL_MAX_WAITING: int = Field(default=16, ge=1, le=256)
+    RAG_DB_POOL_TIMEOUT_SECONDS: float = Field(default=5, gt=0)
+
     model_config = SettingsConfigDict(
         env_file=ROOT / ".env",
         env_file_encoding="utf-8",

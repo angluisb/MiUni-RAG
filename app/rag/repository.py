@@ -1,4 +1,6 @@
 from __future__ import annotations
+from contextlib import contextmanager
+from threading import Lock
 
 from app.core.config import Settings
 from app.rag.models import SearchHit
@@ -7,6 +9,40 @@ from app.rag.models import SearchHit
 class RagRepository:
     def __init__(self, settings: Settings):
         self.settings = settings
+        self._pool = None
+        self._pool_lock = Lock()
+
+    @contextmanager
+    def connection(self):
+        # Preserve explicit raw-connection overrides, including isolated TEMP tests.
+        if (not self.settings.RAG_DB_POOL_ENABLED or type(self).connect is not RagRepository.connect
+                or "connect" in self.__dict__):
+            with self.connect() as conn:
+                yield conn
+            return
+        with self._pool_lock:
+            if self._pool is None:
+                if not self.settings.DATABASE_URL.strip():
+                    raise ValueError("Configura DATABASE_URL antes de consultar PostgreSQL")
+                from psycopg_pool import ConnectionPool
+                from psycopg.rows import dict_row
+                self._pool = ConnectionPool(
+                    conninfo=self.settings.DATABASE_URL, min_size=0,
+                    max_size=self.settings.RAG_DB_POOL_MAX_SIZE,
+                    max_waiting=self.settings.RAG_DB_POOL_MAX_WAITING,
+                    timeout=self.settings.RAG_DB_POOL_TIMEOUT_SECONDS, open=True,
+                    kwargs={"row_factory": dict_row,
+                            "connect_timeout": self.settings.RAG_DB_CONNECT_TIMEOUT_SECONDS,
+                            "options": f"-c statement_timeout={self.settings.RAG_DB_STATEMENT_TIMEOUT_MS}"})
+            pool = self._pool
+        with pool.connection() as conn:
+            yield conn
+
+    def close(self):
+        with self._pool_lock:
+            if self._pool is not None:
+                self._pool.close()
+                self._pool = None
 
     def connect(self):
         if not self.settings.DATABASE_URL.strip():
@@ -23,7 +59,7 @@ class RagRepository:
 
     def list_campus_places(self) -> list[dict]:
         """Use the same active, geolocated places that the map can display."""
-        with self.connect() as conn:
+        with self.connection() as conn:
             rows = conn.execute(
                 "SELECT l.id::text AS id, l.nombre, c.nombre AS categoria "
                 "FROM lugar l JOIN categoria c ON c.id = l.categoria_id "
@@ -35,7 +71,7 @@ class RagRepository:
         return [{**row, "map_url": f"/mapa?lugar={row['id']}"} for row in rows]
 
     def check(self) -> dict:
-        with self.connect() as conn:
+        with self.connection() as conn:
             version = conn.execute(
                 "SELECT extversion FROM pg_extension WHERE extname = 'vector'"
             ).fetchone()
@@ -78,7 +114,7 @@ class RagRepository:
         ) for row in rows]
 
     def vector_search(self, embedding: str, top_n: int) -> list[SearchHit]:
-        with self.connect() as conn:
+        with self.connection() as conn:
             # An ANN index must scan at least as many candidates as requested.
             conn.execute("SELECT set_config('hnsw.ef_search', %s, true)", (str(max(40, top_n)),))
             conn.execute("SELECT set_config('hnsw.iterative_scan', 'strict_order', true)")
@@ -97,7 +133,7 @@ class RagRepository:
         return self._hits(rows)
 
     def lexical_search(self, question: str, top_n: int) -> list[SearchHit]:
-        with self.connect() as conn:
+        with self.connection() as conn:
             rows = conn.execute(
                 """SELECT id, source_url, document_title, content, metadata,
                           ts_rank_cd(search_tsv, query) AS score

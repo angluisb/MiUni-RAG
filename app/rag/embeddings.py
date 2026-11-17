@@ -21,6 +21,10 @@ class DenseEmbedder:
         self._model = None
         self._lock = Lock()
 
+    def warmup(self) -> None:
+        """Load the embedding model before the first user request."""
+        self.encode(["MiUni RAG warmup"])
+
     def encode(self, texts: list[str]) -> list[str]:
         if not texts:
             return []

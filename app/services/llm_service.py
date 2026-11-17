@@ -40,6 +40,11 @@ def _get_retriever():
     return RetrievalService(Config)
 
 
+async def warmup_retriever() -> None:
+    if Config.RAG_ENABLED and Config.RAG_WARMUP_ON_STARTUP:
+        await asyncio.to_thread(_get_retriever().embedder.warmup)
+
+
 async def generate_hyde(user_input: str) -> str:
     response = await _get_llm().ainvoke([
         SystemMessage(content=(

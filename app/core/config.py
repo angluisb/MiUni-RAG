@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     RAG_EMBEDDING_MODEL: Literal["BAAI/bge-m3"] = "BAAI/bge-m3"
     RAG_EMBEDDING_DIMENSION: Literal[1024] = 1024
     RAG_EMBEDDING_BATCH_SIZE: int = Field(default=8, ge=1, le=128)
+    RAG_WARMUP_ON_STARTUP: bool = True
     RAG_MODEL_DEVICE: str = "cpu"
     RAG_MODEL_CACHE: str = str(ROOT / ".cache" / "huggingface")
     RAG_EMBEDDING_PIPELINE_VERSION: str = "rag-embeddings-v1"

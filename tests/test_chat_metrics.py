@@ -40,6 +40,7 @@ class ChatMetricsTests(unittest.TestCase):
         model.astream.side_effect = chunks
         with patch.object(llm_service.Config, "RAG_ENABLED", True), \
              patch("app.warmup_retriever", new_callable=AsyncMock, create=True), \
+             patch.object(llm_service.Config, "RAG_WARMUP_ON_STARTUP", False), \
              patch.object(llm_service, "_get_retriever", return_value=retriever), \
              patch.object(llm_service, "_get_llm", return_value=model), \
              self.assertLogs("uvicorn.error.chat_metrics", level="INFO") as logs:
@@ -62,6 +63,7 @@ class ChatMetricsTests(unittest.TestCase):
 
         with patch("app.api.v1.endpoints.chat.stream_chat_response", fail), \
              patch("app.warmup_retriever", new_callable=AsyncMock, create=True), \
+             patch.object(llm_service.Config, "RAG_WARMUP_ON_STARTUP", False), \
              self.assertLogs("uvicorn.error.chat_metrics", level="INFO") as logs:
             with TestClient(app) as client:
                 response = client.post("/api/v1/chat/stream", json={"question": "Becas"})
@@ -82,6 +84,7 @@ class ChatMetricsTests(unittest.TestCase):
         with patch("app.api.v1.endpoints.chat.stream_chat_response", stream), \
              patch("app.api.v1.endpoints.chat.get_chat_response", answer), \
              patch("app.warmup_retriever", new_callable=AsyncMock, create=True), \
+             patch.object(llm_service.Config, "RAG_WARMUP_ON_STARTUP", False), \
              self.assertLogs("uvicorn.error.chat_metrics", level="INFO") as logs:
             with TestClient(app) as client:
                 for path in ("/api/v1/chat", "/api/v1/chat/stream"):

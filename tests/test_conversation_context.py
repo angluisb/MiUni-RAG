@@ -135,4 +135,4 @@ class PromptTests(unittest.IsolatedAsyncioTestCase):
             chunks_received = [x.encode() if isinstance(x, str) else x async for x in result.body_iterator]
             self.assertEqual(b"".join(chunks_received), b"answer")
         self.assertEqual(response.call_args, streaming.call_args)
-        self.assertEqual(response.call_args.kwargs["history"], request.history)
+        self.assertEqual(response.call_args.kwargs["history"], request.history)

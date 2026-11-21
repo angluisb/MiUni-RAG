@@ -1,0 +1,1979 @@
+{
+  "version": 1,
+  "review_batch": "2026-11-20",
+  "state": "unknown_evidence_or_versioned_refresh_required",
+  "sources": [
+    {
+      "source_id": "97614706-7f9a-5a22-bc75-876e2dc809f6",
+      "source_url": "https://ofertaeducativa.unison.mx/",
+      "title": "Oferta Educativa – UNISON",
+      "group": "offer",
+      "reason_code": "undated_catalog_welcome_scope",
+      "rationale": "The indexed body is an undated welcome/catalog introduction. It supports use of the separate current program-navigation links as authority, but no independent temporal declaration for this stored welcome text or current office-holder claim was established. Remains unknown rather than inferring validity from homepage HTTP200.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "16c3322e-3593-57fa-804c-56f2f2128e66",
+      "source_url": "https://ofertaeducativa.unison.mx/category/orgullosamente-buhos/",
+      "title": "ORGULLOSAMENTE BÚHOS – Oferta Educativa",
+      "group": "offer",
+      "reason_code": "empty_navigation_placeholder",
+      "rationale": "The fetched/indexed substantive text consists only of navigation (Skip to content), not a dated offering, guide, event or policy. Kept unknown; no status/date inferred from menu linkage.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "b109908b-ac96-5b1c-a56f-a13032809a0d",
+      "source_url": "https://ofertaeducativa.unison.mx/ingenieria-en-tecnologia-electronica/",
+      "title": "Ingeniería en Tecnología Electrónica – Oferta Educativa",
+      "group": "offer",
+      "reason_code": "catalog_alias_fetch_ReadTimeout",
+      "rationale": "The already-fetched indexed program body matches all stored substantive chunks, but its one bounded exact-catalog-alias identity request failed or lacked publisher canonical identity proof. ReadTimeout. No retry or current/historical classification inferred from that failure.",
+      "category": "Access or policy unavailable"
+    },
+    {
+      "source_id": "19ff3b29-d6c1-5767-aca2-b79c169d1359",
+      "source_url": "https://ofertaeducativa.unison.mx/mensaje-del-rector/",
+      "title": "MENSAJE DE LA RECTORA – Oferta Educativa",
+      "group": "offer",
+      "reason_code": "undated_welcome_message_scope",
+      "rationale": "The catalog links this welcome message and indexed text matches the live body, but the undated welcome/signature does not independently establish its author's current office or a defined validity interval. No archived/current classification inferred from URL, signature or publication age.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "e177cb49-fe80-56b2-ac31-d20f7d26dd08",
+      "source_url": "https://ofertaeducativa.unison.mx/quimico-biologo-clinico/",
+      "title": "Químico Biólogo Clínico – Oferta Educativa",
+      "group": "offer",
+      "reason_code": "indexed_version_mismatch",
+      "rationale": "Live page differs from the indexed version: only 3/4 indexed chunks are exact normalized substrings. Whitespace alone was normalized; changed content was not ignored. No current classification assigned to stale stored text.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4777afa5-8f8d-5dd3-9868-d0aa71a1ab03",
+      "source_url": "https://ofertaeducativa.unison.mx/slider1/",
+      "title": "SLIDER1 – Oferta Educativa",
+      "group": "offer",
+      "reason_code": "empty_navigation_placeholder",
+      "rationale": "The fetched/indexed substantive text consists only of navigation (Skip to content), not a dated offering, guide, event or policy. Kept unknown; no status/date inferred from menu linkage.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "68d1f2fd-044b-5799-bbf6-6acebc751d0c",
+      "source_url": "https://ofertaeducativa.unison.mx/slider-2-2/",
+      "title": "SLIDER 2 – Oferta Educativa",
+      "group": "offer",
+      "reason_code": "empty_navigation_placeholder",
+      "rationale": "The fetched/indexed substantive text consists only of navigation (Skip to content), not a dated offering, guide, event or policy. Kept unknown; no status/date inferred from menu linkage.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "4222ae1f-b80e-5e8b-bbdb-59082faef86b",
+      "source_url": "https://ofertaeducativa.unison.mx/slider-3-2/",
+      "title": "SLIDER 3 – Oferta Educativa",
+      "group": "offer",
+      "reason_code": "empty_navigation_placeholder",
+      "rationale": "The fetched/indexed substantive text consists only of navigation (Skip to content), not a dated offering, guide, event or policy. Kept unknown; no status/date inferred from menu linkage.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "83196eed-37f0-5c80-a59e-3a79bada3626",
+      "source_url": "https://ofertaeducativa.unison.mx/wp-content/uploads/2025/10/PlandeestudiosLTE2252.pdf",
+      "title": "PlandeestudiosLTE2252",
+      "group": "offer",
+      "reason_code": "program_current_authority_unverified",
+      "rationale": "This PDF was fully read and its live bytes match raw-file, download-metadata and indexed-chunk hashes. Its exact link appears on https://ofertaeducativa.unison.mx/ingenieria-en-tecnologia-electronica/, but parent authority is not verified for the stored program version: either that program changed substantive content or the one catalog-alias request timed out. No current or expired/cohort status is inferred from file availability/old plan labels.",
+      "category": "Current authority not established"
+    },
+    {
+      "source_id": "0f5aa241-9903-570b-acdf-d84b1aff733d",
+      "source_url": "https://ofertaeducativa.unison.mx/wp-content/uploads/2025/10/PlandeEstudiosQBC2232.pdf",
+      "title": "PlandeEstudiosQBC2232",
+      "group": "offer",
+      "reason_code": "program_current_authority_unverified",
+      "rationale": "This PDF was fully read and its live bytes match raw-file, download-metadata and indexed-chunk hashes. Its exact link appears on https://ofertaeducativa.unison.mx/quimico-biologo-clinico/, but parent authority is not verified for the stored program version: either that program changed substantive content or the one catalog-alias request timed out. No current or expired/cohort status is inferred from file availability/old plan labels.",
+      "category": "Current authority not established"
+    },
+    {
+      "source_id": "97230ebe-16d4-5b96-980a-955f5c94c65f",
+      "source_url": "https://ofertaeducativa.unison.mx/wp-content/uploads/2025/11/MapaCurricularLTE2252.pdf",
+      "title": "MapaCurricularLTE2252",
+      "group": "offer",
+      "reason_code": "program_current_authority_unverified",
+      "rationale": "This PDF was fully read and its live bytes match raw-file, download-metadata and indexed-chunk hashes. Its exact link appears on https://ofertaeducativa.unison.mx/ingenieria-en-tecnologia-electronica/, but parent authority is not verified for the stored program version: either that program changed substantive content or the one catalog-alias request timed out. No current or expired/cohort status is inferred from file availability/old plan labels.",
+      "category": "Current authority not established"
+    },
+    {
+      "source_id": "a6f468f9-f6ff-5b0f-8b1c-c3e01eb1b4e9",
+      "source_url": "https://ofertaeducativa.unison.mx/wp-content/uploads/2025/11/MapaCurricular-QBC.pdf",
+      "title": "MapaCurricular QBC",
+      "group": "offer",
+      "reason_code": "program_current_authority_unverified",
+      "rationale": "This PDF was fully read and its live bytes match raw-file, download-metadata and indexed-chunk hashes. Its exact link appears on https://ofertaeducativa.unison.mx/quimico-biologo-clinico/, but parent authority is not verified for the stored program version: either that program changed substantive content or the one catalog-alias request timed out. No current or expired/cohort status is inferred from file availability/old plan labels.",
+      "category": "Current authority not established"
+    },
+    {
+      "source_id": "c16812c6-56f9-544b-9a1e-b00feb6ee78c",
+      "source_url": "https://admision.unison.mx/",
+      "title": "ADMISIÓN UNISON",
+      "group": "services",
+      "reason_code": "landing_dynamic_counter_artifacts",
+      "rationale": "The indexed admissions landing fragment includes zero-valued dynamic student counters; exact text survives, but it is not a reliable current statistical document.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "5f3211ab-5125-58b9-8b2e-8212bd04b2d2",
+      "source_url": "https://admision.unison.mx/costos_por_carreras.php",
+      "title": "$3,813.00",
+      "group": "services",
+      "reason_code": "intake_fee_scope_unresolved",
+      "rationale": "The 2026 prices are unchanged and linked, but this is the closed intake site. Current-year heading alone does not establish applicability to a new or future intake; no general effective interval is proven.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "ec9a74a5-83b7-50f6-8c30-0cf789495950",
+      "source_url": "https://admision.unison.mx/index.php",
+      "title": "ADMISIÓN UNISON",
+      "group": "services",
+      "reason_code": "landing_dynamic_counter_artifacts",
+      "rationale": "The indexed admissions landing fragment includes zero-valued dynamic student counters; exact text survives, but it is not a reliable current statistical document.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "2e9f45bf-dd26-5f95-893a-812fcac478c8",
+      "source_url": "https://dae.unison.mx/antecedentes.html",
+      "title": "Dirección de Apoyo a Estudiantes",
+      "group": "services",
+      "reason_code": "changed_institutional_history",
+      "rationale": "The live institutional history contains changed/restructured material; not every original indexed paragraph matches. Its old dates alone do not make this evolving reference obsolete.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4cb8c544-557e-55a9-9605-dae049512755",
+      "source_url": "https://dae.unison.mx/becas.html",
+      "title": "Becas",
+      "group": "services",
+      "reason_code": "changed_scholarship_portal_fragment",
+      "rationale": "The live portal contains a September/October2026 payment-calendar addition and an old indexed markup terminator no longer matches. Do not discard changed dated material or re-label a stale index as current.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4b14c6e3-9bba-5376-8221-0f362de06aa1",
+      "source_url": "https://dae.unison.mx/Becas.html",
+      "title": "Becas",
+      "group": "services",
+      "reason_code": "changed_scholarship_portal_fragment",
+      "rationale": "The live portal contains a September/October2026 payment-calendar addition and an old indexed markup terminator no longer matches. Do not discard changed dated material or re-label a stale index as current.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ebd604f3-2cd2-56db-b3cd-a5d98e84dccd",
+      "source_url": "https://dae.unison.mx/directorio.html",
+      "title": "Dirección de Apoyo a Estudiantes",
+      "group": "services",
+      "reason_code": "changed_staff_directory",
+      "rationale": "The live staff-directory layout/contact text differs from the indexed version; unchanged names alone would not justify promoting the whole document.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4356c79c-2a0c-5deb-b292-41c25f601f0b",
+      "source_url": "https://dae.unison.mx/manual.html",
+      "title": "Contar con un documento que contenga información detallada referente a la estructura administrativa, organigrama, antecedentes, atribuciones y funciones de los programas y áreas que integran la Dirección de Apoyo a Estudiantes, definiendo los niveles jerárquicos, grados de autoridad y responsabilidad, canales de comunicación y coordinación, que den claridad al funcionamiento de esta dependencia y facilite su optima operación.",
+      "group": "services",
+      "reason_code": "removed_indexed_contact_or_structure",
+      "rationale": "The live organizational page no longer contains all indexed organizational/contact text. Current navigation alone cannot validate that stale indexed version.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5884a7a1-3e67-59d5-a849-740c025c2c05",
+      "source_url": "https://dae.unison.mx/objetivo.html",
+      "title": "Contribuir a elevar la calidad del proceso educativo a través de programas, servicios y orientación personalizada a los estudiantes en relación con situaciones que afectan el desempeño escolar, con el fin de mejorar sus condiciones de aprendizaje y desarrollar habilidades, actitudes y valores que promuevan su formación profesional, humana y social para una inserción laboral exitosa, tanto en el ámbito nacional como internacional.",
+      "group": "services",
+      "reason_code": "removed_indexed_contact_or_structure",
+      "rationale": "The live organizational page no longer contains all indexed organizational/contact text. Current navigation alone cannot validate that stale indexed version.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "efba325b-a67a-538f-995d-5898a23ab37f",
+      "source_url": "https://dae.unison.mx/organigrama.html",
+      "title": "Dirección de Apoyo a Estudiantes",
+      "group": "services",
+      "reason_code": "removed_indexed_contact_or_structure",
+      "rationale": "The live organizational page no longer contains all indexed organizational/contact text. Current navigation alone cannot validate that stale indexed version.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "cd18ab4d-5616-52f2-bed4-58cd51c044ce",
+      "source_url": "https://dae.unison.mx/practicasprofesionales/manual/MANUAL_DE_PROCEDIMIENTOS_DE_PRACTICAS_PROFESIONALES.pdf",
+      "title": "MANUAL DE PROCEDIMIENTOS DE PRACTICAS PROFESIONALES",
+      "group": "services",
+      "reason_code": "legacy_manual_applicability_unresolved",
+      "rationale": "The current portal still links this May2018 manual, with old administrative structures/staff and pre-2020 context. The later2020 regulation requires manual adjustment; its current scope cannot be established merely from the surviving link.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "26fe59e3-d396-537c-adf1-4c51b203b70d",
+      "source_url": "https://dae.unison.mx/SALUD/DONACION-SANGRE/082726_Calendario_Donacion_2262.pdf",
+      "title": "082726 Calendario Donacion 2262",
+      "group": "services",
+      "reason_code": "calendar_month_scope_ambiguous",
+      "rationale": "The printed2026-2 donation calendar includes upcoming November24-26 appointments but also an out-of-order May6-7 row. Retain unknown pending visual/publisher clarification; do not invent a year or effective interval for that mixed schedule.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "d7fc404b-a598-5214-81da-2c38bad8ea5d",
+      "source_url": "https://dae.unison.mx/serviciosocial-directorio.html",
+      "title": "Servicio Social Universitario",
+      "group": "services",
+      "reason_code": "current_authority_link_not_proven",
+      "rationale": "The current social-service portal links this exact unchanged responsible/contact directory. No exact current same-origin authority path was proven; proposal withheld.",
+      "category": "Current authority not established"
+    },
+    {
+      "source_id": "dec7f06d-2729-516e-964f-28ad742c51cf",
+      "source_url": "https://serviciosescolares.unison.mx/2018/09/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "current_source_unavailable",
+      "rationale": "The source could not be validated now (HTTP404 or bounded body-read timeout); no retry, removal, replacement or current-status inference was made.",
+      "category": "Access or policy unavailable"
+    },
+    {
+      "source_id": "bdc45bc5-85c7-5f55-9c53-1ef86ba55b8b",
+      "source_url": "https://serviciosescolares.unison.mx/ampliacion-de-cupo/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "b1c1b569-5db8-5306-a74f-4ca861753f22",
+      "source_url": "https://serviciosescolares.unison.mx/asignacion-de-clave-sivea/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "73c7f01f-1ecd-55a0-90fe-aaa053ddf582",
+      "source_url": "https://serviciosescolares.unison.mx/author/flerida/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "mixed_publication_aggregation",
+      "rationale": "This author/category listing aggregates publications with different scopes and dates. Neither a single current validity window nor a historical event scope is established for the entire indexed aggregate.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "e5f03b33-5d9a-5c2a-a2bb-733026acac86",
+      "source_url": "https://serviciosescolares.unison.mx/author/karla/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "mixed_publication_aggregation",
+      "rationale": "This author/category listing aggregates publications with different scopes and dates. Neither a single current validity window nor a historical event scope is established for the entire indexed aggregate.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "9d6f8997-1a6c-5494-8645-f0463c91fb3f",
+      "source_url": "https://serviciosescolares.unison.mx/baja-por-incapacidad-medica/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "cc645a47-05e4-5dcd-833a-bba4d90ab1ca",
+      "source_url": "https://serviciosescolares.unison.mx/bajas-voluntarias/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "bd14256b-d43b-5ef6-8259-293e1a2ed908",
+      "source_url": "https://serviciosescolares.unison.mx/cambio-de-nombre/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "7560f224-30e4-5ce7-a2da-90e1093fad91",
+      "source_url": "https://serviciosescolares.unison.mx/cambio-de-plan/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "691e19fe-ea42-5eb8-b14f-fbe292c51f97",
+      "source_url": "https://serviciosescolares.unison.mx/cambio-de-programa/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "e7a5ac9e-1a01-5fdf-886a-7fad37acbdb0",
+      "source_url": "https://serviciosescolares.unison.mx/cambio-de-unidad/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "43557c8d-4410-503f-a9e9-c41f927ac7e1",
+      "source_url": "https://serviciosescolares.unison.mx/cancelacion-de-inscripcion/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "f2b68ba5-b5e5-5e5a-93df-94ffd8b8a0ca",
+      "source_url": "https://serviciosescolares.unison.mx/category/sin-categoria/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "mixed_publication_aggregation",
+      "rationale": "This author/category listing aggregates publications with different scopes and dates. Neither a single current validity window nor a historical event scope is established for the entire indexed aggregate.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "73cabc92-f635-54f6-a451-e83535c6fad9",
+      "source_url": "https://serviciosescolares.unison.mx/category/slider/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "mixed_publication_aggregation",
+      "rationale": "This author/category listing aggregates publications with different scopes and dates. Neither a single current validity window nor a historical event scope is established for the entire indexed aggregate.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "bd979cac-da3a-51f6-af3a-0c295a2a6755",
+      "source_url": "https://serviciosescolares.unison.mx/cedula-electronica/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "3808ecd2-ac3e-5615-bb54-739df58bd2de",
+      "source_url": "https://serviciosescolares.unison.mx/certificacion-de-documentos-academicos/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "6775482d-095a-5e8e-ad61-fe946fd61c31",
+      "source_url": "https://serviciosescolares.unison.mx/certificado-de-estudios/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "changed_document_delivery_conditions",
+      "rationale": "The current certificate page includes altered document-delivery/power-of-attorney conditions compared with indexed text. No normalization may hide changed procedural requirements; reingestion/review is needed.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "c024263b-1136-5de0-9321-3bc238c111a6",
+      "source_url": "https://serviciosescolares.unison.mx/certificado-de-pasante/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "conflicting_egel_requirements",
+      "rationale": "The published pasante guide refers to mandatory900CENEVAL points while the licenciatura titulacion page says EGEL is not mandatory pending reform. Current navigation does not resolve the transitional applicability; retain both whole documents unknown.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "3e170765-db00-5378-88cb-1c525d0f8198",
+      "source_url": "https://serviciosescolares.unison.mx/claves-de-programa/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "e83c9129-f02c-5e3b-8477-c71c557e722c",
+      "source_url": "https://serviciosescolares.unison.mx/comunicado_cedula/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "undated_service_restoration_notice",
+      "rationale": "The notice says an electronic-title forwarding service was restored, but gives no verified effective window/current operational proof. It cannot establish present service status from publication/navigation alone.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "dd03edc2-5cab-5c0b-b794-d1b2bad6d666",
+      "source_url": "https://serviciosescolares.unison.mx/conmutacion-de-materias/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5bcf5897-79d4-5526-8685-bdf1a454b793",
+      "source_url": "https://serviciosescolares.unison.mx/constancias-materias-sin-materias-y-especiales/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "bbd94641-be67-5b8a-a291-7be781c3743a",
+      "source_url": "https://serviciosescolares.unison.mx/contacto/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "3af877a5-1ba9-5a17-b64a-ab7f920b2a8f",
+      "source_url": "https://serviciosescolares.unison.mx/correccion-de-calificaciones-2/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "fc352c47-f2fa-5b9c-8e90-861a90d7d453",
+      "source_url": "https://serviciosescolares.unison.mx/costos/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "1f226a1b-51b9-5435-97c3-7f3d575bd686",
+      "source_url": "https://serviciosescolares.unison.mx/directorio/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "changed_live_staff_directory",
+      "rationale": "The live dynamic staff directory no longer matches all indexed names/contact/structural text. No current staff assertion is inferred from partial matches.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8cefbb22-e5f3-5d80-a0b8-1f197f2d5ed8",
+      "source_url": "https://serviciosescolares.unison.mx/disposiciones-para-fotografia/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "413f0391-1aa2-55a0-8d72-b5429c6ed492",
+      "source_url": "https://serviciosescolares.unison.mx/equivalencia-de-materias/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "d847a1d0-9c32-5ae2-9251-f8366ce61164",
+      "source_url": "https://serviciosescolares.unison.mx/equivalencia-de-materias-entre-planes/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5cb49170-345c-5a3e-9e8b-82ae3dacebc7",
+      "source_url": "https://serviciosescolares.unison.mx/examen-con-derecho-de-pasante/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "0bbcdeb3-a169-575f-a0d1-751d1f4d41f4",
+      "source_url": "https://serviciosescolares.unison.mx/examen-extraordinario-especial/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8549d5aa-a8f4-5780-937d-246d994666f7",
+      "source_url": "https://serviciosescolares.unison.mx/hola-mundo/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "current_source_unavailable",
+      "rationale": "The source could not be validated now (HTTP404 or bounded body-read timeout); no retry, removal, replacement or current-status inference was made.",
+      "category": "Access or policy unavailable"
+    },
+    {
+      "source_id": "5451d632-e3f9-5427-a7cf-3faff3326e4b",
+      "source_url": "https://serviciosescolares.unison.mx/impresion-de-estados-de-cuenta/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "current_source_unavailable",
+      "rationale": "The source could not be validated now (HTTP404 or bounded body-read timeout); no retry, removal, replacement or current-status inference was made.",
+      "category": "Access or policy unavailable"
+    },
+    {
+      "source_id": "76549c63-7b17-5798-81f2-27ee912f8c81",
+      "source_url": "https://serviciosescolares.unison.mx/incorporadas/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "changed_incorporated_schools_reference",
+      "rationale": "The current incorporated-schools reference has changed contact/department text compared with the indexed version. Do not infer a present scholarship call or carry old information forward.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "f4b0f8d8-f6b3-54f3-95c8-a27e4a2b756f",
+      "source_url": "https://serviciosescolares.unison.mx/kardex-2/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8ff62004-3ee8-542b-9d9f-e4479a9da034",
+      "source_url": "https://serviciosescolares.unison.mx/lineamientos-de-cursos-de-titulacion/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8a3e6c3c-2293-53b6-8069-aa28302fda9a",
+      "source_url": "https://serviciosescolares.unison.mx/objetivo/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "f4639bb1-253c-5347-be81-b38d5391055b",
+      "source_url": "https://serviciosescolares.unison.mx/organigrama/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "d360b5d6-1674-5ebc-b449-513a5de572c0",
+      "source_url": "https://serviciosescolares.unison.mx/politica-de-calidad/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "19c5818f-b20c-556a-be95-9e15b3e5988f",
+      "source_url": "https://serviciosescolares.unison.mx/posgrados-admision/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "58cb2acb-00a7-51c5-80d7-9e99b33c3e34",
+      "source_url": "https://serviciosescolares.unison.mx/posgrados-doctorados/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "6a85460a-54a5-50f2-85f9-4475ba9c0f55",
+      "source_url": "https://serviciosescolares.unison.mx/posgrados-especialidades/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "d0eed8e5-44bd-5f5c-ae1b-0fe4df17eeca",
+      "source_url": "https://serviciosescolares.unison.mx/posgrados-maestrias/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "be6b4618-051c-5c95-b98f-4a096b028743",
+      "source_url": "https://serviciosescolares.unison.mx/procedimiento-de-titulacion/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "bba24a9c-dfeb-5044-af93-36012e297836",
+      "source_url": "https://serviciosescolares.unison.mx/programa-simultaneo/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "6c53d521-0dc6-5f5b-bc1a-6aa04a4a654f",
+      "source_url": "https://serviciosescolares.unison.mx/quienes-somos/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "af7e2a39-af4c-5135-8a87-84b43cc3287a",
+      "source_url": "https://serviciosescolares.unison.mx/reactivacion-de-kardex-2-anos/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "1a21874e-08f6-5299-9d3f-a56d5e61095d",
+      "source_url": "https://serviciosescolares.unison.mx/reactivacion-de-kardex-2-anos-2/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8ec411e2-47a0-5f5b-bce8-11d14ab27c92",
+      "source_url": "https://serviciosescolares.unison.mx/rectificacion-de-calificaciones/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ec5d4589-4850-5c15-b8c3-7f4d353211f6",
+      "source_url": "https://serviciosescolares.unison.mx/rectificacion-de-identidad-de-genero/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "df4539f1-3d64-51d4-abb9-e1d9536d8ca0",
+      "source_url": "https://serviciosescolares.unison.mx/reexpedicion-de-titulo/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "a5de32d4-9cef-5b87-88da-c9c8e98fd7f6",
+      "source_url": "https://serviciosescolares.unison.mx/reinscripciones-2025-2/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "b7ecc27a-f986-5bf2-bdb2-6da8d2155573",
+      "source_url": "https://serviciosescolares.unison.mx/requisitos-de-titulacion/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "0f4b46f4-f2a0-57e2-a677-d453dc508a15",
+      "source_url": "https://serviciosescolares.unison.mx/requisitos-para-admision/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "4bc2ccba-0534-51a4-b94f-1bec47a2e855",
+      "source_url": "https://serviciosescolares.unison.mx/revalidacion-de-estudios/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "978681db-c77b-57c4-aa71-98d561fd2545",
+      "source_url": "https://serviciosescolares.unison.mx/segundo-programa/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "13f847a9-02e4-552e-b01c-0f2ec65b9c0b",
+      "source_url": "https://serviciosescolares.unison.mx/titulacion/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ac626f76-4e82-555e-8ae0-1628ccef0772",
+      "source_url": "https://serviciosescolares.unison.mx/titulacion-de-licenciatura/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "conflicting_egel_requirements",
+      "rationale": "The published pasante guide refers to mandatory900CENEVAL points while the licenciatura titulacion page says EGEL is not mandatory pending reform. Current navigation does not resolve the transitional applicability; retain both whole documents unknown.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "44669de6-fe36-5ef1-b27a-396da250d61a",
+      "source_url": "https://serviciosescolares.unison.mx/titulacion-de-posgrados/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "df15595f-104f-5cbc-9bb0-b5eece66537e",
+      "source_url": "https://serviciosescolares.unison.mx/TRAMITES-INTERNACIONALES/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "b87ca4a2-032a-5fc9-bcca-406779f1ff54",
+      "source_url": "https://serviciosescolares.unison.mx/verificacion-de-documentos/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "indexed_sidebar_or_article_version_changed",
+      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4ccd2936-1c64-5b18-8556-0360533e0325",
+      "source_url": "https://serviciosescolares.unison.mx/wp-content/uploads/2024/04/CORREOS-DE-ATENCION-PARA-IMPRESION.pdf",
+      "title": "CORREOS DE ATENCION PARA IMPRESION",
+      "group": "services",
+      "reason_code": "mixed_old_admission_and_general_contacts",
+      "rationale": "Although the homepage still links this exact PDF, one entry explicitly covers Admisión2024 while others are generic contacts. The entire stored version cannot safely be labelled current or expired from that mixed scope.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "38c544a1-ffd7-5c58-9921-25ef6e522fb8",
+      "source_url": "https://serviciosescolares.unison.mx/wp-content/uploads/2026/09/Foliosaceptados-1.pdf",
+      "title": "Foliosaceptados 1",
+      "group": "services",
+      "reason_code": "award_result_scope_not_open_call",
+      "rationale": "This is a printed PROCESO DE BECAS2026 accepted-folio list. Publisher navigation refers to2026-2027, but no actual validity/application window is proven. Do not classify an open/current call from the year or expose folio details in evidence.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "6b2ddbee-b7ee-5755-bef6-c310a19c5682",
+      "source_url": "https://serviciosescolares.unison.mx/zona-de-acceso-buho/",
+      "title": "Dirección de Servicios Escolares",
+      "group": "services",
+      "reason_code": "insufficient_visible_substantive_or_window_evidence",
+      "rationale": "The indexed text is a heading/navigation fragment, image-based information or an undated link index. Its unchanged heading alone does not prove the actual schedule, prices, program offer or policy content; no remote authenticated/other-origin resource was followed.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "4dc2b793-5939-58b4-a4ff-60951503cc11",
+      "source_url": "https://abogaciageneral.unison.mx/",
+      "title": "Oficina de la Abogacía General",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "6d2d18a1-9e0e-558e-affa-dcc105490184",
+      "source_url": "https://administracionpublica.unison.mx/",
+      "title": "Licenciatura en Administración Pública – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "1e0a3ed3-2d9f-528f-88cf-3bb243b4e7fb",
+      "source_url": "https://administracion.unison.mx/",
+      "title": "Departamento de Administración – División de Ciencias Económicas y Administrativas",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5a008798-5169-5d93-853a-4de48c1aa797",
+      "source_url": "https://alumnos.unison.mx/",
+      "title": "PORTAL DE ALUMNOS",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "e7af63bc-787d-5df4-b000-8a087c7fecd6",
+      "source_url": "https://bellasartes.unison.mx/",
+      "title": "Departamento de Bellas Artes – Facultad Interdisciplinaria de Humanidades y Artes",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "51cabd25-46d3-56e3-a30f-953a2472131b",
+      "source_url": "https://buhos.uson.mx/web/apps/admision_registro/index.php/carga",
+      "title": "Portal de Aspirantes de Primer Ingreso",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8c213c3c-56cf-58fd-9e9d-38445e668ca3",
+      "source_url": "https://buhos.uson.mx/web/apps/_main_app/index.php/login",
+      "title": "Acceso UNISON",
+      "group": "other",
+      "reason_code": "authentication_landing_page_not_public_guidance",
+      "rationale": "The unchanged indexed text only instructs employees to log in. No credentials, account session or protected content was accessed; no useful public-document validity conclusion follows from this login shell.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "70c48fbb-3943-529c-8230-bbd5e0a7d76d",
+      "source_url": "https://campushermosillo.unison.mx/",
+      "title": "Dirección Administrativa del Campus Hermosillo – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "79a637bb-4250-5a7d-a5d4-3ef95be42347",
+      "source_url": "https://campushermosillo.unison.mx/antecedentes/",
+      "title": "Antecedentes – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ec54272f-bdb6-5c63-b1e3-5bfa2ba332c1",
+      "source_url": "https://campushermosillo.unison.mx/category/avisos/",
+      "title": "Avisos – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "e1be416f-9a73-55b1-a448-5b01d9161dbf",
+      "source_url": "https://campushermosillo.unison.mx/category/convocatorias/",
+      "title": "Convocatorias – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "0f32d6c9-bebb-5d62-b6d2-247ca2c3b125",
+      "source_url": "https://campushermosillo.unison.mx/category/noticias/",
+      "title": "Noticias – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "baa73940-ecf4-5e22-9116-7666bbc79f4d",
+      "source_url": "https://campushermosillo.unison.mx/consejo-regional-de-vinculacion-social/",
+      "title": "Consejo Regional de Vinculación Social del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "64612972-7753-58f3-b400-3df85e3c9f38",
+      "source_url": "https://campushermosillo.unison.mx/convocatoria-pasa-la-pagina-dona-tus-libros/",
+      "title": "Convocatoria Pasa la página: dona tus libros – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "call_announcement_has_no_readable_deadline",
+      "rationale": "The matching visible page only supplies a donation-call title and CMS posting/modification dates. Its actual conditions are image-based/not present in indexed readable text; those dates do not prove a closed application or donation window.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "196088c0-0d38-50f9-b004-1635847331b8",
+      "source_url": "https://campushermosillo.unison.mx/coordinacion-de-espacios-culturales-urc/",
+      "title": "Teatro Emiliana de Zubeldía",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "bc8d8721-f8c2-5105-a917-f048f5fc9973",
+      "source_url": "https://campushermosillo.unison.mx/cursos-de-verano/",
+      "title": "Consulta los turnos de inscripción",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "87301def-ea6a-5ed7-a4ec-3ee4634bd9a0",
+      "source_url": "https://campushermosillo.unison.mx/directorio/",
+      "title": "DIRECTORIO – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "3c586d26-32aa-595d-980d-cec40be9efda",
+      "source_url": "https://campushermosillo.unison.mx/historia-del-campus/",
+      "title": "Historia del campus – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "137bd913-9014-5274-ac8c-21cbefd3b2be",
+      "source_url": "https://campushermosillo.unison.mx/programas-de-graduaciones-urc/",
+      "title": "Ceremonia de Egresados – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "605e7d86-349e-5943-a1c5-5e07097558a1",
+      "source_url": "https://campushermosillo.unison.mx/salas-de-lactancia/",
+      "title": "Salas de Lactancia – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "7a45d1ff-53f8-50b8-b57a-d82a92163114",
+      "source_url": "https://campushermosillo.unison.mx/soy-campus-hermosillo/",
+      "title": "Soy Campus Hermosillo – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "mixed_old_news_and_current_navigation",
+      "rationale": "The unchanged homepage mixes gallery links and older admission/job notices. No single current validity interval applies to every indexed item, and historical notice years alone do not establish their expiry.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "cb4eb995-ccb1-5528-80d0-33df3b9945de",
+      "source_url": "https://campushermosillo.unison.mx/tramites-y-servicios/",
+      "title": "TRÁMITES Y SERVICIOS – Dirección Administrativa del Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2, 3] of 4. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "aa621856-ad24-5f74-93ff-86dae2a60f2d",
+      "source_url": "https://carreradeaniversario.unison.mx/",
+      "title": "Carrera de Aniversario Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ea50c643-04ac-5eec-8f57-5a35d7339b89",
+      "source_url": "https://coil.unison.mx/",
+      "title": "Collaborative Online International Learning ( COIL )",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "64e84a4a-4d7e-5435-8d55-46e87843d464",
+      "source_url": "https://contabilidad.unison.mx/",
+      "title": "Departamento de Contabilidad – División de Ciencias Económicas Administrativas",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "cd114ece-9622-580e-a935-e6c3438c2a66",
+      "source_url": "https://dadip.unison.mx/concurso-institucional-tesis-en-tres-minutos-3mt/",
+      "title": "Dirección de Apoyo a Docentes, Investigación y Posgrado",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "61acf2f2-a335-5bff-b311-05f7165163ff",
+      "source_url": "https://dad.unison.mx/",
+      "title": "Departamento de Arquitectura y Diseño – Facultad Interdisciplinaria de Humanidades y Artes",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5b2e231f-3447-5d9d-a061-a563dab50fb6",
+      "source_url": "https://dagus.unison.mx/",
+      "title": "Departamento de Agricultura y Ganadería",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "89a60d30-38b8-5454-ad8d-d3c4ed77f634",
+      "source_url": "https://dape.unison.mx/",
+      "title": "Dirección de Apoyo a Programas Educativos",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8698ba6e-06c3-5094-bb8b-4b117f84bfae",
+      "source_url": "https://dcea-caborca.unison.mx/",
+      "title": "Departamento de Ciencias Económico Administrativas, Campus Caborca – Facultad Interdisciplinaria de Ciencias Económicas y Administrativas",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "72c6108b-f8ef-5714-aca3-cc04ea11b259",
+      "source_url": "https://dcea-navojoa.unison.mx/",
+      "title": "Departamento de Ciencias Económico-Administrativas, Campus Navojoa – Facultad Interdisciplinaria de Ciencias Económicas y Administrativas",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "b89a575e-8e47-5368-b247-b478b3ac72b2",
+      "source_url": "https://dcea-nogales.unison.mx/",
+      "title": "Departamento de Ciencias Económicos Administrativas, Nogales – Facultad Interdisciplinaria de Ciencias Económicas y Administrativas",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "850a4b0b-498a-5246-ba68-36169a6945c3",
+      "source_url": "https://dcqba-caborca.unison.mx/",
+      "title": "Departamento de Ciencias Químico Biológicas y Agropecuarias (Campus Caborca) – Facultad Interdisciplinaria de Ciencias Biológicas y de Salud",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "712611f3-bdff-53aa-9131-b0d925901eeb",
+      "source_url": "https://dcs-caborca.unison.mx/",
+      "title": "Departamento de Ciencias Sociales, Campus Caborca – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "566ab9ac-32ef-5b34-a7c5-e67b318dbd9a",
+      "source_url": "https://dcs-navojoa.unison.mx/",
+      "title": "Departamento de Ciencias Sociales, Navojoa – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "fc5fce3b-87fc-520e-a36c-95566f70a495",
+      "source_url": "https://dcs-nogales.unison.mx/",
+      "title": "Departamento de Ciencias Sociales, Nogales – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "a3a4398b-e9fa-5220-86e7-de0b9bdd8cca",
+      "source_url": "https://ddu.unison.mx/",
+      "title": "Defensoría de los Derechos Universitarios",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "19168f25-5fe7-5921-988b-46eb9e2ce00f",
+      "source_url": "https://deportes.unison.mx/",
+      "title": "Departamento de Ciencias del Deporte y de la Actividad Física – Facultad Interdisciplinaria de Ciencias Biológicas y de Salud",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "d7c53b77-8d34-5a64-b9f3-1d4b87fccdcf",
+      "source_url": "https://derecho.unison.mx/",
+      "title": "Departamento de Derecho – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "3c312c22-f3bd-5c69-ba1e-f0c3666f6f77",
+      "source_url": "https://dicym.unison.mx/",
+      "title": "Departamento de Ingeniería Civil y Minas – Facultad Interdisciplinaria de Ingeniería",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "f7e380c1-bff8-5df1-bd1c-2b3ccd48ab30",
+      "source_url": "https://difus.unison.mx/",
+      "title": "Departamento de Investigación en Física",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "f5ea8b75-bcd0-5dfc-8a31-ee893c507606",
+      "source_url": "https://dipa.unison.mx/",
+      "title": "Departamento de Investigación y Posgrado en Alimentos – Otro sitio realizado con WordPress",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "a959c3b7-a0b4-5f78-b891-7bae055c1877",
+      "source_url": "https://direcciondecomunicacion.unison.mx/",
+      "title": "Dirección de Comunicación",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "735d2d38-01cf-5e64-b136-b89240a2b439",
+      "source_url": "https://dsap.unison.mx/",
+      "title": "Departamento de Sociología y Administración Pública – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4e1d940c-8c51-556a-a392-8c9308d7ca73",
+      "source_url": "https://dti.unison.mx/",
+      "title": "Dirección de Tecnologías de la Información",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "e02ce24d-ffd1-5560-a24b-4bfcb6f04d16",
+      "source_url": "https://economia.unison.mx/",
+      "title": "Departamento de Economía – Facultad Interdisciplinaria de Ciencias Económicas y Administrativas",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "d24cdd5c-3365-5c28-805f-a38fc23a407b",
+      "source_url": "https://economia.unison.mx/degree-in-business-and-international-commerce/",
+      "title": "Mission",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "7723a2fe-03cc-5459-9621-2e79196e2182",
+      "source_url": "https://educacionenlinea.unison.mx/",
+      "title": "Coordinación de Educación en Línea – Dirección de Apoyo a Programas Educativos",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ecc0f997-d652-50ae-98bb-569cdd40353b",
+      "source_url": "https://emprendedores.unison.mx/",
+      "title": "Programa de Emprendedores Universitarios – Dirección de Apoyo a Estudiantes",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "56063ff2-9376-5e36-9b70-2abc463744bf",
+      "source_url": "https://enfermeria.unison.mx/",
+      "title": "Departamento de Enfermería",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "42fc9c23-4b42-59e9-bde4-d2d32377b7f6",
+      "source_url": "https://fi-cbs.unison.mx/",
+      "title": "Facultad Interdisciplinaria de Ciencias Biológicas y de Salud – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4d524009-8329-5f63-af72-618192bcc006",
+      "source_url": "https://fi-cea.unison.mx/",
+      "title": "Facultad Interdisciplinaria de Ciencias Económicas y Administrativas – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "982e272d-54f9-5729-80bc-90993dfcf41f",
+      "source_url": "https://fi-cen.unison.mx/",
+      "title": "Facultad Interdisciplinaria de Ciencias Exactas y Naturales – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "cdcdf108-ad29-56e3-8fc4-ba4dc7a9f7fb",
+      "source_url": "https://fi-csoc.unison.mx/",
+      "title": "Facultad Interdisciplinaria de Ciencias Sociales – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ac8dcda2-460c-51e4-b046-d2b362d7bf3e",
+      "source_url": "https://fi-ha.unison.mx/",
+      "title": "Facultad Interdisciplinaria de Humanidades y Artes – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "28d8c9cb-622d-5a01-9a6a-0f14169f8501",
+      "source_url": "https://fi-ing.unison.mx/",
+      "title": "Facultad Interdisciplinaria de Ingeniería – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "69c8755e-fb57-52e4-8089-48eba93003af",
+      "source_url": "https://fisica.unison.mx/",
+      "title": "Departamento de Física",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "e58f2943-1be8-57b2-b896-c5e50594c92c",
+      "source_url": "https://fmi-caborca.unison.mx/",
+      "title": "Departamento de Física, Matemáticas e Ingeniería – Caborca – Facultad Interdisciplinaria de Ingeniería",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "4f1bfaf8-885d-5ffa-9101-e954ae234fbc",
+      "source_url": "https://fmiurs.unison.mx/",
+      "title": "Departamento de FûÙsica-MatemûÀticas e IngenierûÙa (Navojoa) – Facultad Interdisciplinaria de IngenierûÙa",
+      "group": "other",
+      "reason_code": "policy_robots_host_not_allowed",
+      "rationale": "Robots/host admission blocked the request (unavailable: robots_host_not_allowed); document text was not fetched or semantically reviewed.",
+      "category": "Access or policy unavailable"
+    },
+    {
+      "source_id": "2b4974d5-8df3-5020-852f-35cd3a4723e2",
+      "source_url": "https://geologia.unison.mx/",
+      "title": "Departamento de Geología",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5fd3deab-189a-5767-9704-c13445503a19",
+      "source_url": "https://historiayantropologia.unison.mx/",
+      "title": "Departamento de Historia y Antropología – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "9dcc7f45-4245-5cf7-8263-6c28fa606e3f",
+      "source_url": "https://iq.unison.mx/",
+      "title": "Departamento de Ingeniería Química y Metalurgia – Facultad Interdisciplinaria de Ingeniería",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "960ccb1b-73c9-5983-b93e-188e6c468fa8",
+      "source_url": "https://ite.unison.mx/",
+      "title": "Ingeniería en Tecnología Electrónica – Ingeniería en Tecnología Electrónica",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "2dee445d-d09f-58b1-af62-ec1ea2bbdd82",
+      "source_url": "https://lci.unison.mx/",
+      "title": "Laboratorio Central de Informática – Campus Hermosillo",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "82d7e4f8-f44d-5b83-b628-a791424c0c09",
+      "source_url": "https://lenguasextranjeras.unison.mx/",
+      "title": "Departamento de Lenguas Extranjeras – Facultad Interdisciplinaria de Humanidades y Artes",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "c049589a-2cc6-563f-911f-c6a9ac007cd4",
+      "source_url": "https://lenguasextranjeras.unison.mx/convocatoria/",
+      "title": "Inicio de clases: Lunes 17 de agosto del 2026",
+      "group": "other",
+      "reason_code": "class_start_date_not_application_expiry",
+      "rationale": "The readable page states classes start 17 August 2026 but does not prove the application deadline or termination of obligations; related-news/sidebar content is also indexed. A class start and CMS dates do not prove whole-document expiry.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "49740fbd-1805-507f-95f2-13ea4d1e4cfb",
+      "source_url": "https://letrasylinguistica.unison.mx/",
+      "title": "Departamento de Letras y Lingüística – Facultad Interdisciplinaria de Humanidades y Bellas Artes",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "34737a1a-966a-5d8e-af16-481da4af1ae2",
+      "source_url": "https://lic.mat.uson.mx/web/",
+      "title": "Licenciatura en Matemáticas – Departamento de Matemáticas",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "a95d97dc-b9ae-5180-b3d8-ea2f3473acb4",
+      "source_url": "https://medicina.unison.mx/",
+      "title": "Departamento de Medicina y Ciencias de la Salud – División de Ciencias Biológicas y de la Salud",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "10f057d2-7a6d-5ddf-92a2-906facd69266",
+      "source_url": "https://movilidad.unison.mx/",
+      "title": "Subdirección de Cooperación, Movilidad e Internacionalización – Dirección de Apoyo a Estudiantes",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "424abca1-1f2b-5567-86c7-cf61a57bfe1a",
+      "source_url": "https://movilidad.unison.mx/alumnos-visitantes/",
+      "title": "Noticias – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "370797a0-8815-5817-bcd1-d5ba558111ae",
+      "source_url": "https://movilidad.unison.mx/apoyo-economico-verano-de-investigacion-cientifica-y-tecnologica-del-pacifico-programa-delfin-2026/",
+      "title": "Apoyo Económico Verano de Investigación Científica y Tecnológica del Pacífico – Programa Delfín 2026 – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "selection_results_without_obligation_end_evidence",
+      "rationale": "The exact matching page is a list of selected Delfin 2026 beneficiaries. Selection results and a program year do not establish whether award/reporting obligations have ended; no blanket historical/current status is inferred.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "29550aa6-db99-5ec0-acd7-dc9a38b655cc",
+      "source_url": "https://movilidad.unison.mx/category/convocatorias/",
+      "title": "Convocatorias Abiertas – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "e995e0fa-9085-51f4-9934-cd39bf18e308",
+      "source_url": "https://movilidad.unison.mx/coordinadores/",
+      "title": "Coordinadores – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "479d4847-a4c7-50e8-b47e-c8d536444dce",
+      "source_url": "https://movilidad.unison.mx/estancias-cientificas/",
+      "title": "Estancias de investigación científicas – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "f2c9e287-e650-5adf-80b0-78d1ea82b41d",
+      "source_url": "https://movilidad.unison.mx/estancias-cortas/",
+      "title": "Estancias cortas – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "4bd9421d-b599-59f0-9588-233c9f864479",
+      "source_url": "https://movilidad.unison.mx/estrategico-internacional/",
+      "title": "Estratégico internacional – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "60233fb2-9de0-51fd-b87c-30d1e1e59084",
+      "source_url": "https://movilidad.unison.mx/estudiante-saliente/",
+      "title": "Estudiante saliente – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "35df12d5-e710-56fb-8305-9212e6f2fba3",
+      "source_url": "https://movilidad.unison.mx/informes/",
+      "title": "Informes – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "multi_year_report_index_not_single_document_interval",
+      "rationale": "This is an unchanged list of annual reports covering several years, not a reviewed individual report. No single document year or effective interval can be assigned to the whole index.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "a091f875-b83b-5588-81ed-da90b2740fa3",
+      "source_url": "https://movilidad.unison.mx/internacional-2/",
+      "title": "Internacional – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "6b9882f1-b234-579c-a5e3-c02befec9dea",
+      "source_url": "https://movilidad.unison.mx/movilidad-convocatorias/",
+      "title": "Movilidad Convocatorias – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "340ef0cd-db7f-564c-b942-13c87142ca3b",
+      "source_url": "https://movilidad.unison.mx/nacional-2/",
+      "title": "Nacional – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "655597b3-204c-57e9-93f6-76712acc04af",
+      "source_url": "https://movilidad.unison.mx/normatividad/",
+      "title": "Normatividad – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "current_normative_index_contains_historical_material",
+      "rationale": "The index is live and unchanged, but its indexed text mixes current guidance, older period-specific funding rules and historical council agreements. A current index link must not promote every linked historical source or make every indexed old rule current.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "2f1b2e3f-e7a3-5912-bf94-bad8e7634600",
+      "source_url": "https://movilidad.unison.mx/office-of-cooperation-mobility-and-internationalization/",
+      "title": "Office of Cooperation, Mobility and Internationalization – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "ongoing_mission_mixed_with_old_incoming_call",
+      "rationale": "The page combines ongoing mission/vision with an explicitly 2026-1 incoming call. Its September-October day/month opening label lacks an explicit calendar year for that application window. The whole mixed page is not promoted or expired from the academic-period label alone.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "e46f36b7-1ce3-5290-9b76-2d879bb63cee",
+      "source_url": "https://movilidad.unison.mx/organigrama/",
+      "title": "Organigrama – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "c258e413-eea8-591a-b898-4db0e2c1de0e",
+      "source_url": "https://movilidad.unison.mx/programas-de-movilidad/",
+      "title": "Programas de Movilidad – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "c0babc3d-8cc5-5cf2-b0bd-e370e6142457",
+      "source_url": "https://movilidad.unison.mx/rankings/",
+      "title": "Rankings – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "616a76b4-c5d4-5679-af1e-05c85db10fe3",
+      "source_url": "https://movilidad.unison.mx/series-historicas/",
+      "title": "Series históricas – Movilidad Saliente – Entrante – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "38e32f03-dd62-5560-8e83-9389e6c6728d",
+      "source_url": "https://movilidad.unison.mx/series-historicas-movilidad-de-investigacion-cientifica/",
+      "title": "SERIES HISTORICAS – MOVILIDAD DE INVESTIGACIÓN CIENTÍFICA – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "indexed_stub_or_image_only_content",
+      "rationale": "The source version matches, but indexed/readable main content is only a short navigation stub or image-based label; substantive document conditions and dates are not available in that indexed text. No current or expired status is inferred.",
+      "category": "Insufficient substantive content"
+    },
+    {
+      "source_id": "b16755f4-777f-57b5-94ab-cf3b16188829",
+      "source_url": "https://movilidad.unison.mx/virtual-2/",
+      "title": "Virtual – Subdirección de Cooperación, Movilidad e Internacionalización",
+      "group": "other",
+      "reason_code": "ongoing_rules_mixed_with_2022_call",
+      "rationale": "This page mixes continuing virtual-mobility criteria and contacts with a 2022-1 call link. The semester label is not proof of the entire page's expiry or current application availability.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "fcae07b7-2242-5d24-9583-3247e69ce9be",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2022/06/Gui%CC%81a-para-postular-a-los-estudiantes-1-1.pdf",
+      "title": "Gui%CC%81a para postular a los estudiantes 1 1",
+      "group": "other",
+      "reason_code": "old_nomination_guide_contacts_conflict_with_live_directory",
+      "rationale": "The exact PDF guide lists Lizbeth Rodriguez and Karla Navarro as contacts, whereas the current matched SCMI directory and newly publisher-linked nomination guide identify different national/international coordinators. No explicit replacement declaration for this PDF was found; do not promote stale contacts or invent an expiry.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "12a5e75a-3767-5460-ac4f-975d3ecf917c",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2024/08/Lineamientos-apoyo-25-1.pdf",
+      "title": "Lineamientos apoyo 25 1",
+      "group": "other",
+      "reason_code": "period_specific_support_no_obligation_end_proof",
+      "rationale": "The body explicitly dates issuance 15 August 2024 and governs 2025-1 funding. Its past period and continued archive link do not prove that all grant or reporting obligations ended. No historical expiry is inferred from the period alone.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "a044cb57-f356-5915-a2e2-bcb9b66f3f87",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2025/01/LINEAMIENTOS_APOYOS_ECONOMICOS_2025_2.pdf",
+      "title": "LINEAMIENTOS APOYOS ECONOMICOS 2025 2",
+      "group": "other",
+      "reason_code": "period_specific_support_no_obligation_end_proof",
+      "rationale": "The body explicitly dates issuance 14 January 2025 and governs 2025-2 funding. The past semester alone does not terminate grant, repayment or reporting obligations; the normative index preserves older period editions.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "ca1b3e47-545e-51bc-b33f-31fe2c778c37",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2025/11/Durante-Movilidad-INTERNACIONAL-25-2_Saliente.pdf",
+      "title": "Durante Movilidad INTERNACIONAL 25 2 Saliente",
+      "group": "other",
+      "reason_code": "mobility_obligations_continue_beyond_period",
+      "rationale": "The actual first slide says 2026-1/Enero-Junio2026 despite the filename's25-2 label. Later slides cover after-mobility reporting and other student obligations. The semester alone does not prove the guide expired; no whole-document end is established.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "ad5aac0a-86d9-5dd5-87d6-c13638ab0c98",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2026/05/COMUNICADO_18_MAY2026.pdf",
+      "title": "COMUNICADO 18 MAY2026",
+      "group": "other",
+      "reason_code": "dated_labor_dispute_statement_not_validity_end",
+      "rationale": "The issuer's 18 May2026 statement describes salary negotiations and union positions; that issue date does not establish when the statement's factual assertions ceased to apply. It is not treated as a current service guide or expired merely because it is dated.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "eda8ba60-f6e5-5e45-8859-99c72279a389",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2026/05/Lineamientos_Veranos_2026.pdf",
+      "title": "Lineamientos Veranos 2026",
+      "group": "other",
+      "reason_code": "publisher_lists_unreviewed_addendum_to_guidelines",
+      "rationale": "The exact 13 February2026 summer-funding guidelines are linked by the normative index, but that same current index also links a separate2026 addendum. The addendum's effects were not reviewed in this assigned-source batch, so the base document alone is not promoted as complete current guidance.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "9a308bc3-143b-5aa6-a1a6-ae81aa81fda3",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2026/08/Lineamientos_2027-1_MDT.pdf",
+      "title": "Lineamientos 2027 1 MDT",
+      "group": "other",
+      "reason_code": "publisher_current_same_period_edition_differs",
+      "rationale": "This stored August2026 funding PDF for2027-1 is byte-matched, but the current normative index links a distinct November2026 PDF for that same period instead. The November file was not fetched in this assigned-source batch. Without reading its changes, no current or formal replacement status is invented for the August edition.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "66360393-a63d-52cd-930d-c6c89c31a29d",
+      "source_url": "https://movilidad.unison.mx/wp-content/uploads/2026/09/Flyer_Arizona.pdf",
+      "title": "Flyer Arizona",
+      "group": "other",
+      "reason_code": "visually_reviewed_event_year_not_stated",
+      "rationale": "The entire first page was rendered and visually inspected. It advertises a University of Arizona postgraduate information session on Thursday September10 at5PM, but gives no event year. Upload-path year and weekday calculations are not substituted for explicit publisher evidence; the event cannot safely be expired or promoted.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "34fc90ae-1f10-5d67-9be5-b223908442a7",
+      "source_url": "https://ninocientifico.unison.mx/",
+      "title": "Día del Niño Científico",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "45124478-3595-541f-9e1a-2409ff41e7bb",
+      "source_url": "https://oic.unison.mx/",
+      "title": "Órgano Interno de Control",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "7acd12b4-7653-5481-b482-e4b0f6141c23",
+      "source_url": "https://planeacion.unison.mx/",
+      "title": "SISTEMA DE INFORMACIÓN ESTADÍSTICA (SIE)",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ef3b9635-e52c-59a5-a2c9-61bf4035be63",
+      "source_url": "https://polimeros.unison.mx/",
+      "title": "Departamento de Investigación Polímeros y Materiales – Facultad Interdisciplinaria de Ingeniería",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "09ac3874-788d-51d1-9d28-4c53fe8428cd",
+      "source_url": "https://programasestrategicos.unison.mx/",
+      "title": "Dirección de Programas Estratégicos y Proyección Universitaria",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "2f789d71-d87b-525f-b431-325cb58d027f",
+      "source_url": "https://psicom.unison.mx/",
+      "title": "Departamento de Psicología y Ciencias de la Comunicación – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5ce54ed8-b909-53a3-8c02-5b30a25b4b3c",
+      "source_url": "https://qbaurs.unison.mx/",
+      "title": "Departamento de Ciencias Químico, Biológicas y Agropecuarias – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "policy_robots_host_not_allowed",
+      "rationale": "Robots/host admission blocked the request (unavailable: robots_host_not_allowed); document text was not fetched or semantically reviewed.",
+      "category": "Access or policy unavailable"
+    },
+    {
+      "source_id": "66cfe260-b985-50d3-9a43-795657bd7045",
+      "source_url": "https://qb.unison.mx/",
+      "title": "Departamento de Ciencias Químico-Biológicas – Facultad Interdisciplinaria de Ciencias Biológicas y de Salud",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "58c9de02-15cc-5185-8a4d-33cc0409bede",
+      "source_url": "https://recursoshumanos.unison.mx/",
+      "title": "Dirección de Recursos Humanos",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "a28c1894-e538-51d4-8c0d-9e2851f584d6",
+      "source_url": "https://serviciosocial.uson.mx/",
+      "title": "SERVICIO SOCIAL UNIVERSITARIO",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "6f48050f-5503-5a62-8f25-4605f1976009",
+      "source_url": "https://sgacademica.unison.mx/",
+      "title": "Secretaría General Académica",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "8050a1fa-0cf5-534b-a363-b3f08ad1df1b",
+      "source_url": "https://sga.unison.mx/",
+      "title": "Secretaría General Administrativa",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "0656df79-0e0c-58fe-b073-a15030aeb3a6",
+      "source_url": "https://sgc.unison.mx/",
+      "title": "Sistema de Gestión de Calidad – Secretaría General Administrativa",
+      "group": "other",
+      "reason_code": "resource_http_404",
+      "rationale": "The public resource returned HTTP 404; its document text was not available for semantic review.",
+      "category": "Access or policy unavailable"
+    },
+    {
+      "source_id": "a7c9e226-02af-5411-8d12-6f5b645f6443",
+      "source_url": "https://sociologia.unison.mx/",
+      "title": "Licenciatura en Sociología – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "department_homepage_mixes_old_news_and_contact",
+      "rationale": "Every indexed chunk matches, but the page combines older news, event/video material and a coordinator directory entry. Contact continuity alone does not establish one temporal status for all the historical news.",
+      "category": "Applicability, dates or conflicting guidance"
+    },
+    {
+      "source_id": "30c9fd30-19a5-532c-aef6-a730cec3246c",
+      "source_url": "https://tesoreria.unison.mx/",
+      "title": "Tesorería General",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "bf7488b6-8414-5e9c-b3b1-a0eda3d377f5",
+      "source_url": "https://trabajosocial.unison.mx/",
+      "title": "Departamento de Trabajo Social – Facultad Interdisciplinaria de Ciencias Sociales",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "9aeaf4a5-5fa5-5e80-bff9-4240ddc0bf42",
+      "source_url": "https://vinculacionyextension.unison.mx/",
+      "title": "Dirección de Vinculación y Extensión",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5a46f136-0f25-539a-aa9e-d2943d345331",
+      "source_url": "https://www.aniversario.unison.mx/",
+      "title": "84 Aniversario | Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "0ecc31be-e7c0-5720-80a7-bf5f39413f11",
+      "source_url": "https://www.industrial.uson.mx/",
+      "title": "DEPARTAMENTO DE INGENIERÍA INDUSTRIAL",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "24909502-f4a2-520d-a4f9-3dcb98f38bf8",
+      "source_url": "https://www.mat.uson.mx/web/",
+      "title": "Departamento de Matemáticas – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "e75e11af-5fe3-5925-b6d2-00b5a1cbfcde",
+      "source_url": "https://www.unison.mx/",
+      "title": "Universidad de Sonora – El saber de mis hijos hará mi grandeza",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "96abc082-7570-5c8c-a63e-adc889d16a54",
+      "source_url": "https://www.unison.mx/convocatorias-anteriores/",
+      "title": "Convocatorias Anteriores – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "d7db769f-b172-5c15-92e0-a084433061cf",
+      "source_url": "https://www.unison.mx/directorio/",
+      "title": "Directorio – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2, 3, 4] of 5. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "fbd0eece-143b-51a6-a611-c5455ae80303",
+      "source_url": "https://www.unison.mx/eje-de-formacion-comun/",
+      "title": "Eje de Formación Común – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [5, 6, 26, 27, 30, 36] of 38. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "5103f087-fd38-5b6a-a4bf-7a3e7fa550e8",
+      "source_url": "https://www.unison.mx/nota/?idnoti=36799",
+      "title": "Nota – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ba93841c-800d-5678-9d97-c3f23db27f61",
+      "source_url": "https://www.unison.mx/nota/?idnoti=38854",
+      "title": "Nota – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "ba9bcb15-bb94-5ace-bee4-49ab395cf961",
+      "source_url": "https://www.unison.mx/nota/?idnoti=38880",
+      "title": "Nota – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "612435b7-b0b1-53be-809f-c11b05163a0a",
+      "source_url": "https://www.unison.mx/nota/?idnoti=38882",
+      "title": "Nota – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "9bd14b5e-86b7-5f36-bae8-94080ef65176",
+      "source_url": "https://www.unison.mx/nota/?idnoti=38891",
+      "title": "Nota – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "2bbeeede-30d3-5d36-9f1b-57a1c9e1f83b",
+      "source_url": "https://www.unison.mx/nota/?idnoti=38892",
+      "title": "Nota – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "877a68ff-f823-5c74-b8ef-c287a0c1a14c",
+      "source_url": "https://www.unison.mx/todos-somos-unison/",
+      "title": "Todos Somos Unison – Universidad de Sonora",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    },
+    {
+      "source_id": "111da9df-6097-50b8-a788-52835b71f2e6",
+      "source_url": "http://www.dictus.uson.mx/",
+      "title": "Departamento de Investigaciones Científicas y Tecnológicas de la Universidad de Sonora – Facultad Interdisciplinaria de Ciencias Biológicas y de Salud",
+      "group": "other",
+      "reason_code": "indexed_version_not_verified",
+      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
+      "category": "Stored/live content mismatch"
+    }
+  ],
+  "applied_batch_at": "2026-11-21T22:28:07.418744+00:00"
+}

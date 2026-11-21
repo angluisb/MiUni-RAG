@@ -3,6 +3,10 @@
 Date: 2026-11-17. Branch: `feat/ingestion-v2`. The existing ingestion spec was
 executed; no separate feature specification or new MiUni migration was needed.
 
+This is the initial six-source rollout snapshot. The later
+[full source review](source-review-2026-11-20.md) records the 2026-11-21 application
+and current coverage.
+
 ## Outcome
 
 The crawlers now check robots policy before resource requests and redirects.

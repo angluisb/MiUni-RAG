@@ -67,7 +67,7 @@ strict rollout and must not be described as its quality benchmark.
 
 Canonical temporal values now flow from a reviewed, exact-URL-keyed manifest
 into `documentofuente`. The checked-in
-`data/sources/document_temporal_metadata.json` contains six reviewed source records;
+`data/sources/document_temporal_metadata.json` contains 269 reviewed source records;
 an empty manifest remains a supported no-op and does not reset classifications.
 No status or year is automatically inferred from a URL,
 filename, title, crawl time or model output.
@@ -180,3 +180,12 @@ CLI reports use ASCII JSON escapes so accented or decomposed-Unicode source URLs
 remain serializable on legacy Windows consoles. JSON parsers recover the exact
 original URL; this changes neither source identity nor transaction semantics.
 The subprocess regression is `python -m unittest discover -s tests -p test_backfill_console.py -v`.
+
+## Current classification coverage
+
+The 2026-11-21 metadata-only rollout applied 263 additional reviewed classifications:
+225 current / 36 historical / 8 replaced / 219 unknown documents now remain stored. Current
+retrieval has 952 eligible chunks; the total 1,379 chunk/vector rows are unchanged.
+See [the complete source review](source-review-2026-11-20.md), including individual
+unknown reasons and the remaining version-preserving reingestion work. Earlier
+six-source counts above are historical rollout snapshots, not the current totals.

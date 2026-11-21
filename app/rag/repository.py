@@ -1,6 +1,7 @@
 from __future__ import annotations
 from contextlib import contextmanager
 from threading import Lock
+import unicodedata
 
 from app.core.config import Settings
 from app.rag.models import SearchHit
@@ -153,4 +154,28 @@ class RagRepository:
                    """ + temporal_sql + " ORDER BY score DESC, id LIMIT %s",
                 (question, *temporal_parameters, top_n),
             ).fetchall()
+            if not rows:
+                # Keep indexed hits authoritative; only a miss pays for this scan.
+                # Fold vowels, not ñ: año and ano are distinct Spanish words.
+                rows = conn.execute(
+                    """WITH query AS (
+                           SELECT websearch_to_tsquery('spanish', translate(%s,
+                               'áéíóúüÁÉÍÓÚÜ', 'aeiouuAEIOUU')) AS value
+                       ), eligible AS MATERIALIZED (
+                           SELECT id, documento_fuente_id, source_url, document_title,
+                                  content, metadata
+                           FROM rag_chunk WHERE true
+                       """ + temporal_sql + """
+                       ), folded AS MATERIALIZED (
+                           SELECT id, source_url, document_title, content, metadata,
+                                  to_tsvector('spanish', translate(content,
+                                      'áéíóúüÁÉÍÓÚÜ', 'aeiouuAEIOUU')) AS folded_tsv
+                           FROM eligible
+                       )
+                       SELECT id, source_url, document_title, content, metadata,
+                              ts_rank_cd(folded_tsv, query.value) AS score
+                       FROM folded, query WHERE folded_tsv @@ query.value
+                       ORDER BY score DESC, id LIMIT %s""",
+                    (unicodedata.normalize("NFC", question), *temporal_parameters, top_n),
+                ).fetchall()
         return self._hits(rows)

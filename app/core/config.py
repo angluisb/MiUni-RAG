@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     LLM_THINKING_LEVEL: Literal["minimal", "low", "medium", "high"] = "minimal"
     CHAT_MAX_CONCURRENT_REQUESTS: int = Field(default=4, ge=1, le=32)
     CHAT_QUEUE_TIMEOUT_SECONDS: float = Field(default=2, gt=0, le=30)
+    CHAT_HISTORY_MAX_MESSAGES: int = Field(default=12, ge=2, le=12)
+    CHAT_HISTORY_MAX_BYTES: int = Field(default=4000, ge=128, le=4000)
     RAG_CACHE_MAX_ENTRIES: int = Field(default=128, ge=0, le=4096)
     RAG_HYDE_CACHE_TTL_SECONDS: float = Field(default=120, ge=0)
     RAG_EMBEDDING_CACHE_TTL_SECONDS: float = Field(default=600, ge=0)

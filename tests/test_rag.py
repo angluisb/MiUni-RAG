@@ -5,7 +5,7 @@ import threading
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import AsyncMock, Mock, patch
+from unittest.mock import AsyncMock, Mock, call, patch
 
 from fastapi.testclient import TestClient
 
@@ -100,7 +100,10 @@ class RetrievalTests(unittest.IsolatedAsyncioTestCase):
     async def test_hyde_only_changes_dense_query_and_rrf_limits_context(self):
         service = self.service(RAG_CONTEXT_TOP_K=1)
         result = await service.retrieve("pregunta original", AsyncMock(return_value="hipotesis"))
-        service.embedder.encode.assert_called_once_with(["hipotesis"])
+        service.embedder.encode.assert_has_calls([
+            call(["pregunta original"]), call(["hipotesis"])
+        ], any_order=True)
+        self.assertEqual(service.embedder.encode.call_count, 2)
         service.repository.lexical_search.assert_called_once_with("pregunta original", 30)
         self.assertEqual([chunk.id for chunk in result.chunks], ["b"])
         self.assertTrue(result.metrics["hyde_used"])

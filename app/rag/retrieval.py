@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import re
 import unicodedata
 from dataclasses import replace
 from time import perf_counter
@@ -52,7 +53,9 @@ class RetrievalService:
         self._embedding_cache = TTLCache(
             capacity, getattr(settings, "RAG_EMBEDDING_CACHE_TTL_SECONDS", 600))
 
-    async def retrieve(self, question: str, hyde_generator=None) -> RetrievalResult:
+    async def retrieve(self, question: str, hyde_generator=None, *,
+                       temporal_question: str | None = None,
+                       private_context: bool = False) -> RetrievalResult:
         settings = self.settings
         started = perf_counter()
         metrics = {"question_id": str(uuid4()), "experiment_name": settings.RAG_EXPERIMENT_NAME,
@@ -64,9 +67,9 @@ class RetrievalService:
                    "vector_top_n": settings.RAG_VECTOR_TOP_N,
                    "lexical_top_n": settings.RAG_LEXICAL_TOP_N,
                    "context_top_k": settings.RAG_CONTEXT_TOP_K}
-        hyde_cache_enabled = (getattr(settings, "RAG_CACHE_MAX_ENTRIES", 128) > 0
+        hyde_cache_enabled = (not private_context and getattr(settings, "RAG_CACHE_MAX_ENTRIES", 128) > 0
                               and self._hyde_cache.ttl_seconds > 0)
-        embedding_cache_enabled = (getattr(settings, "RAG_CACHE_MAX_ENTRIES", 128) > 0
+        embedding_cache_enabled = (not private_context and getattr(settings, "RAG_CACHE_MAX_ENTRIES", 128) > 0
                                    and self._embedding_cache.ttl_seconds > 0)
         metrics["hyde_cache"] = "disabled"
         metrics["embedding_cache"] = "miss" if embedding_cache_enabled else "disabled"
@@ -74,24 +77,43 @@ class RetrievalService:
         async def timed_call(key, fn, *args):
             stage = perf_counter()
             result = await asyncio.to_thread(fn, *args)
-            metrics[key] = (perf_counter() - stage) * 1000
+            # Dense retrieval can have both original and HyDE branches. Report
+            # total stage work, not whichever concurrent branch completed last.
+            metrics[key] += (perf_counter() - stage) * 1000
             return result
 
         query_text = question
         temporal_enabled = settings.RAG_TEMPORAL_FILTER_ENABLED
         intent = TemporalIntent()
+        # A contextual query may mention an old period in its antecedent. Only
+        # the raw current question can authorize broader temporal retrieval.
+        if temporal_question is not None:
+            raw = "".join(c for c in unicodedata.normalize("NFD", temporal_question.casefold())
+                          if not unicodedata.combining(c))
+            period = re.search(r"\b(\d{4}-\d{1,2})\b", raw)
+            if period:
+                intent = TemporalIntent("periodo_especifico", period.group(1))
+            elif re.search(r"\b(?:historico|historica|historicos|historicas|historical|anterior|anteriores|pasado|pasadas|pasados)\b", raw):
+                intent = TemporalIntent("historico")
 
         def temporal_args():
             return (intent,) if temporal_enabled else ()
 
-        async def vector_branch():
-            embedding_key = (_normalized_cache_input(query_text), settings.RAG_EMBEDDING_MODEL,
+        embedding_missed = False
+
+        async def vector_branch(text):
+            nonlocal embedding_missed
+            embedding_key = (_normalized_cache_input(text), settings.RAG_EMBEDDING_MODEL,
                              settings.RAG_EMBEDDING_PIPELINE_VERSION)
             embedding = self._embedding_cache.get(embedding_key) if embedding_cache_enabled else None
             if embedding is not None:
-                metrics["embedding_cache"] = "hit"
+                if not embedding_missed:
+                    metrics["embedding_cache"] = "hit"
             else:
-                embeddings = await timed_call("embedding_ms", self.embedder.encode, [query_text])
+                embedding_missed = True
+                if embedding_cache_enabled:
+                    metrics["embedding_cache"] = "miss"
+                embeddings = await timed_call("embedding_ms", self.embedder.encode, [text])
                 embedding = embeddings[0]
                 if embedding_cache_enabled and embedding is not None and len(embedding):
                     self._embedding_cache.put(embedding_key, embedding)
@@ -123,7 +145,9 @@ class RetrievalService:
                         raise ValueError("HyDE returned non-text content")
                     if hypothetical.strip():
                         if temporal_enabled:
-                            intent, query_text = parse_temporal_hyde(hypothetical)
+                            generated_intent, query_text = parse_temporal_hyde(hypothetical)
+                            if temporal_question is None:
+                                intent = generated_intent
                         else:
                             query_text = hypothetical.strip()
                         metrics["hyde_used"] = True
@@ -148,15 +172,23 @@ class RetrievalService:
                         question, settings.RAG_LEXICAL_TOP_N, intent))
                     tasks.append(lexical_task)
 
-            vector_task = asyncio.create_task(vector_branch())
-            tasks.append(vector_task)
+            # HyDE is an additional signal, never a replacement for the user's
+            # actual retrieval query (including its bounded follow-up context).
+            dense_queries = [question]
+            if metrics["hyde_used"] and query_text != question:
+                dense_queries.append(query_text)
+            dense_tasks = [asyncio.create_task(vector_branch(text)) for text in dense_queries]
+            tasks.extend(dense_tasks)
+            search_tasks = list(dense_tasks)
             if lexical_task is not None:
-                vector, lexical = await asyncio.gather(vector_task, lexical_task)
+                search_tasks.append(lexical_task)
+            rankings = await asyncio.gather(*search_tasks)
+            if len(rankings) > 1:
                 stage = perf_counter()
-                hits = reciprocal_rank_fusion([vector, lexical], settings.RAG_RRF_K)
+                hits = reciprocal_rank_fusion(rankings, settings.RAG_RRF_K)
                 metrics["rrf_ms"] = (perf_counter() - stage) * 1000
             else:
-                hits = await vector_task
+                hits = rankings[0]
         finally:
             # Cancelling to_thread's awaiter cannot stop the underlying SQL/model
             # thread. Database statement timeouts still bound outstanding SQL.

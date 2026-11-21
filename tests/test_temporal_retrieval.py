@@ -2,7 +2,7 @@ import json
 from contextlib import contextmanager
 from types import SimpleNamespace
 import unittest
-from unittest.mock import AsyncMock, Mock
+from unittest.mock import AsyncMock, Mock, call
 
 from app.core.config import Settings
 from app.rag.repository import RagRepository
@@ -30,7 +30,10 @@ class TemporalTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(intent.period, "2025-2")
         self.assertEqual(service.repository.lexical_search.call_args.args[2], intent)
         self.assertEqual(service.repository.lexical_search.call_args.args[0], "becas 2025-2")
-        service.embedder.encode.assert_called_once_with(["documentary query"])
+        service.embedder.encode.assert_has_calls([
+            call(["becas 2025-2"]), call(["documentary query"])
+        ], any_order=True)
+        self.assertEqual(service.embedder.encode.call_count, 2)
         self.assertEqual(result.metrics["temporal_scope"], "periodo_especifico")
 
     async def test_invalid_json_and_missing_period_fall_back_to_current_original_query(self):

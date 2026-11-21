@@ -7,6 +7,12 @@ import logging
 logger = logging.getLogger(__name__)
 chatbot_router = APIRouter()
 
+
+def _context_arguments(request):
+    if request.history or request.personal_context:
+        return {"history": request.history, "personal_context": request.personal_context}
+    return {}
+
 def _normalize_question(question: str) -> str:
     normalized = question.strip()
     if not normalized:
@@ -17,7 +23,7 @@ def _normalize_question(question: str) -> str:
 async def chat_endpoint(request: QueryRequest) -> QueryResponse:
     question = _normalize_question(request.question)
     try:
-        generated_answer = await get_chat_response(question)
+        generated_answer = await get_chat_response(question, **_context_arguments(request))
     except TimeoutError as exc:
         raise HTTPException(status_code=504,
                             detail="La respuesta excedio el tiempo limite; intenta una pregunta mas breve.") from exc
@@ -41,7 +47,7 @@ async def chat_stream_endpoint(request: QueryRequest) -> StreamingResponse:
     question = _normalize_question(request.question)
 
     # Retrieve context and obtain the first token before committing HTTP 200 headers.
-    stream = stream_chat_response(question)
+    stream = stream_chat_response(question, **_context_arguments(request))
     try:
         first = await anext(stream)
     except StopAsyncIteration as exc:

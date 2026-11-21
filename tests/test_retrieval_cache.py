@@ -2,7 +2,7 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import unittest
 from types import SimpleNamespace
-from unittest.mock import AsyncMock, Mock, patch
+from unittest.mock import AsyncMock, Mock, call, patch
 
 from app.core.config import Settings
 from app.rag.cache import TTLCache
@@ -75,8 +75,11 @@ class RetrievalCacheTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(second.metrics["hyde_cache"], "hit")
         self.assertEqual(second.metrics["embedding_cache"], "hit")
         generator.assert_awaited_once()
-        service.embedder.encode.assert_called_once_with(["Documento de BÉCAS 2026.1"])
-        self.assertEqual(service.repository.vector_search.call_count, 2)
+        service.embedder.encode.assert_has_calls([
+            call(["  BÉCAS   2026.1 "]), call(["Documento de BÉCAS 2026.1"])
+        ], any_order=True)
+        self.assertEqual(service.embedder.encode.call_count, 2)
+        self.assertEqual(service.repository.vector_search.call_count, 4)
         self.assertEqual(service.repository.lexical_search.call_args_list[0].args[0],
                          "  BÉCAS   2026.1 ")
         self.assertEqual(service.repository.lexical_search.call_args_list[1].args[0],
@@ -142,7 +145,7 @@ class RetrievalCacheTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(result.metrics["hyde_cache"], "disabled")
             self.assertEqual(result.metrics["embedding_cache"], "disabled")
         self.assertEqual(generator.await_count, 2)
-        self.assertEqual(service.embedder.encode.call_count, 2)
+        self.assertEqual(service.embedder.encode.call_count, 4)
 
     async def test_cancellation_awaits_started_lexical_task(self):
         service = self.service()

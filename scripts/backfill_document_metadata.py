@@ -91,7 +91,8 @@ def main(argv=None) -> int:
     manifest = load_manifest(args.manifest)
     report = backfill_metadata(RagRepository(Config), manifest, apply=args.apply, backup=args.backup,
                                expected_database=args.expected_database)
-    print(json.dumps(report, ensure_ascii=False, default=str))
+    # JSON escapes preserve Unicode URLs even on legacy Windows stdout encodings.
+    print(json.dumps(report, ensure_ascii=True, default=str))
     return 0
 
 

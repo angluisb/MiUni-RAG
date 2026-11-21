@@ -173,3 +173,10 @@ The 2026-11-17 six-source rollout is recorded in
 [ingestion-v2 verification](ingestion-v2-verification.md). A repeated dry-run is
 expected to report zero affected rows. Remaining unknown sources need separate
 authoritative review; this manifest is not a whole-corpus validity declaration.
+
+## Windows console compatibility
+
+CLI reports use ASCII JSON escapes so accented or decomposed-Unicode source URLs
+remain serializable on legacy Windows consoles. JSON parsers recover the exact
+original URL; this changes neither source identity nor transaction semantics.
+The subprocess regression is `python -m unittest discover -s tests -p test_backfill_console.py -v`.

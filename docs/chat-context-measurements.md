@@ -1,9 +1,65 @@
 # Contextual chat: measured results and remaining proof
 
+## Latest post-refresh retest (2026-11-22)
+
+Five paced real-provider calls exercised the production Python retrieval and
+streaming-generation path after refreshing the eligible sources. They did not
+start the application server or test authenticated HTTP/browser behavior.
+
+| Question | First text | Complete | Observed result |
+| --- | ---: | ---: | --- |
+| `Que documentos ocupo para mis practicas?` | 5.952s | 7.100s | Practices regulation cited; asks for the program for specifics. |
+| Same | 3.722s | 5.433s | Regulation and requirements retained. |
+| `Que requisitos hay para titulacion?` | 2.986s | 3.551s | General requirements and program-specific caveat. |
+| `Quiero informacion sobre intercambios academicos` | 3.046s | 4.166s | Mobility sources retrieved. |
+| `y los documentos?` with the completed exchange turn | 2.709s | 3.900s | Follow-up retained the exchange context and mobility sources. |
+
+Median first text: **3.046s**; median completion: **4.166s**. This is a five-call
+sample, not a production SLO or semantic-accuracy measurement. The prior report
+was preserved at `.cache/contextual-chat-before-retest-20261122T063523Z.json`;
+the latest evidence is `.cache/contextual-chat-final-measurement.json`.
+
+Correction to the preceding status message: **HyDE fell back in 4/5 calls**, not
+3/5. The failed attempts returned in 1.20–1.62s against a 3s configured timeout,
+so those observations were not timeout failures. The broad exception handler
+logs only a generic warning, so the provider exception type/status was not
+captured. One isolated call using the same 3s budget succeeded in 2.824s; this
+shows latency near the budget but does not identify the earlier errors. Safe
+exception diagnostics are needed before changing retries or timeouts.
+
+## Prior final-code check (before the source refresh)
+
+A new availability probe succeeded, then five paced real-provider answers on the
+final contextual/raw-anchor code all completed. No prior report was overwritten.
+
+| Question | First text | Complete | Observed result |
+| --- | ---: | ---: | --- |
+| `Que documentos ocupo para mis practicas?` | 5.466s | 6.674s | Practices regulation retrieved and cited. |
+| Same | 3.207s | 4.409s | Same regulation retained; source-specific documents and career caveat. |
+| `Que requisitos hay para titulacion?` | 3.908s | 4.534s | Program pages cited; institution-wide generalization still requires care. |
+| `Quiero informacion sobre intercambios academicos` | 2.711s | 4.020s | Mobility information with documentary sources. |
+| `y los documentos?` with that completed turn | 3.160s | 4.235s | Kept the exchange topic and retrieved international/national mobility requirements. |
+
+Median first text: **3.207s**; median complete: **4.409s**. Deliberate ten-second
+inter-request pacing is excluded. Five answers are not a production benchmark or
+semantic-accuracy percentage, and the two practice answers do not prove universal
+stability. Four HyDE attempts fell back safely; the successful hypothetical query
+still retained the raw anchor. Evidence remains private/ignored at
+`.cache/contextual-chat-final-measurement.json`.
+
+This closes the previously unavailable real-provider follow-up check, not the
+authenticated HTTP/browser acceptance. No server-start denial was bypassed.
+The historical sample and its failures below are retained for comparison, not
+treated as a controlled speedup experiment. This sample precedes the separate
+150-source refresh and any future metadata promotions from that batch.
+
+## Previous sample and limitations
+
 Code adds owned conversation context, raw-query separation, deterministic saved
 schedule replies, and accent-insensitive zero-hit retrieval. Tests do not establish
 end-to-end answer accuracy. The real-provider sample found a retrieval instability
-and exhausted provider quota on the follow-up; final integrated proof is pending.
+and exhausted provider quota on that earlier follow-up. The latest five-answer
+run above closes that provider check; authenticated HTTP/browser proof is pending.
 
 ## Real provider sample
 
@@ -38,7 +94,8 @@ the relevant regulation. Dense retrieval now retains the raw-query anchor alongs
 successful HyDE, fusing both with lexical hits. Deterministic adversarial tests
 cover this rule. The real-provider sample above preceded that last correction;
 **it is not a benchmark of the final raw-anchor implementation**. No further
-provider request was attempted after the rate limit.
+provider request was attempted again within that sampling run. A later user-
+authorized availability probe and paced five-answer run are recorded above.
 
 Accent fallback independently changed `titulacion` from zero to eight lexical hits.
 It costs about1.2s on misses without a dedicated normalized index; successful
@@ -46,9 +103,11 @@ indexed queries preserve their previous results. See `lexical-accent-search.md`.
 
 ## Proof still needed
 
-1. With quota available, rerun the same questions against the final code and
-   manually compare factual claims, citation labels and requirements to returned
-   evidence. Keep unsupported open-call and program-specific claims qualified.
+1. The latest final-code sample above has been compared qualitatively with its
+   retrieved sources: both practice answers retain the regulation and the real
+   follow-up retains mobility context. This is not a full factual-accuracy audit;
+   unsupported open-call and institution-wide/program-specific claims still need
+   qualification. Extend coverage when evaluating any later source promotions.
 2. Exercise authenticated MiUni JSON/stream routes and the browser against the
    final code: reload, selected-chat isolation, delete, schedule edits and a mixed
    empty-schedule query. Server startup must be permitted by the environment.

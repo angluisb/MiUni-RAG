@@ -4,6 +4,13 @@ The recovered local RAG service completed every authorized test request. Map
 responses were measured separately from real Gemini answers; neither benchmark
 is a controlled before/after comparison or an integrated browser measurement.
 
+## Historical measurement snapshot
+
+This report describes measurements before the authorized temporal migration/strict
+rollout. For current normal-question results and the zero-eligible-source finding,
+see [the 2026-11-17 diagnostic](rag-normal-questions-2026-11-17.md). The old pending
+rollout statements below are historical, not the current deployment state.
+
 ## Real Gemini requests
 
 Model: `gemini-3.1-flash-lite`; output ceiling: 1024 tokens; generation deadline:

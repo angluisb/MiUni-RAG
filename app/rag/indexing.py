@@ -56,7 +56,8 @@ class ChunkIndexer:
         self.repository = repository
         self.embedder = embedder
 
-    def index_document(self, chunks: list[InputChunk]) -> dict:
+    def index_document(self, chunks: list[InputChunk], *, archive_directory: Path | None = None,
+                       expected_source_id=None, expected_temporal_status: str | None = None) -> dict:
         from psycopg.types.json import Jsonb
 
         if not chunks:
@@ -66,12 +67,24 @@ class ChunkIndexer:
             raise ValueError("No se pueden mezclar documentos")
         if sorted(c.chunk_index for c in chunks) != list(range(len(chunks))):
             raise ValueError("Se necesita el documento completo con indices consecutivos")
+        if archive_directory is None and (expected_source_id is not None or expected_temporal_status is not None):
+            raise ValueError("Refresh guards require version archiving")
+        if archive_directory is not None:
+            from app.rag.version_archive import validate_archive_directory
+            archive_directory = validate_archive_directory(archive_directory)
         declaration = metadata_for_chunks(chunks)
         texts = {text_hash(chunk.content): chunk.content for chunk in chunks}
         settings = self.settings
         with self.repository.connect() as conn:
             # Serialize reimports of the same source, including creation of its parent row.
             lock_source(conn, source.source_url)
+            if archive_directory is not None:
+                from app.rag.version_archive import capture_preimage
+                # Complete durable preimage and optimistic guards BEFORE model work
+                # and before any SQL mutation. A later rollback may leave an archive.
+                capture_preimage(conn, source.source_url, archive_directory,
+                                 expected_source_id=expected_source_id,
+                                 expected_temporal_status=expected_temporal_status)
             cached = conn.execute(
                 """SELECT content_sha256, embedding::text AS embedding, embedded_at
                    FROM rag_chunk WHERE content_sha256 = ANY(%s)

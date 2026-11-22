@@ -12,8 +12,8 @@ Branch: feat/ingestion-v2. Delivery: feature-branch-chain, local commits only. F
 ## Tasks
 - T1 | S2/S4 | delegated writer: opt-in durable version archives in existing indexer + CLI + TEMP regression tests | complete; commit d8ecf8a; archive+guard implementation, archive-failure rollback test | Risk: items1/3/4.
 - T2 | S1/S3 | delegated writer: bounded mismatch fetch/chunk preparation, no database writes | complete; commit 7bc8877; 118 prepared, 31 inadequate, 1 invalid UTF-8 skipped | Risk: items2/3.
-- T3 | S1/S3 | parent execution + cheap bounded source-specific evidence review | partial; no temporal promotions; 17 offers/services entries lacked finalized review evidence after reviewer usage limit | Risk: item2.
-- T4 | S2/S4 | parent backup/dry-run/selective apply + independent verifier | complete; verified backup, guarded 118-source apply, independent post-apply PASS, unchanged 370 sources | Risk: items1/3/4.
+- T3 | S1/S3 | parent execution + cheap bounded source-specific evidence review | partial; commit d22c8db updates refresh state; no temporal promotions; 17 offers/services entries lacked finalized review evidence after reviewer usage limit | Risk: item2.
+- T4 | S2/S4 | parent backup/dry-run/selective apply + independent verifier | complete; guarded 118-source apply, independent post-apply PASS, unchanged 370 sources; evidence in docs/versioned-source-refresh.md | Risk: items1/3/4.
 - T5 | S5 | parent final-code real-provider sample and recovery documentation | complete | successful availabilityprobe + five final-code answers5/5 including contextualfollowup; medianfirst3.207s/completion4.409s; HTTPstillunverified.
 
 ## Log

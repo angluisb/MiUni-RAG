@@ -44,9 +44,9 @@
       "source_url": "https://ofertaeducativa.unison.mx/quimico-biologo-clinico/",
       "title": "Químico Biólogo Clínico – Oferta Educativa",
       "group": "offer",
-      "reason_code": "indexed_version_mismatch",
-      "rationale": "Live page differs from the indexed version: only 3/4 indexed chunks are exact normalized substrings. Whitespace alone was normalized; changed content was not ignored. No current classification assigned to stale stored text.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "4777afa5-8f8d-5dd3-9868-d0aa71a1ab03",
@@ -143,9 +143,9 @@
       "source_url": "https://dae.unison.mx/antecedentes.html",
       "title": "Dirección de Apoyo a Estudiantes",
       "group": "services",
-      "reason_code": "changed_institutional_history",
-      "rationale": "The live institutional history contains changed/restructured material; not every original indexed paragraph matches. Its old dates alone do not make this evolving reference obsolete.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "4cb8c544-557e-55a9-9605-dae049512755",
@@ -170,9 +170,9 @@
       "source_url": "https://dae.unison.mx/directorio.html",
       "title": "Dirección de Apoyo a Estudiantes",
       "group": "services",
-      "reason_code": "changed_staff_directory",
-      "rationale": "The live staff-directory layout/contact text differs from the indexed version; unchanged names alone would not justify promoting the whole document.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "4356c79c-2a0c-5deb-b292-41c25f601f0b",
@@ -242,18 +242,18 @@
       "source_url": "https://serviciosescolares.unison.mx/ampliacion-de-cupo/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "b1c1b569-5db8-5306-a74f-4ca861753f22",
       "source_url": "https://serviciosescolares.unison.mx/asignacion-de-clave-sivea/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "73c7f01f-1ecd-55a0-90fe-aaa053ddf582",
@@ -278,63 +278,63 @@
       "source_url": "https://serviciosescolares.unison.mx/baja-por-incapacidad-medica/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "cc645a47-05e4-5dcd-833a-bba4d90ab1ca",
       "source_url": "https://serviciosescolares.unison.mx/bajas-voluntarias/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "bd14256b-d43b-5ef6-8259-293e1a2ed908",
       "source_url": "https://serviciosescolares.unison.mx/cambio-de-nombre/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "7560f224-30e4-5ce7-a2da-90e1093fad91",
       "source_url": "https://serviciosescolares.unison.mx/cambio-de-plan/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "691e19fe-ea42-5eb8-b14f-fbe292c51f97",
       "source_url": "https://serviciosescolares.unison.mx/cambio-de-programa/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "e7a5ac9e-1a01-5fdf-886a-7fad37acbdb0",
       "source_url": "https://serviciosescolares.unison.mx/cambio-de-unidad/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "43557c8d-4410-503f-a9e9-c41f927ac7e1",
       "source_url": "https://serviciosescolares.unison.mx/cancelacion-de-inscripcion/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "f2b68ba5-b5e5-5e5a-93df-94ffd8b8a0ca",
@@ -359,27 +359,27 @@
       "source_url": "https://serviciosescolares.unison.mx/cedula-electronica/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "3808ecd2-ac3e-5615-bb54-739df58bd2de",
       "source_url": "https://serviciosescolares.unison.mx/certificacion-de-documentos-academicos/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "6775482d-095a-5e8e-ad61-fe946fd61c31",
       "source_url": "https://serviciosescolares.unison.mx/certificado-de-estudios/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "changed_document_delivery_conditions",
-      "rationale": "The current certificate page includes altered document-delivery/power-of-attorney conditions compared with indexed text. No normalization may hide changed procedural requirements; reingestion/review is needed.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "c024263b-1136-5de0-9321-3bc238c111a6",
@@ -413,18 +413,18 @@
       "source_url": "https://serviciosescolares.unison.mx/conmutacion-de-materias/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5bcf5897-79d4-5526-8685-bdf1a454b793",
       "source_url": "https://serviciosescolares.unison.mx/constancias-materias-sin-materias-y-especiales/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "bbd94641-be67-5b8a-a291-7be781c3743a",
@@ -440,9 +440,9 @@
       "source_url": "https://serviciosescolares.unison.mx/correccion-de-calificaciones-2/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "fc352c47-f2fa-5b9c-8e90-861a90d7d453",
@@ -458,9 +458,9 @@
       "source_url": "https://serviciosescolares.unison.mx/directorio/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "changed_live_staff_directory",
-      "rationale": "The live dynamic staff directory no longer matches all indexed names/contact/structural text. No current staff assertion is inferred from partial matches.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "8cefbb22-e5f3-5d80-a0b8-1f197f2d5ed8",
@@ -476,36 +476,36 @@
       "source_url": "https://serviciosescolares.unison.mx/equivalencia-de-materias/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "d847a1d0-9c32-5ae2-9251-f8366ce61164",
       "source_url": "https://serviciosescolares.unison.mx/equivalencia-de-materias-entre-planes/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5cb49170-345c-5a3e-9e8b-82ae3dacebc7",
       "source_url": "https://serviciosescolares.unison.mx/examen-con-derecho-de-pasante/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "0bbcdeb3-a169-575f-a0d1-751d1f4d41f4",
       "source_url": "https://serviciosescolares.unison.mx/examen-extraordinario-especial/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "8549d5aa-a8f4-5780-937d-246d994666f7",
@@ -539,18 +539,18 @@
       "source_url": "https://serviciosescolares.unison.mx/kardex-2/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "8ff62004-3ee8-542b-9d9f-e4479a9da034",
       "source_url": "https://serviciosescolares.unison.mx/lineamientos-de-cursos-de-titulacion/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "8a3e6c3c-2293-53b6-8069-aa28302fda9a",
@@ -584,9 +584,9 @@
       "source_url": "https://serviciosescolares.unison.mx/posgrados-admision/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "58cb2acb-00a7-51c5-80d7-9e99b33c3e34",
@@ -620,72 +620,72 @@
       "source_url": "https://serviciosescolares.unison.mx/procedimiento-de-titulacion/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "bba24a9c-dfeb-5044-af93-36012e297836",
       "source_url": "https://serviciosescolares.unison.mx/programa-simultaneo/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "6c53d521-0dc6-5f5b-bc1a-6aa04a4a654f",
       "source_url": "https://serviciosescolares.unison.mx/quienes-somos/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "af7e2a39-af4c-5135-8a87-84b43cc3287a",
       "source_url": "https://serviciosescolares.unison.mx/reactivacion-de-kardex-2-anos/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "1a21874e-08f6-5299-9d3f-a56d5e61095d",
       "source_url": "https://serviciosescolares.unison.mx/reactivacion-de-kardex-2-anos-2/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "8ec411e2-47a0-5f5b-bce8-11d14ab27c92",
       "source_url": "https://serviciosescolares.unison.mx/rectificacion-de-calificaciones/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ec5d4589-4850-5c15-b8c3-7f4d353211f6",
       "source_url": "https://serviciosescolares.unison.mx/rectificacion-de-identidad-de-genero/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "df4539f1-3d64-51d4-abb9-e1d9536d8ca0",
       "source_url": "https://serviciosescolares.unison.mx/reexpedicion-de-titulo/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "a5de32d4-9cef-5b87-88da-c9c8e98fd7f6",
@@ -701,9 +701,9 @@
       "source_url": "https://serviciosescolares.unison.mx/requisitos-de-titulacion/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "0f4b46f4-f2a0-57e2-a677-d453dc508a15",
@@ -719,27 +719,27 @@
       "source_url": "https://serviciosescolares.unison.mx/revalidacion-de-estudios/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "978681db-c77b-57c4-aa71-98d561fd2545",
       "source_url": "https://serviciosescolares.unison.mx/segundo-programa/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "13f847a9-02e4-552e-b01c-0f2ec65b9c0b",
       "source_url": "https://serviciosescolares.unison.mx/titulacion/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ac626f76-4e82-555e-8ae0-1628ccef0772",
@@ -755,27 +755,27 @@
       "source_url": "https://serviciosescolares.unison.mx/titulacion-de-posgrados/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "df15595f-104f-5cbc-9bb0-b5eece66537e",
       "source_url": "https://serviciosescolares.unison.mx/TRAMITES-INTERNACIONALES/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "b87ca4a2-032a-5fc9-bcca-406779f1ff54",
       "source_url": "https://serviciosescolares.unison.mx/verificacion-de-documentos/",
       "title": "Dirección de Servicios Escolares",
       "group": "services",
-      "reason_code": "indexed_sidebar_or_article_version_changed",
-      "rationale": "The indexed source still includes an unmatched WordPress sidebar/archive/comment tail. Diagnostic article-only matching does not admit it: no stale announcement, number, date or factual text is removed from the actual stored chunks. Retain unknown pending reingestion or stronger whole-version proof.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "4ccd2936-1c64-5b18-8556-0360533e0325",
@@ -818,18 +818,18 @@
       "source_url": "https://administracionpublica.unison.mx/",
       "title": "Licenciatura en Administración Pública – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "1e0a3ed3-2d9f-528f-88cf-3bb243b4e7fb",
       "source_url": "https://administracion.unison.mx/",
       "title": "Departamento de Administración – División de Ciencias Económicas y Administrativas",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5a008798-5169-5d93-853a-4de48c1aa797",
@@ -872,18 +872,18 @@
       "source_url": "https://campushermosillo.unison.mx/",
       "title": "Dirección Administrativa del Campus Hermosillo – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "79a637bb-4250-5a7d-a5d4-3ef95be42347",
       "source_url": "https://campushermosillo.unison.mx/antecedentes/",
       "title": "Antecedentes – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ec54272f-bdb6-5c63-b1e3-5bfa2ba332c1",
@@ -899,27 +899,27 @@
       "source_url": "https://campushermosillo.unison.mx/category/convocatorias/",
       "title": "Convocatorias – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "0f32d6c9-bebb-5d62-b6d2-247ca2c3b125",
       "source_url": "https://campushermosillo.unison.mx/category/noticias/",
       "title": "Noticias – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "baa73940-ecf4-5e22-9116-7666bbc79f4d",
       "source_url": "https://campushermosillo.unison.mx/consejo-regional-de-vinculacion-social/",
       "title": "Consejo Regional de Vinculación Social del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "64612972-7753-58f3-b400-3df85e3c9f38",
@@ -935,54 +935,54 @@
       "source_url": "https://campushermosillo.unison.mx/coordinacion-de-espacios-culturales-urc/",
       "title": "Teatro Emiliana de Zubeldía",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "bc8d8721-f8c2-5105-a917-f048f5fc9973",
       "source_url": "https://campushermosillo.unison.mx/cursos-de-verano/",
       "title": "Consulta los turnos de inscripción",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "87301def-ea6a-5ed7-a4ec-3ee4634bd9a0",
       "source_url": "https://campushermosillo.unison.mx/directorio/",
       "title": "DIRECTORIO – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "3c586d26-32aa-595d-980d-cec40be9efda",
       "source_url": "https://campushermosillo.unison.mx/historia-del-campus/",
       "title": "Historia del campus – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "137bd913-9014-5274-ac8c-21cbefd3b2be",
       "source_url": "https://campushermosillo.unison.mx/programas-de-graduaciones-urc/",
       "title": "Ceremonia de Egresados – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "605e7d86-349e-5943-a1c5-5e07097558a1",
       "source_url": "https://campushermosillo.unison.mx/salas-de-lactancia/",
       "title": "Salas de Lactancia – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "7a45d1ff-53f8-50b8-b57a-d82a92163114",
@@ -998,27 +998,27 @@
       "source_url": "https://campushermosillo.unison.mx/tramites-y-servicios/",
       "title": "TRÁMITES Y SERVICIOS – Dirección Administrativa del Campus Hermosillo",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2, 3] of 4. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "aa621856-ad24-5f74-93ff-86dae2a60f2d",
       "source_url": "https://carreradeaniversario.unison.mx/",
       "title": "Carrera de Aniversario Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ea50c643-04ac-5eec-8f57-5a35d7339b89",
       "source_url": "https://coil.unison.mx/",
       "title": "Collaborative Online International Learning ( COIL )",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "64e84a4a-4d7e-5435-8d55-46e87843d464",
@@ -1034,63 +1034,63 @@
       "source_url": "https://dadip.unison.mx/concurso-institucional-tesis-en-tres-minutos-3mt/",
       "title": "Dirección de Apoyo a Docentes, Investigación y Posgrado",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "61acf2f2-a335-5bff-b311-05f7165163ff",
       "source_url": "https://dad.unison.mx/",
       "title": "Departamento de Arquitectura y Diseño – Facultad Interdisciplinaria de Humanidades y Artes",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5b2e231f-3447-5d9d-a061-a563dab50fb6",
       "source_url": "https://dagus.unison.mx/",
       "title": "Departamento de Agricultura y Ganadería",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "89a60d30-38b8-5454-ad8d-d3c4ed77f634",
       "source_url": "https://dape.unison.mx/",
       "title": "Dirección de Apoyo a Programas Educativos",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "8698ba6e-06c3-5094-bb8b-4b117f84bfae",
       "source_url": "https://dcea-caborca.unison.mx/",
       "title": "Departamento de Ciencias Económico Administrativas, Campus Caborca – Facultad Interdisciplinaria de Ciencias Económicas y Administrativas",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "72c6108b-f8ef-5714-aca3-cc04ea11b259",
       "source_url": "https://dcea-navojoa.unison.mx/",
       "title": "Departamento de Ciencias Económico-Administrativas, Campus Navojoa – Facultad Interdisciplinaria de Ciencias Económicas y Administrativas",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "b89a575e-8e47-5368-b247-b478b3ac72b2",
       "source_url": "https://dcea-nogales.unison.mx/",
       "title": "Departamento de Ciencias Económicos Administrativas, Nogales – Facultad Interdisciplinaria de Ciencias Económicas y Administrativas",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "850a4b0b-498a-5246-ba68-36169a6945c3",
@@ -1106,99 +1106,99 @@
       "source_url": "https://dcs-caborca.unison.mx/",
       "title": "Departamento de Ciencias Sociales, Campus Caborca – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "566ab9ac-32ef-5b34-a7c5-e67b318dbd9a",
       "source_url": "https://dcs-navojoa.unison.mx/",
       "title": "Departamento de Ciencias Sociales, Navojoa – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "fc5fce3b-87fc-520e-a36c-95566f70a495",
       "source_url": "https://dcs-nogales.unison.mx/",
       "title": "Departamento de Ciencias Sociales, Nogales – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "a3a4398b-e9fa-5220-86e7-de0b9bdd8cca",
       "source_url": "https://ddu.unison.mx/",
       "title": "Defensoría de los Derechos Universitarios",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "19168f25-5fe7-5921-988b-46eb9e2ce00f",
       "source_url": "https://deportes.unison.mx/",
       "title": "Departamento de Ciencias del Deporte y de la Actividad Física – Facultad Interdisciplinaria de Ciencias Biológicas y de Salud",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "d7c53b77-8d34-5a64-b9f3-1d4b87fccdcf",
       "source_url": "https://derecho.unison.mx/",
       "title": "Departamento de Derecho – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "3c312c22-f3bd-5c69-ba1e-f0c3666f6f77",
       "source_url": "https://dicym.unison.mx/",
       "title": "Departamento de Ingeniería Civil y Minas – Facultad Interdisciplinaria de Ingeniería",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "f7e380c1-bff8-5df1-bd1c-2b3ccd48ab30",
       "source_url": "https://difus.unison.mx/",
       "title": "Departamento de Investigación en Física",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "f5ea8b75-bcd0-5dfc-8a31-ee893c507606",
       "source_url": "https://dipa.unison.mx/",
       "title": "Departamento de Investigación y Posgrado en Alimentos – Otro sitio realizado con WordPress",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "a959c3b7-a0b4-5f78-b891-7bae055c1877",
       "source_url": "https://direcciondecomunicacion.unison.mx/",
       "title": "Dirección de Comunicación",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "735d2d38-01cf-5e64-b136-b89240a2b439",
       "source_url": "https://dsap.unison.mx/",
       "title": "Departamento de Sociología y Administración Pública – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "4e1d940c-8c51-556a-a392-8c9308d7ca73",
@@ -1223,72 +1223,72 @@
       "source_url": "https://economia.unison.mx/degree-in-business-and-international-commerce/",
       "title": "Mission",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "7723a2fe-03cc-5459-9621-2e79196e2182",
       "source_url": "https://educacionenlinea.unison.mx/",
       "title": "Coordinación de Educación en Línea – Dirección de Apoyo a Programas Educativos",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ecc0f997-d652-50ae-98bb-569cdd40353b",
       "source_url": "https://emprendedores.unison.mx/",
       "title": "Programa de Emprendedores Universitarios – Dirección de Apoyo a Estudiantes",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "56063ff2-9376-5e36-9b70-2abc463744bf",
       "source_url": "https://enfermeria.unison.mx/",
       "title": "Departamento de Enfermería",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "42fc9c23-4b42-59e9-bde4-d2d32377b7f6",
       "source_url": "https://fi-cbs.unison.mx/",
       "title": "Facultad Interdisciplinaria de Ciencias Biológicas y de Salud – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "4d524009-8329-5f63-af72-618192bcc006",
       "source_url": "https://fi-cea.unison.mx/",
       "title": "Facultad Interdisciplinaria de Ciencias Económicas y Administrativas – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "982e272d-54f9-5729-80bc-90993dfcf41f",
       "source_url": "https://fi-cen.unison.mx/",
       "title": "Facultad Interdisciplinaria de Ciencias Exactas y Naturales – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "cdcdf108-ad29-56e3-8fc4-ba4dc7a9f7fb",
       "source_url": "https://fi-csoc.unison.mx/",
       "title": "Facultad Interdisciplinaria de Ciencias Sociales – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ac8dcda2-460c-51e4-b046-d2b362d7bf3e",
@@ -1304,27 +1304,27 @@
       "source_url": "https://fi-ing.unison.mx/",
       "title": "Facultad Interdisciplinaria de Ingeniería – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "69c8755e-fb57-52e4-8089-48eba93003af",
       "source_url": "https://fisica.unison.mx/",
       "title": "Departamento de Física",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "e58f2943-1be8-57b2-b896-c5e50594c92c",
       "source_url": "https://fmi-caborca.unison.mx/",
       "title": "Departamento de Física, Matemáticas e Ingeniería – Caborca – Facultad Interdisciplinaria de Ingeniería",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "4f1bfaf8-885d-5ffa-9101-e954ae234fbc",
@@ -1340,36 +1340,36 @@
       "source_url": "https://geologia.unison.mx/",
       "title": "Departamento de Geología",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5fd3deab-189a-5767-9704-c13445503a19",
       "source_url": "https://historiayantropologia.unison.mx/",
       "title": "Departamento de Historia y Antropología – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "9dcc7f45-4245-5cf7-8263-6c28fa606e3f",
       "source_url": "https://iq.unison.mx/",
       "title": "Departamento de Ingeniería Química y Metalurgia – Facultad Interdisciplinaria de Ingeniería",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "960ccb1b-73c9-5983-b93e-188e6c468fa8",
       "source_url": "https://ite.unison.mx/",
       "title": "Ingeniería en Tecnología Electrónica – Ingeniería en Tecnología Electrónica",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "2dee445d-d09f-58b1-af62-ec1ea2bbdd82",
@@ -1385,9 +1385,9 @@
       "source_url": "https://lenguasextranjeras.unison.mx/",
       "title": "Departamento de Lenguas Extranjeras – Facultad Interdisciplinaria de Humanidades y Artes",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "c049589a-2cc6-563f-911f-c6a9ac007cd4",
@@ -1403,9 +1403,9 @@
       "source_url": "https://letrasylinguistica.unison.mx/",
       "title": "Departamento de Letras y Lingüística – Facultad Interdisciplinaria de Humanidades y Bellas Artes",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "34737a1a-966a-5d8e-af16-481da4af1ae2",
@@ -1421,9 +1421,9 @@
       "source_url": "https://medicina.unison.mx/",
       "title": "Departamento de Medicina y Ciencias de la Salud – División de Ciencias Biológicas y de la Salud",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "10f057d2-7a6d-5ddf-92a2-906facd69266",
@@ -1475,9 +1475,9 @@
       "source_url": "https://movilidad.unison.mx/estancias-cientificas/",
       "title": "Estancias de investigación científicas – Subdirección de Cooperación, Movilidad e Internacionalización",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "f2c9e287-e650-5adf-80b0-78d1ea82b41d",
@@ -1502,9 +1502,9 @@
       "source_url": "https://movilidad.unison.mx/estudiante-saliente/",
       "title": "Estudiante saliente – Subdirección de Cooperación, Movilidad e Internacionalización",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "35df12d5-e710-56fb-8305-9212e6f2fba3",
@@ -1520,9 +1520,9 @@
       "source_url": "https://movilidad.unison.mx/internacional-2/",
       "title": "Internacional – Subdirección de Cooperación, Movilidad e Internacionalización",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "6b9882f1-b234-579c-a5e3-c02befec9dea",
@@ -1538,9 +1538,9 @@
       "source_url": "https://movilidad.unison.mx/nacional-2/",
       "title": "Nacional – Subdirección de Cooperación, Movilidad e Internacionalización",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "655597b3-204c-57e9-93f6-76712acc04af",
@@ -1691,9 +1691,9 @@
       "source_url": "https://ninocientifico.unison.mx/",
       "title": "Día del Niño Científico",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2] of 3. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "45124478-3595-541f-9e1a-2409ff41e7bb",
@@ -1718,9 +1718,9 @@
       "source_url": "https://polimeros.unison.mx/",
       "title": "Departamento de Investigación Polímeros y Materiales – Facultad Interdisciplinaria de Ingeniería",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "09ac3874-788d-51d1-9d28-4c53fe8428cd",
@@ -1736,9 +1736,9 @@
       "source_url": "https://psicom.unison.mx/",
       "title": "Departamento de Psicología y Ciencias de la Comunicación – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5ce54ed8-b909-53a3-8c02-5b30a25b4b3c",
@@ -1754,27 +1754,27 @@
       "source_url": "https://qb.unison.mx/",
       "title": "Departamento de Ciencias Químico-Biológicas – Facultad Interdisciplinaria de Ciencias Biológicas y de Salud",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "58c9de02-15cc-5185-8a4d-33cc0409bede",
       "source_url": "https://recursoshumanos.unison.mx/",
       "title": "Dirección de Recursos Humanos",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "a28c1894-e538-51d4-8c0d-9e2851f584d6",
       "source_url": "https://serviciosocial.uson.mx/",
       "title": "SERVICIO SOCIAL UNIVERSITARIO",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "6f48050f-5503-5a62-8f25-4605f1976009",
@@ -1817,63 +1817,63 @@
       "source_url": "https://tesoreria.unison.mx/",
       "title": "Tesorería General",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "bf7488b6-8414-5e9c-b3b1-a0eda3d377f5",
       "source_url": "https://trabajosocial.unison.mx/",
       "title": "Departamento de Trabajo Social – Facultad Interdisciplinaria de Ciencias Sociales",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "9aeaf4a5-5fa5-5e80-bff9-4240ddc0bf42",
       "source_url": "https://vinculacionyextension.unison.mx/",
       "title": "Dirección de Vinculación y Extensión",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5a46f136-0f25-539a-aa9e-d2943d345331",
       "source_url": "https://www.aniversario.unison.mx/",
       "title": "84 Aniversario | Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "0ecc31be-e7c0-5720-80a7-bf5f39413f11",
       "source_url": "https://www.industrial.uson.mx/",
       "title": "DEPARTAMENTO DE INGENIERÍA INDUSTRIAL",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "24909502-f4a2-520d-a4f9-3dcb98f38bf8",
       "source_url": "https://www.mat.uson.mx/web/",
       "title": "Departamento de Matemáticas – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "e75e11af-5fe3-5925-b6d2-00b5a1cbfcde",
       "source_url": "https://www.unison.mx/",
       "title": "Universidad de Sonora – El saber de mis hijos hará mi grandeza",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "96abc082-7570-5c8c-a63e-adc889d16a54",
@@ -1889,72 +1889,72 @@
       "source_url": "https://www.unison.mx/directorio/",
       "title": "Directorio – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0, 1, 2, 3, 4] of 5. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "fbd0eece-143b-51a6-a611-c5455ae80303",
       "source_url": "https://www.unison.mx/eje-de-formacion-comun/",
       "title": "Eje de Formación Común – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [5, 6, 26, 27, 30, 36] of 38. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "5103f087-fd38-5b6a-a4bf-7a3e7fa550e8",
       "source_url": "https://www.unison.mx/nota/?idnoti=36799",
       "title": "Nota – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ba93841c-800d-5678-9d97-c3f23db27f61",
       "source_url": "https://www.unison.mx/nota/?idnoti=38854",
       "title": "Nota – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "ba9bcb15-bb94-5ace-bee4-49ab395cf961",
       "source_url": "https://www.unison.mx/nota/?idnoti=38880",
       "title": "Nota – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "612435b7-b0b1-53be-809f-c11b05163a0a",
       "source_url": "https://www.unison.mx/nota/?idnoti=38882",
       "title": "Nota – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "9bd14b5e-86b7-5f36-bae8-94080ef65176",
       "source_url": "https://www.unison.mx/nota/?idnoti=38891",
       "title": "Nota – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [1] of 2. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "2bbeeede-30d3-5d36-9f1b-57a1c9e1f83b",
       "source_url": "https://www.unison.mx/nota/?idnoti=38892",
       "title": "Nota – Universidad de Sonora",
       "group": "other",
-      "reason_code": "indexed_version_not_verified",
-      "rationale": "Exact live-main-body containment failed for indexed chunk indices [0] of 1. Complete indexed-version equivalence is not proved. Structural/title/contact differences are not silently discarded, and no changed dates or fees are tolerated. Reingestion or an explicit per-difference review is required before promotion.",
-      "category": "Stored/live content mismatch"
+      "reason_code": "content_refreshed_temporal_status_unknown",
+      "rationale": "Content was refreshed from the approved source snapshot. Temporal status remains desconocido because this refresh does not establish publication or effective dates.",
+      "category": "Refreshed content; temporal review pending"
     },
     {
       "source_id": "877a68ff-f823-5c74-b8ef-c287a0c1a14c",
